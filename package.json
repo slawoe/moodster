@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .js",
     "build": "cd client && npm run build",
     "start": "node server.js",
-    "prettify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "postinstall": "cd client && npm install"
   },
   "repository": {
     "type": "git",
