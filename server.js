@@ -5,7 +5,7 @@ const jsonServer = require("json-server");
 const router = jsonServer.router("db.json");
 const middlewares = jsonServer.defaults();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(middlewares);
