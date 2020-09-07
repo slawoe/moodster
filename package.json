@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npm run lint && cd client && npm test",
     "lint": "eslint . --ext .js",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run build && npm run build-storybook",
     "start": "node server.js",
     "prettify": "prettier --write .",
     "postinstall": "cd client && npm install"
