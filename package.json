@@ -13,8 +13,7 @@
     "server": "nodemon server.js",
     "client": "cd client && npm start",
     "storybook": "cd client && npm run storybook",
-    "api": "json-server --watch db.json --port 3002",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" \"npm run storybook\" \"npm run api\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\" \"npm run storybook\""
   },
   "repository": {
     "type": "git",
