@@ -20,7 +20,21 @@ const GlobalCSS = () => {
           height: 100vh;
           width: 100vw;
           margin: 0px;
-          @import url("https://db.onlinewebfonts.com/c/784670a6bb0f0b4c713488e8f162a30a?family=Silom");
+          @import url("//db.onlinewebfonts.com/c/784670a6bb0f0b4c713488e8f162a30a?family=Silom");
+          @font-face {
+            font-family: "Silom";
+            src: url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.eot");
+            src: url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.eot?#iefix")
+                format("embedded-opentype"),
+              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.woff2")
+                format("woff2"),
+              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.woff")
+                format("woff"),
+              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.ttf")
+                format("truetype"),
+              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.svg#Silom")
+                format("svg");
+          }
         }
         html {
         }
