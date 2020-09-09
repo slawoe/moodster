@@ -4,6 +4,12 @@ const GlobalCSS = () => {
   return (
     <Global
       styles={css`
+        @font-face {
+          font-family: "SilomBol";
+          src: local("SilomBol"),
+            url(./assets/fonts/SilomBol.otf) format("truetype");
+        }
+
         *,
         *:before,
         *:after {
@@ -20,12 +26,6 @@ const GlobalCSS = () => {
         body {
           background-color: #4da4bc;
           font-family: "Silom";
-
-          @font-face {
-            font-family: "Silom";
-            src: local("Silom"),
-              url(./src/assets/Fonts/SilomBol.ttf) format("ttf");
-          }
         }
         code {
         }
