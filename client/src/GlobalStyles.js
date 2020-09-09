@@ -5,12 +5,6 @@ const GlobalCSS = () => {
   return (
     <Global
       styles={css`
-        @font-face {
-          font-family: "SilomBol";
-          src: local("SilomBol"),
-            url(./assets/fonts/SilomBol.ttf) format("truetype");
-        }
-
         *,
         *:before,
         *:after {
