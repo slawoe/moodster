@@ -1,7 +1,7 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
 
-const GlobalCSS = () => {
+const GlobalStyles = () => {
   return (
     <Global
       styles={css`
@@ -13,7 +13,8 @@ const GlobalCSS = () => {
         #root {
           height: 100vh;
           width: 100vw;
-          margin: 0px;
+          margin: 0;
+
           @import url("//db.onlinewebfonts.com/c/784670a6bb0f0b4c713488e8f162a30a?family=Silom");
           @font-face {
             font-family: "Silom";
@@ -42,4 +43,4 @@ const GlobalCSS = () => {
     />
   );
 };
-export default GlobalCSS;
+export default GlobalStyles;

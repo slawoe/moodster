@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      TESTYTEST
+      MOODSTER
     </>
   );
 }
