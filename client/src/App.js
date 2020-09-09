@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalStyles from "./GlobalStyles";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -7,7 +8,12 @@ import React from "react";
 // } from "react-router-dom";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <GlobalStyles />
+      TESTYTEST
+    </>
+  );
 }
 
 export default App;
