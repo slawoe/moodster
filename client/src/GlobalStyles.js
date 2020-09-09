@@ -10,6 +10,11 @@ const GlobalStyles = () => {
         *:after {
           box-sizing: border-box;
         }
+
+        :root {
+          --main-bg-color: #4da4bc;
+          --main-text-color: #f3cf78;
+        }
         #root {
           height: 100vh;
           width: 100vw;
@@ -34,7 +39,7 @@ const GlobalStyles = () => {
         html {
         }
         body {
-          background-color: #4da4bc;
+          background-color: var(--main-bg-color);
           font-family: "Silom";
         }
         code {
