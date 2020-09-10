@@ -33,12 +33,12 @@ const GlobalStyles = () => {
             font-family: "Silom";
             src: url(${Silom}) format("ttf");
           }
+          font-family: "Silom";
           font-size: 14px;
           background-color: var(--bg-main-color);
           color: var(--text-color-normal);
         }
         body {
-          font-family: "Silom";
           margin: 0 auto;
         }
       `}
