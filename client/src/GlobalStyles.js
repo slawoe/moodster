@@ -1,5 +1,6 @@
 import React from "react";
 import { Global, css } from "@emotion/core";
+import Silom from "./assets/fonts/Silom.ttf";
 
 const GlobalStyles = () => {
   return (
@@ -10,39 +11,34 @@ const GlobalStyles = () => {
         *:after {
           box-sizing: border-box;
         }
-
         :root {
-          --main-bg-color: #4da4bc;
-          --main-text-color: #f3cf78;
-        }
-        #root {
+          --bg-main-color: #4da4bc;
+          --text-color-normal: #f3cf78;
+          --text-color-attention: #fca567;
+          --text-color-danger: #cc5745;
+          --card-background-color: #165b6e;
+          --navigation-main-color: #165b6e;
+          --link-active-color: #165b6e;
+          --link-inactive-color: #fca567;
+          --button-proceed-color: #9bbf88;
+          --button-danger-color: #cc5745;
+          --button-main-color: #f3cf78;
+          --button-ctacall-color: #cc5745;
+          --inputfield-attention-color: #fca567;
+          --inputfield-text-color: #165b6e;
           height: 100vh;
           width: 100vw;
-          margin: 0;
-
-          @import url("//db.onlinewebfonts.com/c/784670a6bb0f0b4c713488e8f162a30a?family=Silom");
           @font-face {
             font-family: "Silom";
-            src: url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.eot");
-            src: url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.eot?#iefix")
-                format("embedded-opentype"),
-              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.woff2")
-                format("woff2"),
-              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.woff")
-                format("woff"),
-              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.ttf")
-                format("truetype"),
-              url("//db.onlinewebfonts.com/t/784670a6bb0f0b4c713488e8f162a30a.svg#Silom")
-                format("svg");
+            src: url(${Silom}) format("ttf");
           }
-        }
-        html {
+          font-family: "Silom";
+          font-size: 14px;
+          background-color: var(--bg-main-color);
+          color: var(--text-color-normal);
         }
         body {
-          background-color: var(--main-bg-color);
-          font-family: "Silom";
-        }
-        code {
+          margin: 0 auto;
         }
       `}
     />

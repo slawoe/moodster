@@ -2,6 +2,8 @@
 
 # MOODSTER
 
+**THIS IS A NON-COMMERCIAL-PROJECT AS FINAL THESIS FOR MY WEB DEVELOPER BOOTCAMP**
+
 Moodester is an app for children in therapy and their parents.
 As in a Mood Diary questionnaires can be answered, which are visible afterwards as diary entries. In addition, medication and reminders can be created and an evaluation of the mood of the last 14 days can be displayed.
 
