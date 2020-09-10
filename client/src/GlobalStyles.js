@@ -29,7 +29,7 @@ const GlobalStyles = () => {
           --main-elements-shadow: 3px 3px 6px #00000029;
           @font-face {
             font-family: "Silom";
-            src: url(${Silom}) format("ttf");
+            src: url(${Silom}) format("truetype");
           }
           font-family: "Silom";
           font-size: 14px;
