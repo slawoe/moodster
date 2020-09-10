@@ -4,8 +4,7 @@ export const parameters = { actions: { argTypesRegex: "^on[A-Z].*" } };
 const withGlobalStyles = (Story, context) => {
   return (
     <>
-      {" "}
-      <GlobalStyles /> <Story {...context} />{" "}
+      <GlobalStyles /> <Story {...context} />
     </>
   );
 };
