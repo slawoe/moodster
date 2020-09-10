@@ -26,6 +26,7 @@ const GlobalStyles = () => {
           --button-ctacall-color: #cc5745;
           --inputfield-attention-color: #fca567;
           --inputfield-text-color: #165b6e;
+          --main-elements-shadow: 3px 3px 6px #00000029;
           height: 100vh;
           width: 100vw;
           @font-face {
