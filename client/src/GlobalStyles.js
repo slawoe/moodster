@@ -20,12 +20,12 @@ const GlobalStyles = () => {
           --navigation-main-color: #165b6e;
           --link-active-color: #165b6e;
           --link-inactive-color: #fca567;
-          --link-proceed-color: #9bbf88;
-          --link-danger-color: #cc5745;
+          --button-proceed-color: #9bbf88;
+          --button-danger-color: #cc5745;
           --button-main-color: #f3cf78;
           --button-ctacall-color: #cc5745;
           --inputfield-attention-color: #fca567;
-          --input-field-text-color: #165b6e;
+          --inputfield-text-color: #165b6e;
           height: 100vh;
           width: 100vw;
           @font-face {
@@ -38,6 +38,7 @@ const GlobalStyles = () => {
           color: var(--text-color-normal);
         }
         body {
+          margin: 0 auto;
         }
       `}
     />
