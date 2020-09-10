@@ -1,6 +1,6 @@
 import React from "react";
 
-import CallButton from "../../components/CallButton";
+import CallButton from "../components/CallButton";
 
 export default {
   title: "CallButton",
