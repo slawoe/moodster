@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Phone from "../assets/icons/call.svg";
 
-const CallingButton = styled.button`
+const StartCallButton = styled.button`
   background-color: var(--button-ctacall-color);
   height: 73px;
   width: 73px;
@@ -15,16 +15,16 @@ const CallingButton = styled.button`
   }
 `;
 
-function CallButton(img) {
+function CallButton() {
   return (
-    <CallingButton>
+    <StartCallButton>
       <a href="tel:08001110111">
         <img
           src={Phone}
           alt="Telefonhörer der Anruf bei Seelsorge auslöst"
         ></img>
       </a>
-    </CallingButton>
+    </StartCallButton>
   );
 }
 
