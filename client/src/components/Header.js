@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Moodster from "../assets/images/moodster.svg";
 import DrawerToggleButton from "./DrawerToggleButton";
 import CallButton from "./CallButton";
 import { Link } from "react-router-dom";
+import SideDrawer from "./SideDrawer";
 
-const MainFooter = styled.header`
+const MainHeader = styled.header`
   background: var(--navigation-main-color);
   border: none;
   border-radius: 0 0 5px 5px;
@@ -43,32 +44,22 @@ const HeaderNavigation = styled.nav`
 `;
 
 function Header() {
+  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
   return (
-    <MainFooter>
-      <CallButton />
-      <HeaderNavigation>
-        <Link to="/">
-          <img src={Moodster} alt="Home" />
-        </Link>
-        <DrawerToggleButton />
-        <div>
-          <ul>
-            <li>
-              <a href="shit">SHIT</a>
-            </li>
-            <li>
-              <a href="shit">SHIT</a>
-            </li>
-            <li>
-              <a href="shit">SHIT</a>
-            </li>
-            <li>
-              <a href="shit">SHIT</a>
-            </li>
-          </ul>
-        </div>
-      </HeaderNavigation>
-    </MainFooter>
+    <>
+      <MainHeader>
+        <CallButton />
+        <HeaderNavigation>
+          <Link to="/">
+            <img src={Moodster} alt="Home" />
+          </Link>
+          <DrawerToggleButton
+            onClick={() => setSideDrawerOpen(!sideDrawerOpen)}
+          />
+        </HeaderNavigation>
+        {sideDrawerOpen && <SideDrawer></SideDrawer>}
+      </MainHeader>
+    </>
   );
 }
 
