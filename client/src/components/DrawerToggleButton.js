@@ -8,6 +8,8 @@ const ToggleButton = styled.button`
   background: transparent;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+  outline: none;
 `;
 
 function DrawerToggleButton({ onClick }) {
