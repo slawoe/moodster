@@ -9,7 +9,7 @@ const SideDrawer = styled.nav`
   background-color: var(--navigation-main-color);
   top: 10%;
   right: 0;
-  width: 50%;
+  width: 70%;
   z-index: 200;
   border: none;
   border-radius: 5px 0 0 5px;
