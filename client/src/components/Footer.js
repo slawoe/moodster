@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Diary from "../assets/icons/diary.svg";
-import Questionnaire from "../assets/icons/questionnare.svg";
+import Questionnaire from "../assets/icons/questionnaire.svg";
 import Medics from "../assets/icons/medics.svg";
 import Analyse from "../assets/icons/analyse.svg";
 import { Link } from "react-router-dom";
