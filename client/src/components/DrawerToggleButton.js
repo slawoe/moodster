@@ -6,9 +6,8 @@ import PropTypes from "prop-types";
 const ToggleButton = styled.button`
   border: none;
   background: transparent;
-  & button:focus {
-    outline: none;
-  }
+  margin: 0;
+  padding: 0;
 `;
 
 function DrawerToggleButton({ onClick }) {
