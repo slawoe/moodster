@@ -4,8 +4,8 @@ import Phone from "../assets/icons/call.svg";
 
 const StartCallButton = styled.button`
   background-color: var(--button-ctacall-color);
-  height: 73px;
-  width: 73px;
+  min-height: 73px;
+  min-width: 73px;
   border-radius: 50%;
   border-style: none;
   box-shadow: var(--main-elements-shadow);
