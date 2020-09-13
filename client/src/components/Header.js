@@ -9,7 +9,7 @@ import SideDrawer from "./SideDrawer";
 const MainHeader = styled.header`
   background: var(--navigation-main-color);
   border: none;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0;
   box-shadow: var(--main-elements-shadow);
   grid-area: 1 / 1 / 2/ 4;
   position: relative;
@@ -55,9 +55,13 @@ function Header() {
           </Link>
           <DrawerToggleButton
             onClick={() => setSideDrawerOpen(!sideDrawerOpen)}
-          />
+            open={sideDrawerOpen}
+          ></DrawerToggleButton>
         </HeaderNavigation>
-        {sideDrawerOpen && <SideDrawer></SideDrawer>}
+        <SideDrawer
+          open={sideDrawerOpen}
+          setSideDrawerOpen={sideDrawerOpen}
+        ></SideDrawer>
       </MainHeader>
     </>
   );
