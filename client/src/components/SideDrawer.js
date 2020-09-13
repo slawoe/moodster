@@ -35,7 +35,7 @@ const SideDrawerList = styled.ul`
   padding: 10% 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   & > li {
   }
   & > li > a {
