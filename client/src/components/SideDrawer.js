@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const SideDrawer = styled.nav`
   height: 82.5vh;
-  width: 65%;
+  width: 70vw;
   position: absolute;
   transition: transform 0.5s ease-in-out;
   background-color: var(--navigation-main-color);
@@ -29,15 +29,13 @@ const SideDrawer = styled.nav`
 
 const SideDrawerList = styled.ul`
   list-style: none;
-  height: 100%;
-  margin: 0px;
-  margin-left: 10%;
-  padding: 10% 0;
+  height: 83vh;
+  margin: 0;
+  margin-left: 10vw;
+  padding: 5vh 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  & > li {
-  }
+  justify-content: space-around;
   & > li > a {
     text-decoration: none;
     color: var(--link-active-color);
@@ -45,7 +43,8 @@ const SideDrawerList = styled.ul`
     align-items: center;
   }
   & > li > a > img {
-    width: 8%;
+    width: 4vh;
+    padding: 5px 0;
   }
   & > li > a > span {
     padding-left: 10%;

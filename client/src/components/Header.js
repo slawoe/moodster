@@ -39,7 +39,7 @@ const HeaderNavigation = styled.nav`
     grid-area: 3 / 4 / 4/ 5;
   }
   & > :nth-child(2) > img {
-    height: 100%;
+    height: 4vh;
   }
 `;
 
