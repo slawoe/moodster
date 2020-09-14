@@ -12,6 +12,7 @@ const MainContainer = styled.main`
   }
   & > :last-child {
     grid-area: 2 / 2 / 3 / 3;
+    overflow: auto;
   }
 `;
 
