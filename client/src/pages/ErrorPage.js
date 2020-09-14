@@ -5,7 +5,7 @@ import Moodster from "../assets/images/moodster.svg";
 const ErrorScreenWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
-  grid-template-rows: 45% 25% 10% 30%;
+  grid-template-rows: 30% 25% 10% 35%;
   grid-template-columns: 20% 60% 20%;
   justify-items: center;
   & > img {
