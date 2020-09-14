@@ -1,16 +1,16 @@
 import React from "react";
-import LoginPage from "../pages/LoginPage";
+import ErrorPage from "../pages/ErrorPage";
 import { BrowserRouter as Router } from "react-router-dom";
 
 export default {
-  title: "LoginScreen",
-  component: LoginPage,
+  title: "ErrorScreen",
+  component: ErrorPage,
 };
 
 const Template = () => (
   <Router>
-    <LoginPage />
+    <ErrorPage />
   </Router>
 );
 
-export const Login = Template.bind({});
+export const Error = Template.bind({});

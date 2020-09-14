@@ -4,19 +4,24 @@ import Moodster from "../assets/images/moodster.svg";
 
 const ErrorScreenWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 45% 25% 10% 30%;
+  grid-template-columns: 20% 60% 20%;
+  justify-items: center;
+  & > img {
+    grid-area: 2 / 2 / 3 / 3;
+  }
   & > h1 {
     font-size: 3em;
     color: var(--text-color-danger);
-    margin-bottom: 0.2em;
+    grid-area: 3 / 2 / 4 / 3;
+    margin: 0;
   }
   & > p {
     font-size: 1.2em;
     text-align: center;
-    margin-top: 0;
+    grid-area: 4 / 2 / 5 / 3;
+    margin: 0;
   }
 `;
 

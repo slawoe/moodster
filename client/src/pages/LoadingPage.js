@@ -4,12 +4,17 @@ import Moodster from "../assets/images/moodster.svg";
 
 const LoadingScreenWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 45% 25% 10% 30%;
+  grid-template-columns: 20% 60% 20%;
+  justify-items: center;
+  & > img {
+    grid-area: 2 / 2 / 3 / 3;
+  }
   & > h1 {
     font-size: 3em;
+    grid-area: 3 / 2 / 4 / 3;
+    margin: 0;
   }
 `;
 
@@ -17,7 +22,7 @@ function LoadingPage() {
   return (
     <LoadingScreenWrapper>
       <img src={Moodster} alt="Logo" />
-      <h1>LOADING</h1>
+      <h1>LOADING...</h1>
     </LoadingScreenWrapper>
   );
 }
