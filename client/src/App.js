@@ -6,6 +6,7 @@ import {
   // Switch, Route, Link
 } from "react-router-dom";
 import Footer from "./components/Footer";
+import Main from "./components/Main";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <GlobalStyles />
       <Router>
         <Header></Header>
+        <Main></Main>
         <Footer></Footer>
       </Router>
     </>
