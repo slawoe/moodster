@@ -10,11 +10,11 @@ const LoginWrapper = styled.div`
   & > h1 {
     font-size: 3em;
   }
-  & > div {
+  & > form {
     display: flex;
     flex-direction: column;
   }
-  & div > input {
+  & form > input {
     border: none;
     border-radius: 5px;
     box-shadow: var(--main-elements-shadow);
@@ -22,11 +22,11 @@ const LoginWrapper = styled.div`
     font-family: "Silom";
     padding: 0.5em 0.5em;
   }
-  & div > span {
+  & form > span {
     padding: 0.4em 0;
     font-size: 1.25em;
   }
-  & div > button {
+  & form > button {
     background-color: var(--button-main-color);
     border: none;
     border-radius: 5px;
@@ -51,13 +51,13 @@ function LoginPage() {
     <LoginWrapper>
       <h1>MOODSTER</h1>
       <img src={Moodster} alt="Logo" />
-      <div>
+      <form>
         <input placeholder="max.mustermann"></input>
         <span>Benutzername</span>
         <input type="password" placeholder="Passwort"></input>
         <span>Passwort</span>
         <button type="submit">LOGIN</button>
-      </div>
+      </form>
       <a href="/">NEU HIER? ANMELDEN...</a>
     </LoginWrapper>
   );
