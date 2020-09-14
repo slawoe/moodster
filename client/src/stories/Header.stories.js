@@ -1,18 +1,16 @@
 import React from "react";
-
-import { Header } from "./Header";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "../components/Header";
 
 export default {
-  title: "Example/Header",
+  title: "Header",
   component: Header,
 };
 
-const Template = (args) => <Header {...args} />;
+const Template = () => (
+  <Router>
+    <Header />
+  </Router>
+);
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {},
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const MainHeader = Template.bind({});

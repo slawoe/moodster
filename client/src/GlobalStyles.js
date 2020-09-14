@@ -41,7 +41,8 @@ const GlobalStyles = () => {
           width: 100vw;
           display: grid;
           grid-template-columns: 5% 90% 5%;
-          grid-template-rows: 10% 10% auto 7%;
+          grid-template-rows: 10% 5% auto 7%;
+          overflow: hidden;
         }
         body {
           margin: 0;

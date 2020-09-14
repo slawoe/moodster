@@ -3,18 +3,14 @@ import styled from "@emotion/styled";
 import Diary from "../assets/icons/diary.svg";
 import Questionnaire from "../assets/icons/questionnaire.svg";
 import Medics from "../assets/icons/medics.svg";
-import Analyse from "../assets/icons/analyse.svg";
+import Analyse from "../assets/icons/analysis.svg";
 import { Link } from "react-router-dom";
 
 const MainFooter = styled.footer`
   background: var(--navigation-main-color);
   border: none;
-  border-radius: 5px 5px 0 0;
   box-shadow: 0 -3px 6px #00000029;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 4;
-  grid-row-end: 5;
+  grid-area: 4 / 1 / 5 / 4;
 `;
 
 const FooterNavigation = styled.nav`
