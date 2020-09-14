@@ -10,8 +10,6 @@ const GlobalStyles = () => {
         *:before,
         *:after {
           box-sizing: border-box;
-          margin: 0;
-          padding: 0;
         }
         :root {
           --bg-main-color: #4da4bc;
