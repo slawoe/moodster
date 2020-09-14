@@ -10,6 +10,8 @@ const GlobalStyles = () => {
         *:before,
         *:after {
           box-sizing: border-box;
+          margin: 0;
+          padding: 0;
         }
         :root {
           --bg-main-color: #4da4bc;
@@ -41,7 +43,7 @@ const GlobalStyles = () => {
           width: 100vw;
           display: grid;
           grid-template-columns: 5% 90% 5%;
-          grid-template-rows: 10% 5% auto 7%;
+          grid-template-rows: 10vh 83vh 7vh;
           overflow: hidden;
         }
         body {

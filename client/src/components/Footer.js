@@ -10,7 +10,7 @@ const MainFooter = styled.footer`
   background: var(--navigation-main-color);
   border: none;
   box-shadow: 0 -3px 6px #00000029;
-  grid-area: 4 / 1 / 5 / 4;
+  grid-area: 3 / 1 / 4 / 4;
 `;
 
 const FooterNavigation = styled.nav`
