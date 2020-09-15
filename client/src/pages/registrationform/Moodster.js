@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemForm from "../../components/ItemForm";
-import FormGoBackButton from "../../components/FormGoBackButton";
+import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import NavigationWrapper from "../../components/FormNavigationWrapper";
 import FormPageWrapper from "../../components/FormPageWrapper";
@@ -33,7 +33,7 @@ function Moodster({ setForm, formData, navigation }) {
           />
         </FormWrapper>
         <NavigationWrapper>
-          <FormGoBackButton onClick={previous} />
+          <GoBackButton onClick={previous} />
           <NextButton onClick={next} />
         </NavigationWrapper>
       </FormPageWrapper>

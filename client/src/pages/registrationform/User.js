@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ItemForm from "../../components/ItemForm";
-import GoBackButton from "../../components/HistoryGoBackButton";
+import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import NavigationWrapper from "../../components/FormNavigationWrapper";
 import FormPageWrapper from "../../components/FormPageWrapper";
 import FormWrapper from "../../components/FormWrapper";
 import FormHeader from "../../components/FormHeader";
 import BasicTextCard from "../../components/BasicTextCard";
+import { useHistory } from "react-router-dom";
 
 function User({ setForm, formData, navigation }) {
   const { firstName, lastName, nickName, birthDay } = formData;
   const { next } = navigation;
+  const history = useHistory();
 
   return (
     <>
@@ -50,7 +52,7 @@ function User({ setForm, formData, navigation }) {
           />
         </FormWrapper>
         <NavigationWrapper>
-          <GoBackButton />
+          <GoBackButton onClick={() => history.goBack()} />
           <NextButton onClick={next} />
         </NavigationWrapper>
       </FormPageWrapper>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-const ItemForms = styled.form`
+const ItemForms = styled.div`
   display: flex;
   flex-direction: column;
   & > label {

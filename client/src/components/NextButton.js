@@ -23,12 +23,10 @@ const NextButton = styled.button`
 
 function NextPageButton({ onClick, next }) {
   return (
-    <>
-      <NextButton onClick={() => onClick(next)}>
-        <span>WEITER</span>
-        <img src={FrontArrow} alt="backarrow" />
-      </NextButton>
-    </>
+    <NextButton onClick={() => onClick(next)}>
+      <span>WEITER</span>
+      <img src={FrontArrow} alt="backarrow" />
+    </NextButton>
   );
 }
 

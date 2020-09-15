@@ -19,9 +19,9 @@ const BackButton = styled.button`
   }
 `;
 
-function GoBackButton({ onClick, previous }) {
+function GoBackButton({ onClick }) {
   return (
-    <BackButton onClick={() => onClick(previous)}>
+    <BackButton onClick={onClick}>
       <img src={BackArrow} alt="backarrow" />
       <span>ZURÜCK</span>
     </BackButton>
@@ -29,8 +29,6 @@ function GoBackButton({ onClick, previous }) {
 }
 
 export default GoBackButton;
-
 GoBackButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  previous: PropTypes.any.isRequired,
+  onClick: PropTypes.any.isRequired,
 };
