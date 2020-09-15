@@ -25,7 +25,7 @@ const ItemForms = styled.form`
   }
 `;
 
-function ItemForm({ label, children, type = "text", ...otherProps }) {
+function ItemForm({ label, type = "text", ...otherProps }) {
   return (
     <ItemForms>
       <label>{label}</label>
@@ -38,6 +38,5 @@ export default ItemForm;
 
 ItemForm.propTypes = {
   label: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
   type: PropTypes.string.isRequired,
 };

@@ -36,5 +36,5 @@ function BasicTextCard({ children }) {
 export default BasicTextCard;
 
 BasicTextCard.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };

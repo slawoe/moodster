@@ -40,7 +40,7 @@ function Submit({ setForm, formData, navigation }) {
   return (
     <SubmitCard>
       <span>
-        Danke {nickName}! Wenn Du jetzt die Anmeldung abschickst, kümmert sich
+        Danke {nickName}! Wenn Du jetzt die Anmeldung abschickst, kümmert sich{" "}
         {moodstername} um alles weitere und Du kannst dir die App in Ruhe
         anschauen.
       </span>
