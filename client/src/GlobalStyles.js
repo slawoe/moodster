@@ -27,6 +27,8 @@ const GlobalStyles = () => {
           --inputfield-attention-color: #fca567;
           --inputfield-text-color: #165b6e;
           --main-elements-shadow: 3px 3px 6px #00000029;
+        }
+        html {
           font-size: 14px;
           background-color: var(--bg-main-color);
           color: var(--text-color-normal);
