@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ItemForm from "../../components/ItemForm";
+import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import NavigationWrapper from "../../components/FormNavigationWrapper";
@@ -21,20 +21,20 @@ function UserLogin({ setForm, formData, navigation }) {
         </BasicTextCard>
       </FormHeader>
       <FormWrapper>
-        <ItemForm
+        <InputField
           label="Dein Nutzername?"
           name="userName"
           value={userName}
           onChange={setForm}
         />
-        <ItemForm
+        <InputField
           type="password"
           label="Dein Passwort?"
           name="password"
           value={password}
           onChange={setForm}
         />
-        <ItemForm
+        <InputField
           type="password"
           label="Bitte einmal wiederholen"
           name="passwordRepeat"

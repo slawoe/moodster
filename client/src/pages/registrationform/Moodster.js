@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ItemForm from "../../components/ItemForm";
+import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import NavigationWrapper from "../../components/FormNavigationWrapper";
@@ -25,7 +25,7 @@ function Moodster({ setForm, formData, navigation }) {
           </BasicTextCard>
         </FormHeader>
         <FormWrapper>
-          <ItemForm
+          <InputField
             label="Wie soll ich heißen?"
             name="moodstername"
             value={moodstername}

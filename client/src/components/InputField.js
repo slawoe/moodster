@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 
-const ItemForms = styled.div`
+const InputFieldWrapper = styled.div`
   display: flex;
   flex-direction: column;
   & > label {
@@ -25,18 +25,18 @@ const ItemForms = styled.div`
   }
 `;
 
-function ItemForm({ label, type = "text", ...otherProps }) {
+function InputField({ label, type = "text", ...otherProps }) {
   return (
-    <ItemForms>
+    <InputFieldWrapper>
       <label>{label}</label>
       <input type={type} {...otherProps} />
-    </ItemForms>
+    </InputFieldWrapper>
   );
 }
 
-export default ItemForm;
+export default InputField;
 
-ItemForm.propTypes = {
+InputField.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ItemForm from "../../components/ItemForm";
+import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import NavigationWrapper from "../../components/FormNavigationWrapper";
@@ -26,25 +26,25 @@ function User({ setForm, formData, navigation }) {
           </BasicTextCard>
         </FormHeader>
         <FormWrapper>
-          <ItemForm
+          <InputField
             label="Wie heißt Du?"
             name="firstName"
             value={firstName}
             onChange={setForm}
           />
-          <ItemForm
+          <InputField
             label="Wie ist dein Nachname?"
             name="lastName"
             value={lastName}
             onChange={setForm}
           />
-          <ItemForm
+          <InputField
             label="Wie ist dein Spitzname?"
             name="nickName"
             value={nickName}
             onChange={setForm}
           />
-          <ItemForm
+          <InputField
             label="Wann bist Du geboren?"
             name="birthDay"
             value={birthDay}
