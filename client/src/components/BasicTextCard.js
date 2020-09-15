@@ -10,6 +10,7 @@ const BasicTextDiv = styled.div`
   border-radius: 5px;
   margin: 10px 0;
   display: grid;
+  height: 75%;
   grid-template-columns: 90% 10%;
   grid-template-rows: 60% 40%;
   & > p {
@@ -18,15 +19,15 @@ const BasicTextDiv = styled.div`
     grid-area: 1/ 1/ 3 /2;
   }
   & > img {
-    width: 100%;
+    height: 50%;
     grid-area: 2/ 2/ 3 /3;
   }
 `;
 
-function BasicTextCard({ text }) {
+function BasicTextCard({ children }) {
   return (
     <BasicTextDiv>
-      <p>{text}</p>
+      {children}
       <img src={Moodster} alt="moodster" />
     </BasicTextDiv>
   );
@@ -35,5 +36,5 @@ function BasicTextCard({ text }) {
 export default BasicTextCard;
 
 BasicTextCard.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };

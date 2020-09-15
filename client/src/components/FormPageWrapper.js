@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
 const FormWrappingDIV = styled.div`
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 2 / 2 / 3 / 3;
   display: grid;
   grid-template-rows: 25% 65% 10%;
 `;
