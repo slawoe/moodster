@@ -5,12 +5,10 @@ import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
 import FormPageWrapper from "../../components/FormPageWrapper";
 import BasicTextCard from "../../components/BasicTextCard";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function User({ setForm, formData }) {
   const { firstName, lastName, nickName, birthDay } = formData;
-  const history = useHistory();
 
   return (
     <FormPageWrapper>
@@ -51,9 +49,9 @@ function User({ setForm, formData }) {
       </div>
       <div>
         <Link to="/">
-          <GoBackButton onClick={() => history.goBack()} />
+          <GoBackButton />
         </Link>
-        <Link to="/userlogin">
+        <Link to="register/userlogin">
           <NextButton />
         </Link>
       </div>

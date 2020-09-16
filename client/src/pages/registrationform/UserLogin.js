@@ -43,10 +43,10 @@ function UserLogin({ setForm, formData }) {
         />
       </div>
       <div>
-        <Link to="/user">
+        <Link to="/register">
           <GoBackButton />
         </Link>
-        <Link to="/moodster">
+        <Link to="moodster">
           <NextButton />
         </Link>
       </div>

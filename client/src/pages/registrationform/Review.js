@@ -64,14 +64,14 @@ function Review({ setForm, formData }) {
           Du scheinst Daten vergessen zu haben. Bitte schaue nochmal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
-        <Link to="/user">Klick hier um alles überprüfen...</Link>
+        <Link to="/register">Klick hier um alles überprüfen...</Link>
       </ReviewCard>
     );
   } else if (password !== passwordRepeat) {
     return (
       <ReviewCard>
         <div>Dein Passwort stimmt nicht überein. Bitte überprüfe dieses.</div>
-        <Link to="/userlogin">Bearbeiten...</Link>
+        <Link to="userlogin">Bearbeiten...</Link>
       </ReviewCard>
     );
   } else {
@@ -81,7 +81,7 @@ function Review({ setForm, formData }) {
         <div>
           <div>
             <span>Nutzerdaten</span>
-            <Link to="/user">Bearbeiten...</Link>
+            <Link to="/register">Bearbeiten...</Link>
           </div>
           <div>
             <span>Vorname:</span> <span>{firstName}</span>
@@ -99,7 +99,7 @@ function Review({ setForm, formData }) {
         <div>
           <div>
             <span>Logindaten</span>
-            <Link to="/userlogin">Bearbeiten...</Link>
+            <Link to="userlogin">Bearbeiten...</Link>
           </div>
           <div>
             <span>Nutzername:</span> <span>{userName}</span>
@@ -108,13 +108,13 @@ function Review({ setForm, formData }) {
         <div>
           <div>
             <span>Moodster</span>
-            <Link to="/moodster">Bearbeiten...</Link>
+            <Link to="moodster">Bearbeiten...</Link>
           </div>
           <div>
             <span>Ich heiße:</span> <span>{moodstername}</span>
           </div>
         </div>
-        <Link to="/submit">Jetzt weiter zur Anmeldung...</Link>
+        <Link to="submit">Jetzt weiter zur Anmeldung...</Link>
       </ReviewCard>
     );
   }

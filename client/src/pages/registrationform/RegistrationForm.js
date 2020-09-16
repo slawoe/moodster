@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hooks-helper";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import User from "./User";
 import UserLogin from "./UserLogin";
 import Moodster from "./Moodster";
@@ -19,31 +19,29 @@ const defaultData = {
 };
 function RegistrationForm() {
   const [formData, setForm] = useForm(defaultData);
-
+  const { path } = useRouteMatch();
   const props = {
     formData,
     setForm,
   };
   return (
-    <Router>
-      <Switch>
-        <Route path="/submit">
-          <Submit {...props} />
-        </Route>
-        <Route path="/review">
-          <Review {...props} />
-        </Route>
-        <Route path="/moodster">
-          <Moodster {...props} />
-        </Route>
-        <Route path="/userlogin">
-          <UserLogin {...props}></UserLogin>
-        </Route>
-        <Route path="/">
-          <User {...props}></User>
-        </Route>
-      </Switch>
-    </Router>
+    <Switch>
+      <Route path={`${path}/submit`}>
+        <Submit {...props} />
+      </Route>
+      <Route path={`${path}/review`}>
+        <Review {...props} />
+      </Route>
+      <Route path={`${path}/moodster`}>
+        <Moodster {...props} />
+      </Route>
+      <Route path={`${path}/userlogin`}>
+        <UserLogin {...props}></UserLogin>
+      </Route>
+      <Route path={`${path}/`}>
+        <User {...props}></User>
+      </Route>
+    </Switch>
   );
 }
 

@@ -30,10 +30,10 @@ function Moodster({ setForm, formData }) {
         />
       </div>
       <div>
-        <Link to="/userlogin">
+        <Link to="userlogin">
           <GoBackButton />
         </Link>
-        <Link to="/review">
+        <Link to="review">
           <NextButton />
         </Link>
       </div>

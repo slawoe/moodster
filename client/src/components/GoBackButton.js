@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import BackArrow from "../assets/icons/backarrow.svg";
 import PropTypes from "prop-types";
 
-const BackButton = styled.button`
+const Button = styled.button`
   display: flex;
   align-items: center;
   border: none;
@@ -20,10 +20,10 @@ const BackButton = styled.button`
 
 function GoBackButton({ onClick }) {
   return (
-    <BackButton onClick={onClick}>
+    <Button onClick={onClick}>
       <img src={BackArrow} alt="backarrow" />
       <span>ZURÜCK</span>
-    </BackButton>
+    </Button>
   );
 }
 
