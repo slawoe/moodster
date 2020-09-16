@@ -3,58 +3,63 @@ import PropTypes from "prop-types";
 import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
-import NavigationWrapper from "../../components/FormNavigationWrapper";
 import FormPageWrapper from "../../components/FormPageWrapper";
-import FormWrapper from "../../components/FormWrapper";
-import FormHeader from "../../components/FormHeader";
 import BasicTextCard from "../../components/BasicTextCard";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function User({ setForm, formData, navigation }) {
+function User({ setForm, formData }) {
   const { firstName, lastName, nickName, birthDay } = formData;
-  const { next } = navigation;
   const history = useHistory();
 
   return (
     <>
       <FormPageWrapper>
-        <FormHeader>
+        <div>
           <BasicTextCard>
             <p>
               Hi, schön, dass Du hier bist. Lass uns ein wenig kennenlernen.
             </p>
           </BasicTextCard>
-        </FormHeader>
-        <FormWrapper>
+        </div>
+        <div>
           <InputField
             label="Wie heißt Du?"
             name="firstName"
             value={firstName}
+            placeholder="Max"
             onChange={setForm}
           />
           <InputField
             label="Wie ist dein Nachname?"
             name="lastName"
             value={lastName}
+            placeholder="Mustermann"
             onChange={setForm}
           />
           <InputField
             label="Wie ist dein Spitzname?"
             name="nickName"
             value={nickName}
+            placeholder="Maxi"
             onChange={setForm}
           />
           <InputField
             label="Wann bist Du geboren?"
             name="birthDay"
             value={birthDay}
+            placeholder="01.01.2010"
             onChange={setForm}
           />
-        </FormWrapper>
-        <NavigationWrapper>
-          <GoBackButton onClick={() => history.goBack()} />
-          <NextButton onClick={next} />
-        </NavigationWrapper>
+        </div>
+        <div>
+          <Link to="/">
+            <GoBackButton onClick={() => history.goBack()} />
+          </Link>
+          <Link to="/userlogin">
+            <NextButton />
+          </Link>
+        </div>
       </FormPageWrapper>
     </>
   );

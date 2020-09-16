@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 const ReviewCard = styled.div`
   background: var(--card-background-color);
@@ -21,11 +22,12 @@ const ReviewCard = styled.div`
   & > div > div:first-child > span:first-child {
     color: var(--text-color-attention);
   }
-  & > div > div > button,
-  > button {
+  & > div > div > a,
+  > a {
     border: none;
     background: transparent;
     color: var(--button-proceed-color);
+    text-align: center;
   }
   & > div > div {
     display: flex;
@@ -34,7 +36,7 @@ const ReviewCard = styled.div`
   }
 `;
 
-function Review({ setForm, formData, navigation }) {
+function Review({ setForm, formData }) {
   const {
     firstName,
     lastName,
@@ -45,7 +47,6 @@ function Review({ setForm, formData, navigation }) {
     passwordRepeat,
     moodstername,
   } = formData;
-  const { go } = navigation;
 
   if (
     firstName === null ||
@@ -63,16 +64,14 @@ function Review({ setForm, formData, navigation }) {
           Du scheinst Daten vergessen zu haben. Bitte schaue nochmal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
-        <button onClick={() => go("user")}>
-          Klick hier um alles überprüfen...
-        </button>
+        <Link to="/user">Klick hier um alles überprüfen...</Link>
       </ReviewCard>
     );
   } else if (password !== passwordRepeat) {
     return (
       <ReviewCard>
         <div>Dein Passwort stimmt nicht überein. Bitte überprüfe dieses.</div>
-        <button onClick={() => go("userlogin")}>Bearbeiten...</button>
+        <Link to="/userlogin">Bearbeiten...</Link>
       </ReviewCard>
     );
   } else {
@@ -82,7 +81,7 @@ function Review({ setForm, formData, navigation }) {
         <div>
           <div>
             <span>Nutzerdaten</span>
-            <button onClick={() => go("user")}>Bearbeiten...</button>
+            <Link to="/user">Bearbeiten...</Link>
           </div>
           <div>
             <span>Vorname:</span> <span>{`${firstName}`}</span>
@@ -100,7 +99,7 @@ function Review({ setForm, formData, navigation }) {
         <div>
           <div>
             <span>Logindaten</span>
-            <button onClick={() => go("userlogin")}>Bearbeiten...</button>
+            <Link to="/userlogin">Bearbeiten...</Link>
           </div>
           <div>
             <span>Nutzername:</span> <span>{`${userName}`}</span>
@@ -109,15 +108,13 @@ function Review({ setForm, formData, navigation }) {
         <div>
           <div>
             <span>Moodster</span>
-            <button onClick={() => go("moodster")}>Bearbeiten...</button>
+            <Link to="/moodster">Bearbeiten...</Link>
           </div>
           <div>
             <span>Ich heiße:</span> <span>{`${moodstername}`}</span>
           </div>
         </div>
-        <button onClick={() => go("submit")}>
-          Jetzt weiter zur Anmeldung...
-        </button>
+        <Link to="/submit">Jetzt weiter zur Anmeldung...</Link>
       </ReviewCard>
     );
   }

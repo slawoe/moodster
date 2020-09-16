@@ -3,39 +3,41 @@ import PropTypes from "prop-types";
 import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
-import NavigationWrapper from "../../components/FormNavigationWrapper";
 import FormPageWrapper from "../../components/FormPageWrapper";
-import FormWrapper from "../../components/FormWrapper";
-import FormHeader from "../../components/FormHeader";
 import BasicTextCard from "../../components/BasicTextCard";
+import { Link } from "react-router-dom";
 
-function Moodster({ setForm, formData, navigation }) {
+function Moodster({ setForm, formData }) {
   const { moodstername } = formData;
-  const { previous, next } = navigation;
 
   return (
     <>
       <FormPageWrapper>
-        <FormHeader>
+        <div>
           <BasicTextCard>
             <p>
               Das hast Du toll gemacht. Aber ich hätte eine letzte Bitte. Ich
               will auch einen Namen haben.
             </p>
           </BasicTextCard>
-        </FormHeader>
-        <FormWrapper>
+        </div>
+        <div>
           <InputField
             label="Wie soll ich heißen?"
             name="moodstername"
             value={moodstername}
+            placeholder="Moody"
             onChange={setForm}
           />
-        </FormWrapper>
-        <NavigationWrapper>
-          <GoBackButton onClick={previous} />
-          <NextButton onClick={next} />
-        </NavigationWrapper>
+        </div>
+        <div>
+          <Link to="/userlogin">
+            <GoBackButton />
+          </Link>
+          <Link to="/review">
+            <NextButton />
+          </Link>
+        </div>
       </FormPageWrapper>
     </>
   );

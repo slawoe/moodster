@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import { useHistory } from "react-router-dom";
 import Moodster from "../../assets/images/moodster.svg";
+import { Link } from "react-router-dom";
+
 const SubmitCard = styled.div`
   background: var(--card-background-color);
   color: var(--text-color-normal);
@@ -13,7 +14,7 @@ const SubmitCard = styled.div`
   padding: 1em 1em;
   height: 80%;
   grid-area: 2 / 2 / 3 / 3;
-  & > button {
+  & > a > button {
     border: none;
     background: transparent;
     color: var(--button-proceed-color);
@@ -24,7 +25,7 @@ const SubmitCard = styled.div`
   }
 `;
 
-function Submit({ setForm, formData, navigation }) {
+function Submit({ setForm, formData }) {
   const {
     // firstName,
     // lastName,
@@ -35,7 +36,6 @@ function Submit({ setForm, formData, navigation }) {
     // passwordRepeat,
     moodstername,
   } = formData;
-  const history = useHistory();
 
   return (
     <SubmitCard>
@@ -44,15 +44,16 @@ function Submit({ setForm, formData, navigation }) {
         {moodstername} um alles weitere und Du kannst dir die App in Ruhe
         anschauen.
       </span>
-      <button
-        onClick={() => {
-          console.log("Angemeldet");
-          setForm = null;
-          history.push("/diary");
-        }}
-      >
-        Anmeldung absenden und App anschauen...
-      </button>
+      <Link to="/">
+        <button
+          onClick={() => {
+            console.log("TaDa");
+            setForm = null;
+          }}
+        >
+          Anmeldung absenden und App anschauen...
+        </button>
+      </Link>
       <img src={Moodster} alt="moodster"></img>
     </SubmitCard>
   );
@@ -61,8 +62,6 @@ function Submit({ setForm, formData, navigation }) {
 export default Submit;
 
 Submit.propTypes = {
-  navigation: PropTypes.any.isRequired,
   formData: PropTypes.any.isRequired,
-  go: PropTypes.any.isRequired,
   setForm: PropTypes.any.isRequired,
 };

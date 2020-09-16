@@ -55,9 +55,13 @@ const GlobalStyles = () => {
           font-family: "Silom";
           outline: none;
           cursor: pointer;
+          margin: 0;
         }
         input {
           outline: none;
+        }
+        a {
+          text-decoration: none;
         }
       `}
     />

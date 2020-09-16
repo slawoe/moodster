@@ -3,28 +3,26 @@ import PropTypes from "prop-types";
 import InputField from "../../components/InputField";
 import GoBackButton from "../../components/GoBackButton";
 import NextButton from "../../components/NextButton";
-import NavigationWrapper from "../../components/FormNavigationWrapper";
 import FormPageWrapper from "../../components/FormPageWrapper";
-import FormWrapper from "../../components/FormWrapper";
-import FormHeader from "../../components/FormHeader";
 import BasicTextCard from "../../components/BasicTextCard";
+import { Link } from "react-router-dom";
 
-function UserLogin({ setForm, formData, navigation }) {
+function UserLogin({ setForm, formData }) {
   const { nickName, userName, password, passwordRepeat } = formData;
-  const { previous, next } = navigation;
 
   return (
     <FormPageWrapper>
-      <FormHeader>
+      <div>
         <BasicTextCard>
           <p>Super, {nickName}! Lass uns jetzt deine Anmeldedaten festlegen.</p>
         </BasicTextCard>
-      </FormHeader>
-      <FormWrapper>
+      </div>
+      <div>
         <InputField
           label="Dein Nutzername?"
           name="userName"
           value={userName}
+          placeholder="maxi.muster"
           onChange={setForm}
         />
         <InputField
@@ -32,6 +30,7 @@ function UserLogin({ setForm, formData, navigation }) {
           label="Dein Passwort?"
           name="password"
           value={password}
+          placeholder="Passwort"
           onChange={setForm}
         />
         <InputField
@@ -39,13 +38,18 @@ function UserLogin({ setForm, formData, navigation }) {
           label="Bitte einmal wiederholen"
           name="passwordRepeat"
           value={passwordRepeat}
+          placeholder="Passwort"
           onChange={setForm}
         />
-      </FormWrapper>
-      <NavigationWrapper>
-        <GoBackButton onClick={previous} />
-        <NextButton onClick={next} />
-      </NavigationWrapper>
+      </div>
+      <div>
+        <Link to="/user">
+          <GoBackButton />
+        </Link>
+        <Link to="/moodster">
+          <NextButton />
+        </Link>
+      </div>
     </FormPageWrapper>
   );
 }

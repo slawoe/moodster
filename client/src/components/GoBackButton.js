@@ -4,7 +4,6 @@ import BackArrow from "../assets/icons/backarrow.svg";
 import PropTypes from "prop-types";
 
 const BackButton = styled.button`
-  width: 50%;
   display: flex;
   align-items: center;
   border: none;
@@ -15,7 +14,7 @@ const BackButton = styled.button`
     margin: 0;
   }
   & > img {
-    width: 20%;
+    width: 2em;
   }
 `;
 
