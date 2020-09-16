@@ -25,27 +25,25 @@ function RegistrationForm() {
     setForm,
   };
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path="/submit">
-            <Submit {...props} />
-          </Route>
-          <Route path="/review">
-            <Review {...props} />
-          </Route>
-          <Route path="/moodster">
-            <Moodster {...props} />
-          </Route>
-          <Route path="/userlogin">
-            <UserLogin {...props}></UserLogin>
-          </Route>
-          <Route path="/">
-            <User {...props}></User>
-          </Route>
-        </Switch>
-      </Router>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/submit">
+          <Submit {...props} />
+        </Route>
+        <Route path="/review">
+          <Review {...props} />
+        </Route>
+        <Route path="/moodster">
+          <Moodster {...props} />
+        </Route>
+        <Route path="/userlogin">
+          <UserLogin {...props}></UserLogin>
+        </Route>
+        <Route path="/">
+          <User {...props}></User>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

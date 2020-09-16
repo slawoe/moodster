@@ -84,16 +84,16 @@ function Review({ setForm, formData }) {
             <Link to="/user">Bearbeiten...</Link>
           </div>
           <div>
-            <span>Vorname:</span> <span>{`${firstName}`}</span>
+            <span>Vorname:</span> <span>{firstName}</span>
           </div>
           <div>
-            <span>Nachname:</span> <span>{`${lastName}`}</span>
+            <span>Nachname:</span> <span>{lastName}</span>
           </div>
           <div>
-            <span>Spitzame:</span> <span>{`${nickName}`}</span>
+            <span>Spitzame:</span> <span>{nickName}</span>
           </div>
           <div>
-            <span>Geburtsdatum:</span> <span>{`${birthDay}`}</span>
+            <span>Geburtsdatum:</span> <span>{birthDay}</span>
           </div>
         </div>
         <div>
@@ -102,7 +102,7 @@ function Review({ setForm, formData }) {
             <Link to="/userlogin">Bearbeiten...</Link>
           </div>
           <div>
-            <span>Nutzername:</span> <span>{`${userName}`}</span>
+            <span>Nutzername:</span> <span>{userName}</span>
           </div>
         </div>
         <div>
@@ -111,7 +111,7 @@ function Review({ setForm, formData }) {
             <Link to="/moodster">Bearbeiten...</Link>
           </div>
           <div>
-            <span>Ich heiße:</span> <span>{`${moodstername}`}</span>
+            <span>Ich heiße:</span> <span>{moodstername}</span>
           </div>
         </div>
         <Link to="/submit">Jetzt weiter zur Anmeldung...</Link>

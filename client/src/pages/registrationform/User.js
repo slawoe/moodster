@@ -13,55 +13,51 @@ function User({ setForm, formData }) {
   const history = useHistory();
 
   return (
-    <>
-      <FormPageWrapper>
-        <div>
-          <BasicTextCard>
-            <p>
-              Hi, schön, dass Du hier bist. Lass uns ein wenig kennenlernen.
-            </p>
-          </BasicTextCard>
-        </div>
-        <div>
-          <InputField
-            label="Wie heißt Du?"
-            name="firstName"
-            value={firstName}
-            placeholder="Max"
-            onChange={setForm}
-          />
-          <InputField
-            label="Wie ist dein Nachname?"
-            name="lastName"
-            value={lastName}
-            placeholder="Mustermann"
-            onChange={setForm}
-          />
-          <InputField
-            label="Wie ist dein Spitzname?"
-            name="nickName"
-            value={nickName}
-            placeholder="Maxi"
-            onChange={setForm}
-          />
-          <InputField
-            label="Wann bist Du geboren?"
-            name="birthDay"
-            value={birthDay}
-            placeholder="01.01.2010"
-            onChange={setForm}
-          />
-        </div>
-        <div>
-          <Link to="/">
-            <GoBackButton onClick={() => history.goBack()} />
-          </Link>
-          <Link to="/userlogin">
-            <NextButton />
-          </Link>
-        </div>
-      </FormPageWrapper>
-    </>
+    <FormPageWrapper>
+      <div>
+        <BasicTextCard>
+          <p>Hi, schön, dass Du hier bist. Lass uns ein wenig kennenlernen.</p>
+        </BasicTextCard>
+      </div>
+      <div>
+        <InputField
+          label="Wie heißt Du?"
+          name="firstName"
+          value={firstName}
+          placeholder="Max"
+          onChange={setForm}
+        />
+        <InputField
+          label="Wie ist dein Nachname?"
+          name="lastName"
+          value={lastName}
+          placeholder="Mustermann"
+          onChange={setForm}
+        />
+        <InputField
+          label="Wie ist dein Spitzname?"
+          name="nickName"
+          value={nickName}
+          placeholder="Maxi"
+          onChange={setForm}
+        />
+        <InputField
+          label="Wann bist Du geboren?"
+          name="birthDay"
+          value={birthDay}
+          placeholder="01.01.2010"
+          onChange={setForm}
+        />
+      </div>
+      <div>
+        <Link to="/">
+          <GoBackButton onClick={() => history.goBack()} />
+        </Link>
+        <Link to="/userlogin">
+          <NextButton />
+        </Link>
+      </div>
+    </FormPageWrapper>
   );
 }
 export default User;
