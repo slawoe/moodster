@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Moodster from "../assets/images/moodster.svg";
+import { Link } from "react-router-dom";
 
 const LoginWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
@@ -58,7 +59,7 @@ function LoginPage() {
         <span>Passwort</span>
         <button type="submit">LOGIN</button>
       </form>
-      <a href="/">NEU HIER? ANMELDEN...</a>
+      <Link to="/register">NEU HIER? ANMELDEN...</Link>
     </LoginWrapper>
   );
 }
