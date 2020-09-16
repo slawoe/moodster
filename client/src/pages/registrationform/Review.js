@@ -48,6 +48,7 @@ function Review({ setForm, formData }) {
     moodstername,
   } = formData;
 
+  let info;
   if (
     firstName === null ||
     lastName === null ||
@@ -58,25 +59,25 @@ function Review({ setForm, formData }) {
     passwordRepeat === null ||
     moodstername === null
   ) {
-    return (
-      <ReviewCard>
+    info = (
+      <>
         <div>
           Du scheinst Daten vergessen zu haben. Bitte schaue nochmal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
         <Link to="/register">Klick hier um alles überprüfen...</Link>
-      </ReviewCard>
+      </>
     );
   } else if (password !== passwordRepeat) {
-    return (
-      <ReviewCard>
+    info = (
+      <>
         <div>Dein Passwort stimmt nicht überein. Bitte überprüfe dieses.</div>
         <Link to="userlogin">Bearbeiten...</Link>
-      </ReviewCard>
+      </>
     );
   } else {
-    return (
-      <ReviewCard>
+    info = (
+      <>
         <h2>Lass uns deine Daten überprüfen</h2>
         <div>
           <div>
@@ -115,10 +116,13 @@ function Review({ setForm, formData }) {
           </div>
         </div>
         <Link to="submit">Jetzt weiter zur Anmeldung...</Link>
-      </ReviewCard>
+      </>
     );
   }
+
+  return <ReviewCard>{info}</ReviewCard>;
 }
+
 export default Review;
 
 Review.propTypes = {
