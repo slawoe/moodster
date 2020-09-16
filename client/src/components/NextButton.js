@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import FrontArrow from "../assets/icons/gotoarrow.svg";
 import PropTypes from "prop-types";
 
-const NextButton = styled.button`
+const Button = styled.button`
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -21,10 +21,10 @@ const NextButton = styled.button`
 
 function NextPageButton({ onClick }) {
   return (
-    <NextButton onClick={onClick}>
+    <Button onClick={onClick}>
       <span>WEITER</span>
       <img src={FrontArrow} alt="backarrow" />
-    </NextButton>
+    </Button>
   );
 }
 
