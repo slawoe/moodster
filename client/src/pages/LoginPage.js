@@ -27,7 +27,10 @@ const LoginWrapper = styled.div`
     padding: 0.4em 0;
     font-size: 1.25em;
   }
-  & form > button {
+  & form > a {
+    align-self: center;
+  }
+  & form > a > button {
     background-color: var(--button-main-color);
     border: none;
     border-radius: 5px;
@@ -37,7 +40,6 @@ const LoginWrapper = styled.div`
     width: 6em;
     height: 2em;
     font-size: 1.25em;
-    align-self: center;
     margin-top: 0.5em;
   }
   & > a {
@@ -57,7 +59,9 @@ function LoginPage() {
         <span>Benutzername</span>
         <input type="password" placeholder="Passwort"></input>
         <span>Passwort</span>
-        <button type="submit">LOGIN</button>
+        <Link to="/main/welcome">
+          <button type="submit">LOGIN</button>
+        </Link>
       </form>
       <Link to="/register">NEU HIER? ANMELDEN...</Link>
     </LoginWrapper>
