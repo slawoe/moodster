@@ -44,7 +44,7 @@ function Submit({ setForm, formData }) {
         {moodstername} um alles weitere und Du kannst dir die App in Ruhe
         anschauen.
       </span>
-      <Link to="/">
+      <Link to="/main/onboarding">
         <button
           onClick={() => {
             console.log("TaDa");
