@@ -80,7 +80,7 @@ function Drawer({ open }) {
           </Link>
         </li>
         <li>
-          <Link to="/main/doctor">
+          <Link to="/main/doctors">
             <img src={Doctor} alt="Doctor" />
             <span>Meine Ärzte</span>
           </Link>
