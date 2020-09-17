@@ -27,14 +27,16 @@ const GlobalStyles = () => {
           --inputfield-attention-color: #fca567;
           --inputfield-text-color: #165b6e;
           --main-elements-shadow: 3px 3px 6px #00000029;
-          @font-face {
-            font-family: "Silom";
-            src: url(${Silom}) format("truetype");
-          }
-          font-family: "Silom";
+        }
+        html {
           font-size: 14px;
           background-color: var(--bg-main-color);
           color: var(--text-color-normal);
+          @font-face {
+            src: url(${Silom}) format("truetype");
+            font-family: "Silom";
+          }
+          font-family: "Silom";
         }
         #root {
           height: 100vh;
@@ -47,6 +49,19 @@ const GlobalStyles = () => {
         body {
           margin: 0;
           padding: 0;
+        }
+
+        button {
+          font-family: "Silom";
+          outline: none;
+          cursor: pointer;
+          margin: 0;
+        }
+        input {
+          outline: none;
+        }
+        a {
+          text-decoration: none;
         }
       `}
     />

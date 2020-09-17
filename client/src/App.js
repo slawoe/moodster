@@ -1,21 +1,22 @@
 import React from "react";
-import Header from "./components/Header";
 import GlobalStyles from "./GlobalStyles";
-import {
-  BrowserRouter as Router,
-  // Switch, Route, Link
-} from "react-router-dom";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import RegistrationForm from "./pages/registrationform/RegistrationForm";
 
 function App() {
   return (
     <>
       <GlobalStyles />
       <Router>
-        <Header></Header>
-        <Main></Main>
-        <Footer></Footer>
+        <Switch>
+          <Route path="/register">
+            <RegistrationForm />
+          </Route>
+          <Route exact path="/">
+            <LoginPage />
+          </Route>
+        </Switch>
       </Router>
     </>
   );
