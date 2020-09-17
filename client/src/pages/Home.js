@@ -3,6 +3,8 @@ import { Switch, Route, useRouteMatch } from "react-router-dom";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
+import About from "./About";
+
 function App() {
   const { path } = useRouteMatch();
   return (
@@ -18,7 +20,9 @@ function App() {
           <Route exact path={`${path}/profile`}></Route>
           <Route exact path={`${path}/links`}></Route>
           <Route exact path={`${path}/help`}></Route>
-          <Route exact path={`${path}/about`}></Route>
+          <Route exact path={`${path}/about`}>
+            <About />
+          </Route>
           <Route exact path={`${path}/welcome`}></Route>
           <Route exact path={`${path}/onboarding`}></Route>
           <Route exact path={`${path}/`}></Route>
