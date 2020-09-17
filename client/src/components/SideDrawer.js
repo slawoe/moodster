@@ -56,55 +56,55 @@ function Drawer({ open }) {
     <SideDrawer open={open}>
       <SideDrawerList>
         <li>
-          <Link to="/">
+          <Link to="/main/diary">
             <img src={Diary} alt="Tagebuch" />
             <span>Tagebuch</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/questionnaire">
             <img src={Questionnaire} alt="Fragebögen" />
             <span>Fragebögen</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/medics">
             <img src={Medics} alt="Medikamente" />
             <span>Medikamente</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/analysis">
             <img src={Analyse} alt="Analyse" />
             <span>Analyse</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/doctor">
             <img src={Doctor} alt="Doctor" />
             <span>Meine Ärzte</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/profile">
             <img src={Profile} alt="Profile" />
             <span>Profil</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/helpfullinks">
             <img src={Links} alt="Link" />
             <span>Anlaufstellen</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/help">
             <img src={Help} alt="Help" />
             <span>Hilfe</span>
           </Link>
         </li>
         <li>
-          <Link to="/">
+          <Link to="/main/about">
             <img src={About} alt="About" />
             <span>Über Moodster</span>
           </Link>
