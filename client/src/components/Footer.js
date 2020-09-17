@@ -31,16 +31,16 @@ function Footer() {
   return (
     <MainFooter>
       <FooterNavigation>
-        <Link to="/diary">
+        <Link to="/main/diary">
           <img src={Diary} alt="Tagebuch" />
         </Link>
-        <Link to="/questionnaire">
+        <Link to="/main/questionnaire">
           <img src={Questionnaire} alt="Fragebögen" />
         </Link>
-        <Link to="/medics">
+        <Link to="/main/medics">
           <img src={Medics} alt="Medikamente" />
         </Link>
-        <Link to="/analyse">
+        <Link to="/main/analysis">
           <img src={Analyse} alt="Auswertung" />
         </Link>
       </FooterNavigation>
