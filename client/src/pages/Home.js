@@ -16,7 +16,7 @@ function App() {
           <Route exact path={`${path}/analysis`}></Route>
           <Route exact path={`${path}/doctors`}></Route>
           <Route exact path={`${path}/profile`}></Route>
-          <Route exact path={`${path}/helpfullinks`}></Route>
+          <Route exact path={`${path}/links`}></Route>
           <Route exact path={`${path}/help`}></Route>
           <Route exact path={`${path}/about`}></Route>
           <Route exact path={`${path}/welcome`}></Route>

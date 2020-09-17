@@ -92,7 +92,7 @@ function Drawer({ open }) {
           </Link>
         </li>
         <li>
-          <Link to="/main/helpfullinks">
+          <Link to="/main/links">
             <img src={Links} alt="Link" />
             <span>Anlaufstellen</span>
           </Link>
