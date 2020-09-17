@@ -72,7 +72,7 @@ function Review({ setForm, formData }) {
     info = (
       <>
         <div>Dein Passwort stimmt nicht überein. Bitte überprüfe dieses.</div>
-        <Link to="userlogin">Bearbeiten...</Link>
+        <Link to="/register/userlogin">Bearbeiten...</Link>
       </>
     );
   } else {
@@ -100,7 +100,7 @@ function Review({ setForm, formData }) {
         <div>
           <div>
             <span>Logindaten</span>
-            <Link to="userlogin">Bearbeiten...</Link>
+            <Link to="/register/userlogin">Bearbeiten...</Link>
           </div>
           <div>
             <span>Nutzername:</span> <span>{userName}</span>
@@ -109,13 +109,13 @@ function Review({ setForm, formData }) {
         <div>
           <div>
             <span>Moodster</span>
-            <Link to="moodster">Bearbeiten...</Link>
+            <Link to="/register/moodster">Bearbeiten...</Link>
           </div>
           <div>
             <span>Ich heiße:</span> <span>{moodstername}</span>
           </div>
         </div>
-        <Link to="submit">Jetzt weiter zur Anmeldung...</Link>
+        <Link to="/register/submit">Jetzt weiter zur Anmeldung...</Link>
       </>
     );
   }

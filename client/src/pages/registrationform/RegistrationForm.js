@@ -26,19 +26,19 @@ function RegistrationForm() {
   };
   return (
     <Switch>
-      <Route path={`${path}/submit`}>
+      <Route exact path={`${path}/submit`}>
         <Submit {...props} />
       </Route>
-      <Route path={`${path}/review`}>
+      <Route exact path={`${path}/review`}>
         <Review {...props} />
       </Route>
-      <Route path={`${path}/moodster`}>
+      <Route exact path={`${path}/moodster`}>
         <Moodster {...props} />
       </Route>
-      <Route path={`${path}/userlogin`}>
+      <Route exact path={`${path}/userlogin`}>
         <UserLogin {...props}></UserLogin>
       </Route>
-      <Route path={`${path}/`}>
+      <Route exact path={`${path}/`}>
         <User {...props}></User>
       </Route>
     </Switch>

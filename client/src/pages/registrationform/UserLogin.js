@@ -46,7 +46,7 @@ function UserLogin({ setForm, formData }) {
         <Link to="/register">
           <GoBackButton />
         </Link>
-        <Link to="moodster">
+        <Link to="/register/moodster">
           <NextButton />
         </Link>
       </div>
