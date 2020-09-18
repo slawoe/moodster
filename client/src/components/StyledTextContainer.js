@@ -12,9 +12,18 @@ const StyledTextContainer = styled.div`
     padding: 0.6em;
     margin: 0px;
   }
-  & > p {
+  & > h2 {
+    font-size: 1em;
+    padding: 0 1em;
+    margin: 0px;
+  }
+  & > p,
+  & > div > p {
     padding: 1em;
     margin: 0;
+  }
+  & > p > a {
+    color: var(--text-color-normal);
   }
 `;
 
