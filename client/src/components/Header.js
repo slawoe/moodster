@@ -61,6 +61,7 @@ function Header() {
         <SideDrawer
           open={sideDrawerOpen}
           setSideDrawerOpen={sideDrawerOpen}
+          onClick={() => setSideDrawerOpen(!sideDrawerOpen)}
         ></SideDrawer>
       </MainHeader>
     </>

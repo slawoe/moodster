@@ -51,9 +51,9 @@ const SideDrawerList = styled.ul`
   }
 `;
 
-function Drawer({ open }) {
+function Drawer({ open, onClick }) {
   return (
-    <SideDrawer open={open}>
+    <SideDrawer open={open} onClick={() => onClick(!open)}>
       <SideDrawerList>
         <li>
           <Link to="/main/diary">
@@ -117,6 +117,6 @@ function Drawer({ open }) {
 export default Drawer;
 
 Drawer.propTypes = {
-  setSideDrawerOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
 };
