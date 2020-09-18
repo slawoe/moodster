@@ -3,25 +3,30 @@ import StyledTextContainer from "../components/StyledTextContainer";
 
 function About() {
   return (
-    <StyledTextContainer>
-      <h1>Über Moodster</h1>
-      <p>
-        Moodster ist eine Applikation für Kinder, die sich in Therapie befinden.
-        Sie soll Kindern und Eltern durch diese schwierige Phase begleiten und
-        gleichzeitig dabei helfen, sich gegenseitig besser verstehen und deuten
-        zu können.
-      </p>
-      <p>
-        Die Tagebucheinträge sind dabei vollständig vor Zugriff durch Dritte
-        geschützt und stehen nur dem Nutzer selbst zur Verfügung
-      </p>
-      <p>
-        Moodster ist eine nicht kommerzielle App, die im Rahmen einer
-        Abschlussarbeit für das Web Developer Bootcamp bei neue fische
-        entstanden ist.
-      </p>
-      <p>Die Rechte liegen bei: Slawomir Ernst</p>
-    </StyledTextContainer>
+    <>
+      <div></div>
+      <div>
+        <StyledTextContainer>
+          <h1>Über Moodster</h1>
+          <p>
+            Moodster ist eine Applikation für Kinder, die sich in Therapie
+            befinden. Sie soll Kindern und Eltern durch diese schwierige Phase
+            begleiten und gleichzeitig dabei helfen, sich gegenseitig besser
+            verstehen und deuten zu können.
+          </p>
+          <p>
+            Die Tagebucheinträge sind dabei vollständig vor Zugriff durch Dritte
+            geschützt und stehen nur dem Nutzer selbst zur Verfügung
+          </p>
+          <p>
+            Moodster ist eine nicht kommerzielle App, die im Rahmen einer
+            Abschlussarbeit für das Web Developer Bootcamp bei neue fische
+            entstanden ist.
+          </p>
+          <p>Die Rechte liegen bei: Slawomir Ernst</p>
+        </StyledTextContainer>
+      </div>
+    </>
   );
 }
 

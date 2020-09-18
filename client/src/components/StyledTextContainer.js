@@ -14,16 +14,21 @@ const StyledTextContainer = styled.div`
   }
   & > h2 {
     font-size: 1em;
-    padding: 0 1em;
+    padding: 0.5em 1em 0;
     margin: 0px;
   }
   & > p,
   & > div > p {
-    padding: 1em;
+    padding: 0.5em 1em;
     margin: 0;
+    display: flex;
+    flex-direction: column;
   }
   & > p > a {
-    color: var(--text-color-normal);
+    color: var(--button-proceed-color);
+  }
+  & > p > img {
+    padding: 3em;
   }
 `;
 
