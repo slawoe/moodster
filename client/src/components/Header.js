@@ -50,7 +50,7 @@ function Header() {
       <MainHeader>
         <CallButton />
         <HeaderNavigation>
-          <Link to="/main/welcome">
+          <Link to="/main">
             <img src={Moodster} alt="Home" />
           </Link>
           <DrawerToggleButton

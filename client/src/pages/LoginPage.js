@@ -59,7 +59,7 @@ function LoginPage() {
         <span>Benutzername</span>
         <input type="password" placeholder="Passwort"></input>
         <span>Passwort</span>
-        <Link to="/main/welcome">
+        <Link to="/main">
           <button type="submit">LOGIN</button>
         </Link>
       </form>
