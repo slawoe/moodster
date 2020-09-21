@@ -15,6 +15,7 @@ import MedicsExplanation from "../pages/explanationCards/MedicsExplanation";
 import AnalysisExplanation from "./explanationCards/AnalysisExplanation";
 import Welcome from "../pages/Welcome";
 import DiaryForm from "./questionnaireform/QuestionnaireForm";
+import DiaryList from "../pages/DiaryList";
 
 function Home() {
   const { path } = useRouteMatch();
@@ -23,7 +24,9 @@ function Home() {
       <Header />
       <Main>
         <Switch>
-          <Route path={`${path}/diary`}></Route>
+          <Route path={`${path}/diary`}>
+            <DiaryList />
+          </Route>
           <Route path={`${path}/medics`}></Route>
           <Route path={`${path}/analysis`}></Route>
           <Route path={`${path}/doctors`}></Route>
