@@ -14,7 +14,7 @@ import QuestionnaireExplanation from "../pages/explanationCards/QuestionnaireExp
 import MedicsExplanation from "../pages/explanationCards/MedicsExplanation";
 import AnalysisExplanation from "./explanationCards/AnalysisExplanation";
 import Welcome from "../pages/Welcome";
-import DiaryForm from "../pages/questionnaireform/RegistrationForm";
+import DiaryForm from "./questionnaireform/QuestionnaireForm";
 
 function Home() {
   const { path } = useRouteMatch();
