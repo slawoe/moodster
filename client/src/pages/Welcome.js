@@ -21,7 +21,7 @@ function Welcome({ children }) {
               Fragebögen gibt, die Du beantworten musst.
             </p>
             <p>
-              <Link to="/main/questionnaires">Klick dazu: hier</Link>
+              <Link to="/main/questionnaire">Klick dazu: hier</Link>
               <img src={Moodster} alt="Logo" />
             </p>
           </StyledTextContainer>
