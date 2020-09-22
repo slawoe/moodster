@@ -1,6 +1,7 @@
 import React from "react";
 import BasicPageLayout from "../components/BasicPageLayout";
 import DiaryListElement from "../components/DiaryListElement";
+import Searchbar from "../components/Searchbar";
 
 function DiaryList() {
   const mockupData = [
@@ -40,7 +41,11 @@ function DiaryList() {
 
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
+      childrenheadsection={
+        <>
+          <Searchbar placeholder="Tagebucheintrag suchen" />
+        </>
+      }
       childrenmainsection={
         <>
           {mockupData?.map((diaryentry) => (
