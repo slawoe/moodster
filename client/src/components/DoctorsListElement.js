@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import InfoElementWrapper from "./InfoElementWrapper";
 
 const DoctorsListWrapper = styled.div`
   background: var(--card-background-color);
@@ -19,35 +20,29 @@ const DoctorsListWrapper = styled.div`
   }
 `;
 
-const DoctorsInfoElement = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5em 0;
-`;
-
 function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
   return (
     <DoctorsListWrapper>
-      <DoctorsInfoElement>
+      <InfoElementWrapper>
         <span>Name:</span>
         <span>{name}</span>
-      </DoctorsInfoElement>
-      <DoctorsInfoElement>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
         <span>Adresse:</span>
         <span>{address}</span>
-      </DoctorsInfoElement>
-      <DoctorsInfoElement>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
         <span>Telefonnummer:</span>
         <span>{phone}</span>
-      </DoctorsInfoElement>
-      <DoctorsInfoElement>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
         <span>Mail:</span>
         <span>{mail}</span>
-      </DoctorsInfoElement>
-      <DoctorsInfoElement>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
         <span>Sprechzeiten:</span>
         <span>{officeHours}</span>
-      </DoctorsInfoElement>
+      </InfoElementWrapper>
       <div>
         <a href={`/main/doctors/${id}`}>Arzt bearbeiten oder löschen...</a>
       </div>
