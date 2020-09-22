@@ -16,6 +16,7 @@ import AnalysisExplanation from "./explanationCards/AnalysisExplanation";
 import Welcome from "../pages/Welcome";
 import DiaryForm from "./questionnaireform/QuestionnaireForm";
 import DiaryList from "../pages/DiaryList";
+import Doctors from "./Doctors";
 
 function Home() {
   const { path } = useRouteMatch();
@@ -29,7 +30,9 @@ function Home() {
           </Route>
           <Route path={`${path}/medics`}></Route>
           <Route path={`${path}/analysis`}></Route>
-          <Route path={`${path}/doctors`}></Route>
+          <Route path={`${path}/doctors`}>
+            <Doctors />
+          </Route>
           <Route path={`${path}/profile`}></Route>
           <Route path={`${path}/links`}>
             <Links />
