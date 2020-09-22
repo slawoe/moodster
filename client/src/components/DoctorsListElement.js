@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
-const DiaryListWrapper = styled.div`
+const DoctorsListWrapper = styled.div`
   background: var(--card-background-color);
   border: none;
   box-shadow: var(--main-elements-shadow);
@@ -27,7 +27,7 @@ const DoctorsInfoElement = styled.div`
 
 function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
   return (
-    <DiaryListWrapper>
+    <DoctorsListWrapper>
       <DoctorsInfoElement>
         <span>Name:</span>
         <span>{name}</span>
@@ -51,7 +51,7 @@ function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
       <div>
         <a href={`/main/doctors/${id}`}>Arzt bearbeiten oder löschen...</a>
       </div>
-    </DiaryListWrapper>
+    </DoctorsListWrapper>
   );
 }
 
