@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import StyledTextContainer from "../../components/StyledTextContainer";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
+import SaveButton from "../../components/SaveButton";
+import { Link } from "react-router-dom";
 
 const mockupData = {
   firstName: "Max",
@@ -12,51 +14,88 @@ const mockupData = {
   moodstername: "Moody",
 };
 
-function About() {
+function ProfileChange() {
+  const [firstName, setFirstName] = useState(mockupData.firstName);
+  const [lastName, setLastName] = useState(mockupData.lastName);
+  const [nickName, setNickName] = useState(mockupData.nickName);
+  const [birthDay, setBirthDay] = useState(mockupData.birthDay);
+  const [userName, setUserName] = useState(mockupData.userName);
+  const [moodstername, setMoodstername] = useState(mockupData.moodstername);
+
+  function firstNameChange(firstName) {
+    setFirstName(firstName.target.value);
+  }
+  function lastNameChange(lastName) {
+    setLastName(lastName.target.value);
+  }
+  function nickNameChange(nickName) {
+    setNickName(nickName.target.value);
+  }
+  function birthDayChange(birthDay) {
+    setBirthDay(birthDay.target.value);
+  }
+  function userNameChange(userName) {
+    setUserName(userName.target.value);
+  }
+  function moodsternameChange(moodstername) {
+    setMoodstername(moodstername.target.value);
+  }
+
   return (
     <BasicPageLayout
       childrenheadsection={<></>}
       childrenmainsection={
         <>
           <StyledTextContainer>
-            <h1>Dein Profil</h1>
+            <h1>Dein Profil bearbeiten</h1>
             <InputFieldChangeData
               label={"Vorname:"}
               name="firstName"
-              value={mockupData.firstName}
-              placeholder={mockupData.firstName}
+              value={firstName}
+              placeholder={firstName}
+              onChange={firstNameChange}
             />
             <InputFieldChangeData
               label={"Nachname:"}
               name="lastName"
-              value={mockupData.lastName}
-              placeholder={mockupData.lastName}
+              value={lastName}
+              placeholder={lastName}
+              onChange={lastNameChange}
             />
             <InputFieldChangeData
               label={"Spitzname:"}
               name="nickName"
-              value={mockupData.nickName}
-              placeholder={mockupData.nickName}
+              value={nickName}
+              placeholder={nickName}
+              onChange={nickNameChange}
             />
             <InputFieldChangeData
               label={"Geburtsdatum:"}
               name="birthDay"
-              value={mockupData.birthDay}
-              placeholder={mockupData.birthDay}
+              value={birthDay}
+              placeholder={birthDay}
+              onChange={birthDayChange}
             />
             <InputFieldChangeData
               label={"Benutzername:"}
               name="userName"
-              value={mockupData.userName}
-              placeholder={mockupData.userName}
+              value={userName}
+              placeholder={userName}
+              onChange={userNameChange}
             />
             <InputFieldChangeData
-              label={"Dein Moodster heißt:"}
+              label={"Moodster-Name:"}
               name="moodstername"
-              value={mockupData.moodstername}
-              placeholder={mockupData.moodstername}
+              value={moodstername}
+              placeholder={moodstername}
+              onChange={moodsternameChange}
             />
-            <button type="submit">Speichern...</button>
+            <Link to="/main/profile">
+              <SaveButton
+                onClick={console.log("Click")}
+                description={"Speichern..."}
+              />
+            </Link>
           </StyledTextContainer>
         </>
       }
@@ -64,4 +103,4 @@ function About() {
   );
 }
 
-export default About;
+export default ProfileChange;
