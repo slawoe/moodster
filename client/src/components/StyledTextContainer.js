@@ -35,8 +35,7 @@ const StyledTextContainer = styled.div`
   & > div {
     padding: 0.5em 1em;
   }
-  & > a,
-  button {
+  & > a {
     padding: 0.5em 1em;
     color: var(--button-proceed-color);
     align-self: flex-end;

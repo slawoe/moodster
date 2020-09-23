@@ -29,11 +29,7 @@ const mockupData = [
 function Medics() {
   return (
     <BasicPageLayout
-      childrenheadsection={
-        <>
-          <Searchbar placeholder={"Medikament suchen"} />
-        </>
-      }
+      childrenheadsection={<Searchbar placeholder={"Medikament suchen"} />}
       childrenmainsection={
         <ContentWithAddFunction
           addcomponent={

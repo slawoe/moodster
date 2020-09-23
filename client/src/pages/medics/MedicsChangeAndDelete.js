@@ -28,43 +28,41 @@ function MedicsChange() {
     <BasicPageLayout
       childrenheadsection={<></>}
       childrenmainsection={
-        <>
-          <StyledTextContainer>
-            <h1>Dein Medikament bearbeiten</h1>
-            <InputFieldChangeData
-              label="Name:"
-              name="medic"
-              value={medic}
-              placeholder={medic}
-              onChange={medicChange}
-            />
-            <InputFieldTextAraChangeData
-              label="Einnahmen:"
-              name="intakes"
-              value={intakes}
-              placeholder={intakes}
-              onChange={intakesChange}
-            />
-            <DeleteAndSaveButtonWrapper>
-              <Link to="/main/medics">
-                <DeleteButton
-                  onClick={() => {
-                    console.log("Hallo");
-                  }}
-                  description={"Löschen"}
-                />
-              </Link>
-              <Link to="/main/medics">
-                <SaveButton
-                  onClick={() => {
-                    console.log("Welt");
-                  }}
-                  description={"Speichern..."}
-                />
-              </Link>
-            </DeleteAndSaveButtonWrapper>
-          </StyledTextContainer>
-        </>
+        <StyledTextContainer>
+          <h1>Dein Medikament bearbeiten</h1>
+          <InputFieldChangeData
+            label="Name:"
+            name="medic"
+            value={medic}
+            placeholder={medic}
+            onChange={medicChange}
+          />
+          <InputFieldTextAraChangeData
+            label="Einnahmen:"
+            name="intakes"
+            value={intakes}
+            placeholder={intakes}
+            onChange={intakesChange}
+          />
+          <DeleteAndSaveButtonWrapper>
+            <Link to="/main/medics">
+              <DeleteButton
+                onClick={() => {
+                  console.log("Hallo");
+                }}
+                description={"Löschen"}
+              />
+            </Link>
+            <Link to="/main/medics">
+              <SaveButton
+                onClick={() => {
+                  console.log("Welt");
+                }}
+                description={"Speichern..."}
+              />
+            </Link>
+          </DeleteAndSaveButtonWrapper>
+        </StyledTextContainer>
       }
     />
   );
