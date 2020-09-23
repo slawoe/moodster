@@ -29,7 +29,7 @@ const HelpContainer = styled.div`
   }
 `;
 
-function Help() {
+function HelpCard() {
   return (
     <HelpContainer>
       <div>
@@ -68,4 +68,4 @@ function Help() {
   );
 }
 
-export default Help;
+export default HelpCard;
