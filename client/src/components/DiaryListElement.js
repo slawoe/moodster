@@ -97,7 +97,7 @@ function DiaryListElement({
               <span>{whatWasGood}</span>
             </DetailsInfoElement>
             <DetailsInfoElement>
-              <span>WAS HÄTTE BESSER LAUFEN KÖNNEN?:</span>
+              <span>WAS HÄTTE BESSER LAUFEN KÖNNEN:</span>
               <span>{whatCouldBeBetter}</span>
             </DetailsInfoElement>
             <DetailsInfoElement>

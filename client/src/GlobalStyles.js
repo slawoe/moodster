@@ -59,6 +59,7 @@ const GlobalStyles = () => {
         }
         input {
           outline: none;
+          font-family: "Silom";
         }
         a {
           text-decoration: none;
