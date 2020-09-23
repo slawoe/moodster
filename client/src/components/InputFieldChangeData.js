@@ -19,7 +19,7 @@ const InputFieldWrapper = styled.div`
     font-family: "Silom";
     color: var(--inputfield-text-color);
     align-self: flex-end;
-    width: 40%;
+    width: 50%;
   }
 `;
 

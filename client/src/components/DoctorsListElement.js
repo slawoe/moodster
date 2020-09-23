@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import InfoElementWrapper from "./InfoElementWrapper";
+import { Link } from "react-router-dom";
 
 const DoctorsListWrapper = styled.div`
   background: var(--card-background-color);
@@ -44,7 +45,9 @@ function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
         <span>{officeHours}</span>
       </InfoElementWrapper>
       <div>
-        <a href={`/main/doctors/${id}`}>Arzt bearbeiten oder löschen...</a>
+        <Link to={`/main/doctors/change/${id}`}>
+          Arzt bearbeiten oder löschen...
+        </Link>
       </div>
     </DoctorsListWrapper>
   );

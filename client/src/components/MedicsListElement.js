@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 import InfoElementWrapper from "./InfoElementWrapper";
+import { Link } from "react-router-dom";
 
 const MedicsListWrapper = styled.div`
   background: var(--card-background-color);
@@ -12,8 +13,8 @@ const MedicsListWrapper = styled.div`
   padding: 0.4em 0.7em;
   display: flex;
   flex-direction: column;
-  & div > span:last-child {
-    color: var(--text-color-attention);
+  & > div:nth-child(2) > span:last-child {
+    text-align: right;
   }
   & div:last-child,
   & div:last-child > a {
@@ -35,7 +36,9 @@ function MedicsListElement({ name, intakes, id }) {
         <span>{intakes}</span>
       </InfoElementWrapper>
       <div>
-        <a href={`/main/medics/${id}`}>Medikament bearbeiten oder löschen...</a>
+        <Link to={`/main/medics/change/${id}`}>
+          Medikament bearbeiten oder löschen...
+        </Link>
       </div>
     </MedicsListWrapper>
   );

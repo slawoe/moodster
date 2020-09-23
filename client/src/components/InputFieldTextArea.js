@@ -22,7 +22,7 @@ const InputFieldWrapper = styled.div`
     font-family: "Silom";
     color: var(--inputfield-text-color);
     align-self: flex-end;
-    width: 100%;
+    width: 70%;
     height: 15em;
     resize: none;
     outline: none;
