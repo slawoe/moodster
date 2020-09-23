@@ -18,11 +18,11 @@ const Button = styled.button`
   }
 `;
 
-function DeleteButton({ onClick, description }) {
+function DeleteButton({ onClick }) {
   return (
     <Button onClick={onClick}>
       <img src={Trash} alt="Mülleimer" />
-      <span>{description}</span>
+      <span>Löschen</span>
     </Button>
   );
 }
@@ -31,5 +31,4 @@ export default DeleteButton;
 
 DeleteButton.propTypes = {
   onClick: PropTypes.any.isRequired,
-  description: PropTypes.string.isRequired,
 };
