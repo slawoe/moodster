@@ -4,15 +4,12 @@ import styled from "@emotion/styled";
 
 const InputFieldWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   & > label {
-    background-color: var(--card-background-color);
+    background: transparent;
     border: none;
     border-radius: 5px;
     padding: 0.4em 0.7em;
-    margin: 0.4em 0;
-    width: 70%;
-    box-shadow: var(--main-elements-shadow);
   }
   & > textarea {
     border: none;
@@ -22,14 +19,14 @@ const InputFieldWrapper = styled.div`
     font-family: "Silom";
     color: var(--inputfield-text-color);
     align-self: flex-end;
-    width: 70%;
+    width: 50%;
     height: 15em;
     resize: none;
     outline: none;
   }
 `;
 
-function InputFieldTextArea({ label, type = "text", ...otherProps }) {
+function InputField({ label, type = "text", ...otherProps }) {
   return (
     <InputFieldWrapper>
       <label>{label}</label>
@@ -38,9 +35,9 @@ function InputFieldTextArea({ label, type = "text", ...otherProps }) {
   );
 }
 
-export default InputFieldTextArea;
+export default InputField;
 
-InputFieldTextArea.propTypes = {
+InputField.propTypes = {
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };

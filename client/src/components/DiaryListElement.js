@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import PropTypes from "prop-types";
+import InfoElementWrapper from "./InfoElementWrapper";
 
 const DiaryListItem = styled.div`
   background: var(--card-background-color);
@@ -37,11 +38,6 @@ const CollapsingDiv = styled.div`
   }
 `;
 
-const MainInfoElement = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 const DetailsInfoElement = styled.div`
   display: flex;
   flex-direction: column;
@@ -75,18 +71,18 @@ function DiaryListElement({
           </div>
         </HeaderDiv>
         <div>
-          <MainInfoElement>
+          <InfoElementWrapper>
             <span>Datum:</span>
             <span>{date}</span>
-          </MainInfoElement>
-          <MainInfoElement>
+          </InfoElementWrapper>
+          <InfoElementWrapper>
             <span>Stimmung:</span>
             <span>{mood} von 10</span>
-          </MainInfoElement>
-          <MainInfoElement>
+          </InfoElementWrapper>
+          <InfoElementWrapper>
             <span>Dein Tag in einem Wort:</span>
             <span>{dayInOneWord}</span>
-          </MainInfoElement>
+          </InfoElementWrapper>
         </div>
       </MainCardDiv>
       <CollapsingDiv>

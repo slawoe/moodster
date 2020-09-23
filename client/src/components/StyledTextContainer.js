@@ -7,6 +7,8 @@ const StyledTextContainer = styled.div`
   box-shadow: var(--main-elements-shadow);
   border-radius: 5px;
   margin: 10px 0;
+  display: flex;
+  flex-direction: column;
   & > h1 {
     font-size: 1.4em;
     padding: 0.6em;
@@ -29,6 +31,16 @@ const StyledTextContainer = styled.div`
   }
   & > p > img {
     padding: 3em;
+  }
+  & > div {
+    padding: 0.5em 1em;
+  }
+  & > a {
+    padding: 0.5em 1em;
+    color: var(--button-proceed-color);
+    align-self: flex-end;
+    border: none;
+    background: transparent;
   }
 `;
 
