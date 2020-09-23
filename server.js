@@ -12,13 +12,13 @@ app.use(
   "/storybook",
   express.static(path.join(__dirname, "client/storybook-static"))
 );
-app.use(
-  jsonServer.rewriter({
-    "/api/*": "/$1",
-  })
-);
+app.use("/api", router);
+
 app.use(middlewares);
-app.use(router);
+// Handle React routing, return all requests to React app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
