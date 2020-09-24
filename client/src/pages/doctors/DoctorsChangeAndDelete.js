@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StyledTextContainer from "../../components/StyledTextContainer";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
@@ -6,28 +6,50 @@ import InputFieldTextAraChangeData from "../../components/InputFieldTextAreaChan
 import DeleteAndSaveButtonWrapper from "../../components/DeleteAndSaveButtonWrapper";
 import DeleteButton from "../../components/DeleteButton";
 import SaveButton from "../../components/SaveButton";
-import { Link } from "react-router-dom";
-
-const mockupData = {
-  name: "Heinz Müller",
-  address: "Lindenstraße 10, 12345 Berlin",
-  phone: "0123456789",
-  mail: "test@test.de",
-  officeHours: "Mo-Fr 10-18 Uhr",
-};
+import { useHistory, useParams } from "react-router-dom";
+import { fetchDoctor, updateDoctor, deleteDoctor } from "../../api/doctors";
+import LoadingPage from "../LoadingPage";
 
 function DoctorsChange() {
-  const [name, setName] = useState(mockupData.name);
-  const [address, setAdress] = useState(mockupData.address);
-  const [phone, setPhone] = useState(mockupData.phone);
-  const [mail, setMail] = useState(mockupData.mail);
-  const [officeHours, setOfficeHours] = useState(mockupData.officeHours);
+  const history = useHistory();
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [street, setStreet] = useState(null);
+  const [zipAndLocation, setZipAndLocation] = useState(null);
+  const [phone, setPhone] = useState(null);
+  const [mail, setMail] = useState(null);
+  const [officeHours, setOfficeHours] = useState(null);
+  const [loadingDoctor, setLoadingDoctor] = useState(false);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
+  const [error, setError] = useState(false);
+  const { id } = useParams();
 
-  function nameChange(name) {
-    setName(name.target.value);
+  useEffect(() => {
+    async function showDoctor() {
+      const newDoctor = await fetchDoctor(id);
+      setFirstName(newDoctor.firstName);
+      setLastName(newDoctor.lastName);
+      setStreet(newDoctor.street);
+      setZipAndLocation(newDoctor.zipAndLocation);
+      setPhone(newDoctor.phone);
+      setMail(newDoctor.mail);
+      setOfficeHours(newDoctor.officeHours);
+      setLoadingDoctor(true);
+    }
+    showDoctor();
+  }, [id]);
+
+  function firstNameChange(firstName) {
+    setFirstName(firstName.target.value);
   }
-  function addressChange(adress) {
-    setAdress(adress.target.value);
+  function lastNameChange(lastName) {
+    setLastName(lastName.target.value);
+  }
+  function streetChange(street) {
+    setStreet(street.target.value);
+  }
+  function zipAndLocationChange(zipAndLocation) {
+    setZipAndLocation(zipAndLocation.target.value);
   }
   function phoneChange(phone) {
     setPhone(phone.target.value);
@@ -39,6 +61,34 @@ function DoctorsChange() {
     setOfficeHours(officeHours.target.value);
   }
 
+  const updatedDoctor = {
+    firstName,
+    lastName,
+    street,
+    zipAndLocation,
+    phone,
+    mail,
+    officeHours,
+  };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoadingUpdate(true);
+    setError(false);
+    try {
+      await updateDoctor(id, updatedDoctor);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoadingUpdate(false);
+      history.push("/main/doctors");
+    }
+  }
+
+  if (!loadingDoctor) {
+    return <LoadingPage />;
+  }
   return (
     <BasicPageLayout
       childrenheadsection={<></>}
@@ -46,58 +96,72 @@ function DoctorsChange() {
         <StyledTextContainer>
           <h1>Deinen Arzt bearbeiten</h1>
           <InputFieldChangeData
-            label="Name:"
-            name="name"
-            value={name}
-            placeholder="Heinz Müller"
-            onChange={nameChange}
+            label="Vorname:"
+            name="firstName"
+            placeholder="Heinz"
+            onChange={firstNameChange}
           />
-          <InputFieldTextAraChangeData
-            label="Adresse:"
-            name="address"
-            value={address}
-            placeholder="Lindenstraße 10, 12345 Berlin"
-            onChange={addressChange}
+          <InputFieldChangeData
+            label="Nachname:"
+            name="lastName"
+            placeholder="Müller"
+            onChange={lastNameChange}
+          />
+          <InputFieldChangeData
+            label="Straße:"
+            name="street"
+            placeholder="Lindenstraße 10"
+            onChange={streetChange}
+          />
+          <InputFieldChangeData
+            label="PLZ und Ort:"
+            name="zipAndLocation"
+            placeholder="12345 Berlin"
+            onChange={zipAndLocationChange}
           />
           <InputFieldChangeData
             label="Telefon:"
             name="phone"
-            value={phone}
-            placeholder="0123456789"
+            placeholder={phone}
             onChange={phoneChange}
           />
           <InputFieldChangeData
             label="Mail:"
             name="mail"
-            value={mail}
-            placeholder="test@test.de"
+            placeholder={mail}
             onChange={mailChange}
           />
           <InputFieldTextAraChangeData
             label="Sprechzeiten:"
             name="officeHours"
-            value={officeHours}
-            placeholder="Mo-Fr 10-18 Uhr"
+            placeholder={officeHours}
             onChange={officeHoursChange}
           />
 
           <DeleteAndSaveButtonWrapper>
-            <Link to="/main/doctors">
-              <DeleteButton
-                onClick={() => {
-                  console.log("Hallo");
-                }}
-                description={"Löschen"}
-              />
-            </Link>
-            <Link to="/main/doctors">
-              <SaveButton
-                onClick={() => {
-                  console.log("Welt");
-                }}
-                description={"Speichern..."}
-              />
-            </Link>
+            <DeleteButton
+              type="submit"
+              onClick={() => {
+                deleteDoctor(id);
+                history.push("/main/doctors");
+              }}
+            />
+            {error && <p>Something bad happened. Please try again.</p>}
+            <SaveButton
+              disabled={
+                !firstName ||
+                !lastName ||
+                !street ||
+                !zipAndLocation ||
+                !phone ||
+                !mail ||
+                !officeHours ||
+                loadingUpdate
+              }
+              type="submit"
+              onClick={handleSubmit}
+            />
+            {error && <p>Something bad happened. Please try again.</p>}
           </DeleteAndSaveButtonWrapper>
         </StyledTextContainer>
       }

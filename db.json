@@ -106,22 +106,48 @@
       "id": 1
     },
     {
-      "name": "50",
-      "adress": "Test",
-      "phone": "Test",
-      "mail": "Test",
-      "officeHours": "Test",
+      "firstName": "Heinz",
+      "lastName": "Müller",
+      "street": "",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
       "userName": "slawo.e",
       "id": 2
     },
     {
-      "name": "40",
-      "adress": "Test",
-      "phone": "Test",
-      "mail": "Test",
-      "officeHours": "Test",
+      "firstName": "Barbara",
+      "lastName": "Becker",
+      "street": "",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
       "userName": "slawo.e",
       "id": 3
+    },
+    {
+      "firstName": "Linda",
+      "lastName": "Aschebesche",
+      "street": "",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
+      "userName": "slawo.e",
+      "id": 4
+    },
+    {
+      "firstName": "Claus",
+      "lastName": "Cluas",
+      "street": "",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
+      "userName": "slawo.e",
+      "id": 5
     }
   ]
 }

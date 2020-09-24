@@ -1,22 +1,35 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InputField from "../../components/InputField";
 import InputFieldTextArea from "../../components/InputFieldTextArea";
 import SaveButton from "../../components/SaveButton";
+import { postNewDoctor } from "../../api/doctors";
+import { useHistory } from "react-router-dom";
 
 function AddDoctor() {
-  const [name, setName] = useState("");
-  const [address, setAdress] = useState("");
+  const history = useHistory();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipAndLocation, setZipAndLocation] = useState("");
   const [phone, setPhone] = useState("");
   const [mail, setMail] = useState("");
   const [officeHours, setOfficeHours] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const userName = "slawo.e";
 
-  function nameChange(name) {
-    setName(name.target.value);
+  function firstNameChange(firstName) {
+    setFirstName(firstName.target.value);
   }
-  function addressChange(adress) {
-    setAdress(adress.target.value);
+  function lastNameChange(lastName) {
+    setLastName(lastName.target.value);
+  }
+  function streetChange(street) {
+    setStreet(street.target.value);
+  }
+  function zipAndLocationChange(zipAndLocation) {
+    setZipAndLocation(zipAndLocation.target.value);
   }
   function phoneChange(phone) {
     setPhone(phone.target.value);
@@ -28,6 +41,32 @@ function AddDoctor() {
     setOfficeHours(officeHours.target.value);
   }
 
+  const newDoctor = {
+    firstName,
+    lastName,
+    street,
+    zipAndLocation,
+    phone,
+    mail,
+    officeHours,
+    userName,
+  };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoading(true);
+    setError(false);
+    try {
+      await postNewDoctor(newDoctor);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+      history.push("/main/doctors");
+    }
+  }
+
   return (
     <BasicPageLayout
       childrenheadsection={<></>}
@@ -35,18 +74,32 @@ function AddDoctor() {
         <>
           <h2>Arzt hinzufügen</h2>
           <InputField
-            label="Name:"
-            name="name"
-            value={name}
-            placeholder="Heinz Müller"
-            onChange={nameChange}
+            label="Vorname:"
+            name="firstName"
+            value={firstName}
+            placeholder="Heinz"
+            onChange={firstNameChange}
           />
-          <InputFieldTextArea
-            label="Adresse:"
-            name="address"
-            value={address}
-            placeholder="Lindenstraße 10, 12345 Berlin"
-            onChange={addressChange}
+          <InputField
+            label="Nachname:"
+            name="lastName"
+            value={lastName}
+            placeholder="Müller"
+            onChange={lastNameChange}
+          />
+          <InputField
+            label="Straße:"
+            name="street"
+            value={street}
+            placeholder="Lindenstraße 10"
+            onChange={streetChange}
+          />
+          <InputField
+            label="PLZ und Ort:"
+            name="zipAndLocation"
+            value={zipAndLocation}
+            placeholder="12345 Berlin"
+            onChange={zipAndLocationChange}
           />
           <InputField
             label="Telefon:"
@@ -63,13 +116,27 @@ function AddDoctor() {
             onChange={mailChange}
           />
           <InputFieldTextArea
-            label="Sprechzeiten:"
+            label="Sprechzeiten Montag:"
             name="officeHours"
             value={officeHours}
             placeholder="Mo-Fr 10-18 Uhr"
             onChange={officeHoursChange}
           />
-          <SaveButton type="submit">Speichern...</SaveButton>
+          <SaveButton
+            disabled={
+              !firstName ||
+              !lastName ||
+              !street ||
+              !zipAndLocation ||
+              !phone ||
+              !mail ||
+              !officeHours ||
+              loading
+            }
+            type="submit"
+            onClick={handleSubmit}
+          />
+          {error && <p>Something bad happened. Please try again.</p>}
         </>
       }
     />
@@ -77,7 +144,3 @@ function AddDoctor() {
 }
 
 export default AddDoctor;
-
-AddDoctor.propTypes = {
-  children: PropTypes.element.isRequired,
-};

@@ -8,6 +8,9 @@ const Button = styled.button`
   border: none;
   background: transparent;
   float: right;
+  & > a {
+    color: var(--text-color-attention);
+  }
 `;
 
 function SaveButton({ onClick }) {
@@ -17,5 +20,5 @@ function SaveButton({ onClick }) {
 export default SaveButton;
 
 SaveButton.propTypes = {
-  onClick: PropTypes.any.isRequired,
+  onClick: PropTypes.func,
 };

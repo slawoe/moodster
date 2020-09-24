@@ -5,10 +5,16 @@ const InfoElementWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.5em 0;
+  & :first-child {
+    width: 50%;
+  }
+  & :last-child {
+    width: 50%;
+  }
 `;
 
 export default InfoElementWrapper;
 
 InfoElementWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };
