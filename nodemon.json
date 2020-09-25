@@ -1,1 +1,1 @@
-{ "ignore": ["client/*"] }
+{ "ignore": ["client/*", "db.json"] }
