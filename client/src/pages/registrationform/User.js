@@ -61,7 +61,6 @@ function User({ setForm, formData }) {
 export default User;
 
 User.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
-  navigation: PropTypes.any.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
 };
