@@ -12,7 +12,7 @@ function Welcome({ children }) {
       childrenmainsection={
         <>
           <StyledTextContainer>
-            <p>Hallo NICKNAME!</p>
+            <p>Hallo!</p>
             <p>Ich freue mich, dass Du da bist!</p>
           </StyledTextContainer>
           <StyledTextContainer>

@@ -43,7 +43,6 @@ function Moodster({ setForm, formData }) {
 export default Moodster;
 
 Moodster.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
-  navigation: PropTypes.any.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
 };

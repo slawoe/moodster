@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Moodster from "../../assets/images/moodster.svg";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { postNewUser } from "../../api/user";
 
 const SubmitCard = styled.div`
   background: var(--card-background-color);
@@ -14,7 +15,7 @@ const SubmitCard = styled.div`
   padding: 1em 1em;
   height: 80%;
   grid-area: 2 / 2 / 3 / 3;
-  & > a > button {
+  & button {
     border: none;
     background: transparent;
     color: var(--button-proceed-color);
@@ -26,34 +27,45 @@ const SubmitCard = styled.div`
 `;
 
 function Submit({ setForm, formData }) {
-  const {
-    // firstName,
-    // lastName,
-    nickName,
-    // birthDay,
-    // userName,
-    // password,
-    // passwordRepeat,
-    moodstername,
-  } = formData;
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoading(true);
+    setError(false);
+    try {
+      await postNewUser(formData);
+      sessionStorage.userName = formData.userName;
+      formData.firstName = null;
+      formData.lastName = null;
+      formData.nickName = null;
+      formData.birthDay = null;
+      formData.userName = null;
+      formData.password = null;
+      formData.repeatPassword = null;
+      formData.moodsterName = null;
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+      history.push("/main/help");
+    }
+  }
 
   return (
     <SubmitCard>
       <span>
-        Danke {nickName}! Wenn Du jetzt die Anmeldung abschickst, kümmert sich{" "}
-        {moodstername} um alles weitere und Du kannst dir die App in Ruhe
-        anschauen.
+        Danke {formData.nickName}! Wenn Du jetzt die Anmeldung abschickst,
+        kümmert sich {formData.moodstername} um alles weitere und Du kannst dir
+        die App in Ruhe anschauen.
       </span>
-      <Link to="/main/help">
-        <button
-          onClick={() => {
-            console.log("TaDa");
-            setForm = null;
-          }}
-        >
-          Anmeldung absenden und App anschauen...
-        </button>
-      </Link>
+      <button disabled={loading} type="submit" onClick={handleSubmit}>
+        Anmeldung absenden und App anschauen...
+      </button>
+      {error && <p>Something bad happened. Please try again.</p>}
       <img src={Moodster} alt="moodster"></img>
     </SubmitCard>
   );
@@ -62,6 +74,6 @@ function Submit({ setForm, formData }) {
 export default Submit;
 
 Submit.propTypes = {
-  formData: PropTypes.any.isRequired,
-  setForm: PropTypes.any.isRequired,
+  formData: PropTypes.any,
+  setForm: PropTypes.any,
 };

@@ -126,14 +126,14 @@ function Review({ setForm, formData }) {
 export default Review;
 
 Review.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
-  navigation: PropTypes.any.isRequired,
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-  nickName: PropTypes.string.isRequired,
-  birtDay: PropTypes.string.isRequired,
-  userName: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  moodstername: PropTypes.string.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
+  navigation: PropTypes.any,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  nickName: PropTypes.string,
+  birtDay: PropTypes.string,
+  userName: PropTypes.string,
+  password: PropTypes.string,
+  moodstername: PropTypes.string,
 };

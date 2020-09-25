@@ -14,7 +14,7 @@ const defaultData = {
   birthDay: null,
   userName: null,
   password: null,
-  passowordRepeat: null,
+  passwordRepeat: null,
   moodstername: null,
 };
 function RegistrationForm() {
