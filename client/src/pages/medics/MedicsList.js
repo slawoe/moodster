@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import ContentWithAddFunction from "../../components/ContentwithAddFunction";
@@ -6,30 +6,40 @@ import AddButton from "../../components/AddButton";
 import MedicsListElement from "../../components/MedicsListElement";
 import Searchbar from "../../components/Searchbar";
 import { Link } from "react-router-dom";
-
-const mockupData = [
-  {
-    name: "Resperidon",
-    intakes: "5mg 08:00 Uhr, 10mg 12:00 Uhr, 5 mg 18:00 Uhr",
-  },
-  {
-    name: "Medikament2",
-    intakes: "5mg 08:00 Uhr, 10mg 12:00 Uhr, 5 mg 18:00 Uhr",
-  },
-  {
-    name: "Medikament3",
-    intakes: "5mg 08:00 Uhr, 10mg 12:00 Uhr, 5 mg 18:00 Uhr",
-  },
-  {
-    name: "Medikament4",
-    intakes: "5mg 08:00 Uhr, 10mg 12:00 Uhr, 5 mg 18:00 Uhr",
-  },
-];
+import { fetchMedics } from "../../api/medics";
+import Loading from "../../pages/LoadingPage";
 
 function Medics() {
+  const [medics, setMedics] = useState(null);
+  const [isLoading, setIsLoaded] = useState(false);
+  const [query, setQuery] = useState("");
+  const userName = "slawo.e";
+
+  useEffect(() => {
+    async function showMedics() {
+      const newMedics = await fetchMedics(userName);
+      setMedics(newMedics);
+      setIsLoaded(true);
+    }
+    showMedics();
+  }, []);
+
+  const filteredMedics = medics?.filter((medic) => {
+    return medic.name.startsWith(query);
+  });
+
+  if (!isLoading) {
+    return <Loading />;
+  }
   return (
     <BasicPageLayout
-      childrenheadsection={<Searchbar placeholder={"Medikament suchen"} />}
+      childrenheadsection={
+        <Searchbar
+          placeholder={"Medikament suchen"}
+          value={query}
+          onChange={(value) => setQuery(value)}
+        />
+      }
       childrenmainsection={
         <ContentWithAddFunction
           addcomponent={
@@ -39,12 +49,15 @@ function Medics() {
           }
           content={
             <>
-              {mockupData?.map((medic) => (
+              {filteredMedics?.map((medic) => (
                 <MedicsListElement
-                  key={medic.name}
+                  key={medic.id}
                   name={medic.name}
-                  intakes={medic.intakes}
-                  id={medic.name}
+                  intakeMorning={medic.intakeMorning}
+                  intakeMidday={medic.intakeMidday}
+                  intakeEvening={medic.intakeEvening}
+                  intakeNight={medic.intakeNight}
+                  id={medic.id}
                 />
               ))}
             </>

@@ -1,29 +1,81 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StyledTextContainer from "../../components/StyledTextContainer";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
-import InputFieldTextAraChangeData from "../../components/InputFieldTextAreaChangeData";
 import DeleteAndSaveButtonWrapper from "../../components/DeleteAndSaveButtonWrapper";
 import DeleteButton from "../../components/DeleteButton";
 import SaveButton from "../../components/SaveButton";
-import { Link } from "react-router-dom";
-
-const mockupData = {
-  name: "Resperidon",
-  intakes: "5mg 08:00 Uhr, 10mg 12:00 Uhr, 5 mg 18:00 Uhr",
-};
+import { fetchMedic, updateMedic, deleteMedic } from "../../api/medics";
+import LoadingPage from "../LoadingPage";
+import { useHistory, useParams } from "react-router-dom";
 
 function MedicsChange() {
-  const [medic, setMedic] = useState(mockupData.name);
-  const [intakes, setIntakes] = useState(mockupData.intakes);
+  const history = useHistory();
+  const [name, setName] = useState("");
+  const [intakeMorning, setIntakeMorning] = useState("");
+  const [intakeMidday, setIntakeMidday] = useState("");
+  const [intakeEvening, setIntakeEvening] = useState("");
+  const [intakeNight, setIntakeNight] = useState("");
+  const [loadingMedic, setLoadingMedic] = useState(false);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
+  const [error, setError] = useState(false);
+  const { id } = useParams();
 
-  function medicChange(medic) {
-    setMedic(medic.target.value);
+  useEffect(() => {
+    async function showMedic() {
+      const newMedic = await fetchMedic(id);
+      setName(newMedic.name);
+      setIntakeMorning(newMedic.intakeMorning);
+      setIntakeMidday(newMedic.intakeMidday);
+      setIntakeEvening(newMedic.intakeEvening);
+      setIntakeNight(newMedic.intakeNight);
+      setLoadingMedic(true);
+    }
+    showMedic();
+  }, [id]);
+
+  function nameChange(name) {
+    setName(name.target.value);
   }
-  function intakesChange(intakes) {
-    setIntakes(intakes.target.value);
+  function intakeMorningChange(intakeMorning) {
+    setIntakeMorning(intakeMorning.target.value);
+  }
+  function intakeMiddayChange(intakeMidday) {
+    setIntakeMidday(intakeMidday.target.value);
+  }
+  function intakeEveningChange(intakeEvening) {
+    setIntakeEvening(intakeEvening.target.value);
+  }
+  function intakeNightChange(intakeNight) {
+    setIntakeNight(intakeNight.target.value);
   }
 
+  const updatedMedic = {
+    name,
+    intakeMorning,
+    intakeMidday,
+    intakeEvening,
+    intakeNight,
+  };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoadingUpdate(true);
+    setError(false);
+    try {
+      await updateMedic(id, updatedMedic);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoadingUpdate(false);
+      history.push("/main/medics");
+    }
+  }
+
+  if (!loadingMedic) {
+    return <LoadingPage />;
+  }
   return (
     <BasicPageLayout
       childrenheadsection={<></>}
@@ -32,35 +84,56 @@ function MedicsChange() {
           <h1>Dein Medikament bearbeiten</h1>
           <InputFieldChangeData
             label="Name:"
-            name="medic"
-            value={medic}
-            placeholder={medic}
-            onChange={medicChange}
+            name="name"
+            placeholder={name}
+            onChange={nameChange}
           />
-          <InputFieldTextAraChangeData
-            label="Einnahmen:"
-            name="intakes"
-            value={intakes}
-            placeholder={intakes}
-            onChange={intakesChange}
+          <InputFieldChangeData
+            label="Morgens:"
+            name="intakeMorning"
+            placeholder={intakeMorning}
+            onChange={intakeMorningChange}
+          />
+          <InputFieldChangeData
+            label="Mittags:"
+            name="intakeMidday"
+            placeholder={intakeMidday}
+            onChange={intakeMiddayChange}
+          />
+          <InputFieldChangeData
+            label="Abends:"
+            name="intakeEvening"
+            placeholder={intakeEvening}
+            onChange={intakeEveningChange}
+          />
+          <InputFieldChangeData
+            label="Nachts:"
+            name="intakeNight"
+            placeholder={intakeNight}
+            onChange={intakeNightChange}
           />
           <DeleteAndSaveButtonWrapper>
-            <Link to="/main/medics">
-              <DeleteButton
-                onClick={() => {
-                  console.log("Hallo");
-                }}
-                description={"Löschen"}
-              />
-            </Link>
-            <Link to="/main/medics">
-              <SaveButton
-                onClick={() => {
-                  console.log("Welt");
-                }}
-                description={"Speichern..."}
-              />
-            </Link>
+            <DeleteButton
+              type="submit"
+              onClick={() => {
+                deleteMedic(id);
+                history.push("/main/medics");
+              }}
+            />
+            {error && <p>Something bad happened. Please try again.</p>}
+            <SaveButton
+              disabled={
+                !name ||
+                !intakeMorning ||
+                !intakeMidday ||
+                !intakeEvening ||
+                !intakeNight ||
+                loadingUpdate
+              }
+              type="submit"
+              onClick={handleSubmit}
+            />
+            {error && <p>Something bad happened. Please try again.</p>}
           </DeleteAndSaveButtonWrapper>
         </StyledTextContainer>
       }
