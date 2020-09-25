@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import ContentWithAddFunction from "../../components/ContentwithAddFunction";
 import AddButton from "../../components/AddButton";
@@ -67,9 +66,4 @@ function Medics() {
     />
   );
 }
-
 export default Medics;
-
-Medics.propTypes = {
-  children: PropTypes.element.isRequired,
-};

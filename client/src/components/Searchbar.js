@@ -26,14 +26,12 @@ const SearchbarWrapper = styled.div`
   }
 `;
 
-function Searchbar({ query, onQueryChange, placeholder }) {
+function Searchbar({ query, onChange, placeholder }) {
   return (
     <SearchbarWrapper>
       <input
         value={query}
-        onChange={(event) => {
-          onQueryChange(event.target.value);
-        }}
+        onChange={(event) => onChange(event.target.value.trim())}
         placeholder={placeholder}
       />
       <img src={Loupe} alt="Lupe" />
@@ -44,6 +42,6 @@ function Searchbar({ query, onQueryChange, placeholder }) {
 export default Searchbar;
 Searchbar.propTypes = {
   query: PropTypes.any.isRequired,
-  onQueryChange: PropTypes.any.isRequired,
+  onChange: PropTypes.any.isRequired,
   placeholder: PropTypes.string.isRequired,
 };
