@@ -42,6 +42,6 @@ function WhatWasGood({ setForm, formData }) {
 export default WhatWasGood;
 
 WhatWasGood.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
 };

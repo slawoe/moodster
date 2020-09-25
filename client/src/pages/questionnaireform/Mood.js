@@ -45,6 +45,6 @@ function Mood({ setForm, formData }) {
 export default Mood;
 
 Mood.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
 };

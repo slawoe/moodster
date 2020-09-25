@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
+import { postNewDiaryEntry } from "../../api/diary";
+import { Link, useHistory } from "react-router-dom";
 
 const ReviewCard = styled.div`
   background: var(--card-background-color);
@@ -22,7 +23,7 @@ const ReviewCard = styled.div`
     margin: 1em 0;
   }
   & a,
-  a > button {
+  button {
     color: var(--button-proceed-color);
     text-align: center;
     border: none;
@@ -42,20 +43,50 @@ const ReviewCard = styled.div`
 `;
 
 function Review({ setForm, formData }) {
-  const {
-    mood,
-    dayInOneWord,
-    whatWasGood,
-    whatCouldBeBetter,
-    diaryEntry,
-  } = formData;
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const userName = "slawo.e";
+  const date = new Date();
+
+  const newDiaryEntry = {
+    mood: formData.mood,
+    dayInOneWord: formData.dayInOneWord,
+    whatWasGood: formData.whatWasGood,
+    whatCouldBeBetter: formData.whatCouldBeBetter,
+    diaryEntry: formData.diaryEntry,
+    userName,
+    date: `${date.getUTCFullYear()}/${date.getMonth(
+      +1
+    )}/${date.getUTCDate()} ${date.getHours()}:${date.getMinutes()} Uhr`,
+  };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoading(true);
+    setError(false);
+    try {
+      await postNewDiaryEntry(newDiaryEntry);
+      formData.mood = "5";
+      formData.dayInOneWord = null;
+      formData.whatWasGood = null;
+      formData.whatCouldBeBetter = null;
+      formData.diaryEntry = null;
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+      history.push("/main/questionnaire/submitmessage");
+    }
+  }
 
   let info;
   if (
-    dayInOneWord === null ||
-    whatWasGood === null ||
-    whatCouldBeBetter === null ||
-    diaryEntry === null
+    formData.dayInOneWord === null ||
+    formData.whatWasGood === null ||
+    formData.whatCouldBeBetter === null ||
+    formData.diaryEntry === null
   ) {
     info = (
       <>
@@ -75,21 +106,21 @@ function Review({ setForm, formData }) {
             <span>Deine Stimmung:</span>
             <Link to="/main/questionnaire">Bearbeiten...</Link>
           </div>
-          <span>{mood} von 10</span>
+          <span>{formData.mood} von 10</span>
         </div>
         <div>
           <div>
             <span>Dein Tag in eimen Wort:</span>
             <Link to="/main/questionnaire/dayInOneWord">Bearbeiten...</Link>
           </div>
-          <span>{dayInOneWord}</span>
+          <span>{formData.dayInOneWord}</span>
         </div>
         <div>
           <div>
             <span>Was lief heute gut:</span>
             <Link to="/main/questionnaire/whatWasGood">Bearbeiten...</Link>
           </div>
-          <span>{whatWasGood}</span>
+          <span>{formData.whatWasGood}</span>
         </div>
         <div>
           <div>
@@ -98,25 +129,19 @@ function Review({ setForm, formData }) {
               Bearbeiten...
             </Link>
           </div>
-          <span>{whatCouldBeBetter}</span>
+          <span>{formData.whatCouldBeBetter}</span>
         </div>
         <div>
           <div>
             <span>Dein Tagebucheintrag:</span>
             <Link to="/main/questionnaire/diaryEntry">Bearbeiten...</Link>
           </div>
-          <span>{diaryEntry}</span>
+          <span>{formData.diaryEntry}</span>
         </div>
-
-        <Link to="/main/questionnaire/submitmessage">
-          <button
-            onClick={() => {
-              setForm = null;
-            }}
-          >
-            Jetzt abschicken...
-          </button>
-        </Link>
+        <button disabled={loading} type="submit" onClick={handleSubmit}>
+          Abschicken
+        </button>
+        {error && <p>Something bad happened. Please try again.</p>}
       </>
     );
   }
@@ -127,11 +152,11 @@ function Review({ setForm, formData }) {
 export default Review;
 
 Review.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
-  mood: PropTypes.any.isRequired,
-  dayInOneWord: PropTypes.string.isRequired,
-  whatWasGood: PropTypes.string.isRequired,
-  whatCouldBeBetter: PropTypes.string.isRequired,
-  diaryEntry: PropTypes.string.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
+  mood: PropTypes.any,
+  dayInOneWord: PropTypes.string,
+  whatWasGood: PropTypes.string,
+  whatCouldBeBetter: PropTypes.string,
+  diaryEntry: PropTypes.string,
 };
