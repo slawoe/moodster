@@ -7,25 +7,25 @@ export async function postNewDoctor(newDoctor) {
   return response.ok;
 }
 
-export async function updateDoctor({ id }) {
+export async function updateDoctor(id, content) {
   const response = await fetch(`/api/doctors/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(id),
+    body: JSON.stringify(content),
   });
   return response.ok;
 }
 
-export async function deleteDoctor({ id }) {
+export async function deleteDoctor(id) {
   const response = await fetch(`/api/doctors/${id}`, {
     method: "DELETE",
   });
   return response.ok;
 }
 
-export async function fetchDoctors({ userName, name }) {
+export async function fetchDoctors(userName) {
   const response = await fetch(
-    `/api/doctors?userName=${userName}&_sort=${name}&_order=desc`
+    `/api/doctors?userName=${userName}&_sort=lastName`
   );
   if (!response.ok) {
     throw new Error(response);
@@ -34,8 +34,8 @@ export async function fetchDoctors({ userName, name }) {
   return result;
 }
 
-export async function fetchDoctor({ id }) {
-  const response = await fetch(`/api/medics/${id}`);
+export async function fetchDoctor(id) {
+  const response = await fetch(`/api/doctors/${id}`);
   if (!response.ok) {
     throw new Error(response);
   }

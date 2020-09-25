@@ -16,7 +16,7 @@ export async function fetchUsers() {
   return result;
 }
 
-export async function fetchUser({ userName }) {
+export async function fetchUser(userName) {
   const response = await fetch(`/api/users/?userName=${userName}`);
   if (!response.ok) {
     throw new Error(response);
