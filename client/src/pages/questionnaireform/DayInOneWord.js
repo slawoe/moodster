@@ -43,6 +43,6 @@ function DayInOneWord({ setForm, formData }) {
 export default DayInOneWord;
 
 DayInOneWord.propTypes = {
-  setForm: PropTypes.any.isRequired,
-  formData: PropTypes.any.isRequired,
+  setForm: PropTypes.any,
+  formData: PropTypes.any,
 };
