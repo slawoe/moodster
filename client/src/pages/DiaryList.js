@@ -8,6 +8,7 @@ import Loading from "./LoadingPage";
 function DiaryList() {
   const [diaryEntries, setDiaryEntries] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
+  const [query, setQuery] = useState("");
   const userName = "slawo.e";
 
   useEffect(() => {
@@ -19,6 +20,10 @@ function DiaryList() {
     showDiaryEntries();
   }, []);
 
+  const filteredDiary = diaryEntries?.filter((entries) => {
+    return entries.date.startsWith(query);
+  });
+
   if (!isLoading) {
     return <Loading />;
   }
@@ -26,12 +31,16 @@ function DiaryList() {
     <BasicPageLayout
       childrenheadsection={
         <>
-          <Searchbar placeholder="Tagebucheintrag suchen" />
+          <Searchbar
+            placeholder="Tagebucheintrag suchen"
+            value={query}
+            onChange={(value) => setQuery(value)}
+          />
         </>
       }
       childrenmainsection={
         <>
-          {diaryEntries?.map((diaryentry) => (
+          {filteredDiary?.map((diaryentry) => (
             <DiaryListElement
               key={diaryentry.date}
               date={diaryentry.date}
