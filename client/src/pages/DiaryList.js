@@ -1,44 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BasicPageLayout from "../components/BasicPageLayout";
 import DiaryListElement from "../components/DiaryListElement";
 import Searchbar from "../components/Searchbar";
+import { fetchDiaryEntries } from "../api/diary";
+import Loading from "./LoadingPage";
 
 function DiaryList() {
-  const mockupData = [
-    {
-      date: "21.05.1999",
-      mood: "5",
-      dayInOneWord: "great",
-      whatWasGood: "my Component",
-      whatCouldBeBetter: "daily output",
-      diaryEntry: "everything is great",
-    },
-    {
-      date: "22.05.1999",
-      mood: "5",
-      dayInOneWord: "greater",
-      whatWasGood: "my App",
-      whatCouldBeBetter: "daily output",
-      diaryEntry: "everything is great",
-    },
-    {
-      date: "23.05.1999",
-      mood: "5",
-      dayInOneWord: "greatest",
-      whatWasGood: "I'am",
-      whatCouldBeBetter: "daily output",
-      diaryEntry: "everything is great",
-    },
-    {
-      date: "24.05.1999",
-      mood: "5",
-      dayInOneWord: "badass",
-      whatWasGood: "Hacker",
-      whatCouldBeBetter: "daily output",
-      diaryEntry: "everything is great",
-    },
-  ];
+  const [diaryEntries, setDiaryEntries] = useState(null);
+  const [isLoading, setIsLoaded] = useState(false);
+  const userName = "slawo.e";
 
+  useEffect(() => {
+    async function showDiaryEntries() {
+      const newDiaryEntries = await fetchDiaryEntries(userName);
+      setDiaryEntries(newDiaryEntries);
+      setIsLoaded(true);
+    }
+    showDiaryEntries();
+  }, []);
+
+  if (!isLoading) {
+    return <Loading />;
+  }
   return (
     <BasicPageLayout
       childrenheadsection={
@@ -48,7 +31,7 @@ function DiaryList() {
       }
       childrenmainsection={
         <>
-          {mockupData?.map((diaryentry) => (
+          {diaryEntries?.map((diaryentry) => (
             <DiaryListElement
               key={diaryentry.date}
               date={diaryentry.date}
