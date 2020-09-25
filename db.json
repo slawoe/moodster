@@ -1,6 +1,137 @@
 {
-  "users": [],
-  "doctors": [],
-  "medics": [],
-  "diary": []
+  "users": [
+    {
+      "firstName": "Slawomir",
+      "lastName": "Ernst",
+      "nickName": "Slawo",
+      "birthDay": "21.05.1986",
+      "userName": "slawo.e",
+      "password": "123456",
+      "passowordRepeat": null,
+      "moodstername": "Moody",
+      "passwordRepeat": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "asdasd",
+      "lastName": "dasdasd",
+      "nickName": "dasdasddsa",
+      "birthDay": "dasdasdds",
+      "userName": "slawomir.e",
+      "password": "qqq",
+      "passowordRepeat": null,
+      "moodstername": "yxcyxycyxc",
+      "passwordRepeat": "qqq",
+      "id": 2
+    },
+    {
+      "firstName": "Slawomir",
+      "lastName": "Ernst",
+      "nickName": "Test",
+      "birthDay": "adsssadasd",
+      "userName": "asdfsdgfg",
+      "password": "111",
+      "passowordRepeat": null,
+      "moodstername": "sadasddass",
+      "passwordRepeat": "111",
+      "id": 3
+    },
+    {
+      "firstName": "qqqq",
+      "lastName": "qqqq",
+      "nickName": "qqqq",
+      "birthDay": "qqqqq",
+      "userName": "qqqq",
+      "password": "qqqq",
+      "passowordRepeat": null,
+      "moodstername": "qqqqqqq",
+      "passwordRepeat": "qqqq",
+      "id": 4
+    },
+    {
+      "firstName": "sdfsdf",
+      "lastName": "sdfsdfsd",
+      "nickName": "",
+      "birthDay": "",
+      "userName": "",
+      "password": "vvvv",
+      "passwordRepeat": "vvvv",
+      "moodstername": "",
+      "id": 5
+    }
+  ],
+  "doctors": [
+    {
+      "firstName": "cyxcyxcxyc",
+      "lastName": "yyyyy",
+      "street": "yxcyxcyxcyxc",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
+      "userName": "slawo.e",
+      "id": 1
+    }
+  ],
+  "medics": [
+    {
+      "name": "xycyxcyxcyxc",
+      "intakeMorning": "",
+      "intakeMidday": "",
+      "intakeEvening": "",
+      "intakeNight": "",
+      "userName": "slawo.e",
+      "id": 1
+    },
+    {
+      "name": "yxcyxcyxcxycxcy",
+      "intakeMorning": "",
+      "intakeMidday": "",
+      "intakeEvening": "",
+      "intakeNight": "",
+      "userName": "slawo.e",
+      "id": 2
+    },
+    {
+      "name": "ADSGHKJAGS",
+      "intakeMorning": "",
+      "intakeMidday": "",
+      "intakeEvening": "",
+      "intakeNight": "",
+      "userName": "slawo.e",
+      "id": 3
+    }
+  ],
+  "diary": [
+    {
+      "mood": "5",
+      "dayInOneWord": "Test",
+      "whatWasGood": "Test",
+      "whatCouldBeBetter": "Test",
+      "diaryEntry": "Test",
+      "userName": "slawo.e",
+      "date": "2020/8/25 13:40 Uhr",
+      "id": 1
+    },
+    {
+      "mood": "7",
+      "dayInOneWord": "TEST2",
+      "whatWasGood": "Test",
+      "whatCouldBeBetter": "Test",
+      "diaryEntry": "Test",
+      "userName": "slawo.e",
+      "date": "2020/8/25 13:40 Uhr",
+      "id": 2
+    },
+    {
+      "mood": "7",
+      "dayInOneWord": "Gut",
+      "whatWasGood": "dfgfgdfg",
+      "whatCouldBeBetter": "dfagdfgafdgfgda",
+      "diaryEntry": "gadfgdfgdfgfdg",
+      "userName": "slawo.e",
+      "date": "2020/8/25 13:41 Uhr",
+      "id": 3
+    }
+  ]
 }
