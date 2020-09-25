@@ -116,7 +116,7 @@ function AddDoctor() {
             onChange={mailChange}
           />
           <InputFieldTextArea
-            label="Sprechzeiten Montag:"
+            label="Sprechzeiten:"
             name="officeHours"
             value={officeHours}
             placeholder="Mo-Fr 10-18 Uhr"
