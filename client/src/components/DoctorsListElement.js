@@ -21,16 +21,33 @@ const DoctorsListWrapper = styled.div`
   }
 `;
 
-function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
+function DoctorsListElement({
+  firstName,
+  lastName,
+  street,
+  zipAndLocation,
+  phone,
+  mail,
+  officeHours,
+  id,
+}) {
   return (
     <DoctorsListWrapper>
       <InfoElementWrapper>
-        <span>Name:</span>
-        <span>{name}</span>
+        <span>Vorname:</span>
+        <span>{firstName}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
-        <span>Adresse:</span>
-        <span>{address}</span>
+        <span>Nachname:</span>
+        <span>{lastName}</span>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
+        <span>Straße:</span>
+        <span>{street}</span>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
+        <span>PLZ und Ort:</span>
+        <span>{zipAndLocation}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
         <span>Telefonnummer:</span>
@@ -56,10 +73,12 @@ function DoctorsListElement({ name, address, phone, mail, officeHours, id }) {
 export default DoctorsListElement;
 
 DoctorsListElement.propTypes = {
-  name: PropTypes.any.isRequired,
-  address: PropTypes.any.isRequired,
-  phone: PropTypes.any.isRequired,
-  mail: PropTypes.any.isRequired,
-  officeHours: PropTypes.any.isRequired,
-  id: PropTypes.any.isRequired,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  street: PropTypes.string,
+  zipAndLocation: PropTypes.string,
+  phone: PropTypes.string,
+  mail: PropTypes.string,
+  officeHours: PropTypes.string,
+  id: PropTypes.string,
 };
