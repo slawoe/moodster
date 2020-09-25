@@ -1,5 +1,5 @@
 export async function postNewMedic(newMedic) {
-  const response = await fetch(`/api/medic`, {
+  const response = await fetch(`/api/medics`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newMedic),
@@ -7,25 +7,25 @@ export async function postNewMedic(newMedic) {
   return response.ok;
 }
 
-export async function updateMedic({ id }) {
-  const response = await fetch(`/api/medic/${id}`, {
+export async function updateMedic(id, content) {
+  const response = await fetch(`/api/medics/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(id),
+    body: JSON.stringify(content),
   });
   return response.ok;
 }
 
-export async function deleteMedic({ id }) {
-  const response = await fetch(`/api/medic/${id}`, {
+export async function deleteMedic(id) {
+  const response = await fetch(`/api/medics/${id}`, {
     method: "DELETE",
   });
   return response.ok;
 }
 
-export async function fetchMedics({ userName, name }) {
+export async function fetchMedics(userName, name) {
   const response = await fetch(
-    `/api/medics?userName=${userName}&_sort=${name}&_order=desc`
+    `/api/medics?userName=${userName}&_sort=${name}`
   );
   if (!response.ok) {
     throw new Error(response);
@@ -34,7 +34,7 @@ export async function fetchMedics({ userName, name }) {
   return result;
 }
 
-export async function fetcMedic({ id }) {
+export async function fetchMedic(id) {
   const response = await fetch(`/api/medics/${id}`);
   if (!response.ok) {
     throw new Error(response);
