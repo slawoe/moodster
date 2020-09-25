@@ -71,6 +71,17 @@
       "officeHours": "",
       "userName": "slawo.e",
       "id": 1
+    },
+    {
+      "firstName": "sdasdasdsad",
+      "lastName": "dsadsasad",
+      "street": "",
+      "zipAndLocation": "",
+      "phone": "",
+      "mail": "",
+      "officeHours": "",
+      "userName": "slawo.e",
+      "id": 2
     }
   ],
   "medics": [

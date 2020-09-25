@@ -11,6 +11,7 @@ import Loading from "../../pages/LoadingPage";
 function Doctors() {
   const [doctors, setDoctors] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
+  const [query, setQuery] = useState("");
   const userName = "slawo.e";
 
   useEffect(() => {
@@ -22,12 +23,22 @@ function Doctors() {
     showDoctors();
   }, []);
 
+  const filteredDoctors = doctors?.filter((doctor) => {
+    return doctor.lastName.startsWith(query);
+  });
+
   if (!isLoading) {
     return <Loading />;
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<Searchbar placeholder={"Arzt suchen"} />}
+      childrenheadsection={
+        <Searchbar
+          placeholder={"Arzt suchen"}
+          value={query}
+          onChange={(value) => setQuery(value)}
+        />
+      }
       childrenmainsection={
         <ContentWithAddFunction
           addcomponent={
@@ -37,7 +48,7 @@ function Doctors() {
           }
           content={
             <>
-              {doctors?.map((doctor) => (
+              {filteredDoctors?.map((doctor) => (
                 <DoctorsListElement
                   key={doctor.id}
                   firstName={doctor.firstName}
