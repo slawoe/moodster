@@ -98,25 +98,25 @@ function DoctorsChange() {
           <InputFieldChangeData
             label="Vorname:"
             name="firstName"
-            placeholder="Heinz"
+            placeholder={firstName}
             onChange={firstNameChange}
           />
           <InputFieldChangeData
             label="Nachname:"
             name="lastName"
-            placeholder="Müller"
+            placeholder={lastName}
             onChange={lastNameChange}
           />
           <InputFieldChangeData
             label="Straße:"
             name="street"
-            placeholder="Lindenstraße 10"
+            placeholder={street}
             onChange={streetChange}
           />
           <InputFieldChangeData
             label="PLZ und Ort:"
             name="zipAndLocation"
-            placeholder="12345 Berlin"
+            placeholder={zipAndLocation}
             onChange={zipAndLocationChange}
           />
           <InputFieldChangeData
@@ -137,7 +137,6 @@ function DoctorsChange() {
             placeholder={officeHours}
             onChange={officeHoursChange}
           />
-
           <DeleteAndSaveButtonWrapper>
             <DeleteButton
               type="submit"
