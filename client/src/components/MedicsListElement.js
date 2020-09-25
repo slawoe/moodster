@@ -13,9 +13,6 @@ const MedicsListWrapper = styled.div`
   padding: 0.4em 0.7em;
   display: flex;
   flex-direction: column;
-  & > div:nth-child(2) > span:last-child {
-    text-align: right;
-  }
   & div:last-child,
   & div:last-child > a {
     align-self: flex-end;
@@ -24,7 +21,14 @@ const MedicsListWrapper = styled.div`
   }
 `;
 
-function MedicsListElement({ name, intakes, id }) {
+function MedicsListElement({
+  name,
+  intakeMorning,
+  intakeMidday,
+  intakeEvening,
+  intakeNight,
+  id,
+}) {
   return (
     <MedicsListWrapper>
       <InfoElementWrapper>
@@ -32,8 +36,20 @@ function MedicsListElement({ name, intakes, id }) {
         <span>{name}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
-        <span>Einnahmen:</span>
-        <span>{intakes}</span>
+        <span>Morgens:</span>
+        <span>{intakeMorning}</span>
+      </InfoElementWrapper>{" "}
+      <InfoElementWrapper>
+        <span>Mittags:</span>
+        <span>{intakeMidday}</span>
+      </InfoElementWrapper>
+      <InfoElementWrapper>
+        <span>Abends:</span>
+        <span>{intakeEvening}</span>
+      </InfoElementWrapper>{" "}
+      <InfoElementWrapper>
+        <span>Nachts:</span>
+        <span>{intakeNight}</span>
       </InfoElementWrapper>
       <div>
         <Link to={`/main/medics/change/${id}`}>
@@ -47,7 +63,10 @@ function MedicsListElement({ name, intakes, id }) {
 export default MedicsListElement;
 
 MedicsListElement.propTypes = {
-  name: PropTypes.any.isRequired,
-  intakes: PropTypes.any.isRequired,
-  id: PropTypes.any.isRequired,
+  name: PropTypes.string,
+  intakeMorning: PropTypes.string,
+  intakeMidday: PropTypes.string,
+  intakeEvening: PropTypes.string,
+  intakeNight: PropTypes.string,
+  id: PropTypes.string,
 };
