@@ -40,15 +40,15 @@ function DiaryList() {
       }
       childrenmainsection={
         <>
-          {filteredDiary?.map((diaryentry) => (
+          {filteredDiary?.map((diaryEntry) => (
             <DiaryListElement
-              key={diaryentry.date}
-              date={diaryentry.date}
-              mood={diaryentry.mood}
-              dayInOneWord={diaryentry.dayInOneWord}
-              whatWasGood={diaryentry.whatWasGood}
-              whatCouldBeBetter={diaryentry.whatCouldBeBetter}
-              diaryEntry={diaryentry.diaryEntry}
+              key={diaryEntry.date}
+              date={diaryEntry.date}
+              mood={diaryEntry.mood}
+              dayInOneWord={diaryEntry.dayInOneWord}
+              whatWasGood={diaryEntry.whatWasGood}
+              whatCouldBeBetter={diaryEntry.whatCouldBeBetter}
+              diaryEntry={diaryEntry.diaryEntry}
             />
           ))}
         </>
