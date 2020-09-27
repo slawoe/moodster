@@ -64,7 +64,7 @@ function Drawer({ open, onClick }) {
         <li>
           <Link to="/main/questionnaire">
             <img src={Questionnaire} alt="Fragebögen" />
-            <span>Fragebögen</span>
+            <span>Tagebuch-Eintrag</span>
           </Link>
         </li>
         <li>
