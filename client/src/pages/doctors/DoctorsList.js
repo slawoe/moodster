@@ -21,7 +21,7 @@ function Doctors() {
       setIsLoaded(true);
     }
     showDoctors();
-  }, []);
+  }, [userName]);
 
   const filteredDoctors = doctors?.filter((doctor) => {
     return doctor.lastName.startsWith(query);

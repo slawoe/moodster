@@ -18,7 +18,7 @@ function DiaryList() {
       setIsLoaded(true);
     }
     showDiaryEntries();
-  }, []);
+  }, [userName]);
 
   const filteredDiary = diaryEntries?.filter((entries) => {
     return entries.date.startsWith(query);
