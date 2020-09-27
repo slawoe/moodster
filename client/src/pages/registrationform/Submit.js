@@ -15,6 +15,7 @@ const SubmitCard = styled.div`
   padding: 1em 1em;
   height: 80%;
   grid-area: 2 / 2 / 3 / 3;
+  text-align: center;
   & button {
     border: none;
     background: transparent;
@@ -51,7 +52,7 @@ function Submit({ setForm, formData }) {
       setError(true);
     } finally {
       setLoading(false);
-      history.push("/main/help");
+      history.push("/");
     }
   }
 
@@ -59,11 +60,11 @@ function Submit({ setForm, formData }) {
     <SubmitCard>
       <span>
         Danke {formData.nickName}! Wenn Du jetzt die Anmeldung abschickst,
-        kümmert sich {formData.moodstername} um alles weitere und Du kannst dir
-        die App in Ruhe anschauen.
+        kümmert sich {formData.moodstername} um alles weitere und Du kannst dich
+        einloggen, um dir die App in Ruhe anschauen.
       </span>
       <button disabled={loading} type="submit" onClick={handleSubmit}>
-        Anmeldung absenden und App anschauen...
+        Anmeldung absenden und zum Login...
       </button>
       {error && <p>Something bad happened. Please try again.</p>}
       <img src={Moodster} alt="moodster"></img>
