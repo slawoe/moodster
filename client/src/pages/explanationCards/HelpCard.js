@@ -50,11 +50,11 @@ function HelpCard() {
         </Link>
       </div>
       <div>
-        <NavButtonDownArrow description={"Tagebuch"} to={"/main/help/diary"} />
         <NavButtonDownArrow
-          description={"Fragen"}
+          description={"Eintrag"}
           to={"/main/help/questionnaire"}
         />
+        <NavButtonDownArrow description={"Tagebuch"} to={"/main/help/diary"} />
         <NavButtonDownArrow
           description={"Medikamente"}
           to={"/main/help/medics"}
