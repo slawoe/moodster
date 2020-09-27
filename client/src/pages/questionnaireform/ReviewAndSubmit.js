@@ -46,7 +46,7 @@ function Review({ setForm, formData }) {
   const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = "slawo.e";
+  const userName = sessionStorage.getItem("userName");
   const date = new Date();
 
   const newDiaryEntry = {

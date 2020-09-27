@@ -14,7 +14,7 @@ function AddMedics() {
   const [intakeNight, setIntakeNight] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = "slawo.e";
+  const userName = sessionStorage.getItem("userName");
 
   function nameChange(name) {
     setName(name.target.value);

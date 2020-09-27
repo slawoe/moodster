@@ -17,7 +17,7 @@ function AddDoctor() {
   const [officeHours, setOfficeHours] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = "slawo.e";
+  const userName = sessionStorage.getItem("userName");
 
   function firstNameChange(firstName) {
     setFirstName(firstName.target.value);

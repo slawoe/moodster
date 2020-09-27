@@ -9,7 +9,7 @@ function DiaryList() {
   const [diaryEntries, setDiaryEntries] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
   const [query, setQuery] = useState("");
-  const userName = "slawo.e";
+  const userName = sessionStorage.getItem("userName");
 
   useEffect(() => {
     async function showDiaryEntries() {
