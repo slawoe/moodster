@@ -1,26 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StyledTextContainer from "../../components/StyledTextContainer";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
 import SaveButton from "../../components/SaveButton";
-import { Link } from "react-router-dom";
-
-const mockupData = {
-  firstName: "Max",
-  lastName: "Mustermann",
-  nickName: "Maxi",
-  birthDay: "01.01.2010",
-  userName: "maxi.muster",
-  moodstername: "Moody",
-};
+import { useHistory } from "react-router-dom";
+import { fetchUserProfile, updateUser } from "../../api/user";
+import Loading from "../LoadingPage";
 
 function ProfileChange() {
-  const [firstName, setFirstName] = useState(mockupData.firstName);
-  const [lastName, setLastName] = useState(mockupData.lastName);
-  const [nickName, setNickName] = useState(mockupData.nickName);
-  const [birthDay, setBirthDay] = useState(mockupData.birthDay);
-  const [userName, setUserName] = useState(mockupData.userName);
-  const [moodstername, setMoodstername] = useState(mockupData.moodstername);
+  const history = useHistory();
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [nickName, setNickName] = useState(null);
+  const [birthDay, setBirthDay] = useState(null);
+  const [moodstername, setMoodstername] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(false);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    async function showUser() {
+      const loadedUser = await fetchUserProfile(sessionStorage.getItem("id"));
+      setFirstName(loadedUser.firstName);
+      setLastName(loadedUser.lastName);
+      setNickName(loadedUser.nickName);
+      setBirthDay(loadedUser.birthDay);
+      setMoodstername(loadedUser.moodstername);
+      setLoadingUser(true);
+    }
+    showUser();
+  }, []);
 
   function firstNameChange(firstName) {
     setFirstName(firstName.target.value);
@@ -34,13 +43,38 @@ function ProfileChange() {
   function birthDayChange(birthDay) {
     setBirthDay(birthDay.target.value);
   }
-  function userNameChange(userName) {
-    setUserName(userName.target.value);
-  }
+
   function moodsternameChange(moodstername) {
     setMoodstername(moodstername.target.value);
   }
 
+  const updatedUser = {
+    firstName,
+    lastName,
+    nickName,
+    birthDay,
+    moodstername,
+  };
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    setLoadingUpdate(true);
+    setError(false);
+    try {
+      await updateUser(sessionStorage.getItem("id"), updatedUser);
+      sessionStorage.nickName = updatedUser.nickName;
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoadingUpdate(false);
+      history.push("/main/profile");
+    }
+  }
+
+  if (!loadingUser) {
+    return <Loading />;
+  }
   return (
     <BasicPageLayout
       childrenheadsection={<></>}
@@ -51,51 +85,46 @@ function ProfileChange() {
             <InputFieldChangeData
               label={"Vorname:"}
               name="firstName"
-              value={firstName}
               placeholder={firstName}
               onChange={firstNameChange}
             />
             <InputFieldChangeData
               label={"Nachname:"}
               name="lastName"
-              value={lastName}
               placeholder={lastName}
               onChange={lastNameChange}
             />
             <InputFieldChangeData
               label={"Spitzname:"}
               name="nickName"
-              value={nickName}
               placeholder={nickName}
               onChange={nickNameChange}
             />
             <InputFieldChangeData
               label={"Geburtsdatum:"}
               name="birthDay"
-              value={birthDay}
               placeholder={birthDay}
               onChange={birthDayChange}
             />
             <InputFieldChangeData
-              label={"Benutzername:"}
-              name="userName"
-              value={userName}
-              placeholder={userName}
-              onChange={userNameChange}
-            />
-            <InputFieldChangeData
               label={"Moodster-Name:"}
               name="moodstername"
-              value={moodstername}
               placeholder={moodstername}
               onChange={moodsternameChange}
             />
-            <Link to="/main/profile">
-              <SaveButton
-                onClick={console.log("Click")}
-                description={"Speichern..."}
-              />
-            </Link>
+            <SaveButton
+              disabled={
+                !firstName ||
+                !lastName ||
+                !nickName ||
+                !birthDay ||
+                !moodstername ||
+                loadingUpdate
+              }
+              type="submit"
+              onClick={handleSubmit}
+            />
+            {error && <p>Something bad happened. Please try again.</p>}
           </StyledTextContainer>
         </>
       }
