@@ -28,9 +28,14 @@ const StyledTextContainer = styled.div`
   }
   & > p > a {
     color: var(--button-proceed-color);
+    padding: 0.5em 1em;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   & > p > img {
-    padding: 3em;
+    padding: 1em;
   }
   & > div {
     padding: 0.5em 1em;
@@ -39,8 +44,6 @@ const StyledTextContainer = styled.div`
     padding: 0.5em 1em;
     color: var(--button-proceed-color);
     align-self: flex-end;
-    border: none;
-    background: transparent;
   }
 `;
 
