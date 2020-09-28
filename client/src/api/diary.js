@@ -7,9 +7,9 @@ export async function postNewDiaryEntry(newDiaryEntry) {
   return response.ok;
 }
 
-export async function fetchDiaryEntries(userName) {
+export async function fetchDiaryEntries(userID) {
   const response = await fetch(
-    `/api/diary?userName=${userName}&_sort=date&_order=desc`
+    `/api/diary?userID=${userID}&_sort=date&_order=desc`
   );
   if (!response.ok) {
     throw new Error(response);

@@ -46,7 +46,7 @@ function Review({ setForm, formData }) {
   const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = "slawo.e";
+  const userID = sessionStorage.getItem("userID");
   const date = new Date();
 
   const newDiaryEntry = {
@@ -55,7 +55,7 @@ function Review({ setForm, formData }) {
     whatWasGood: formData.whatWasGood,
     whatCouldBeBetter: formData.whatCouldBeBetter,
     diaryEntry: formData.diaryEntry,
-    userName,
+    userID,
     date: `${date.getUTCFullYear()}/${date.getMonth(
       +1
     )}/${date.getUTCDate()} ${date.getHours()}:${date.getMinutes()} Uhr`,

@@ -12,16 +12,16 @@ function Doctors() {
   const [doctors, setDoctors] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
   const [query, setQuery] = useState("");
-  const userName = "slawo.e";
+  const userID = sessionStorage.getItem("userID");
 
   useEffect(() => {
     async function showDoctors() {
-      const newDoctors = await fetchDoctors(userName);
+      const newDoctors = await fetchDoctors(userID);
       setDoctors(newDoctors);
       setIsLoaded(true);
     }
     showDoctors();
-  }, []);
+  }, [userID]);
 
   const filteredDoctors = doctors?.filter((doctor) => {
     return doctor.lastName.startsWith(query);

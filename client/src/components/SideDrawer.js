@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 import Diary from "../assets/icons/diaryslim.svg";
 import Questionnaire from "../assets/icons/questionslim.svg";
@@ -9,6 +10,7 @@ import Doctor from "../assets/icons/doctor.svg";
 import Help from "../assets/icons/laptop.svg";
 import About from "../assets/icons/information.svg";
 import Profile from "../assets/icons/user.svg";
+import Exit from "../assets/icons/exit.svg";
 import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
@@ -49,9 +51,42 @@ const SideDrawerList = styled.ul`
   & > li > a > span {
     padding-left: 10%;
   }
+  & > li:last-child {
+    display: flex;
+    align-items: center;
+  }
+  & > li:last-child > img {
+    width: 4vh;
+    padding: 5px 0;
+  }
+  & > li:last-child > button {
+    border: none;
+    background: transparent;
+    color: var(--button-danger-color);
+    padding-left: 10%;
+  }
 `;
 
 function Drawer({ open, onClick }) {
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function Logout(event) {
+    event.preventDefault();
+    setLoading(true);
+    setError(false);
+    try {
+      await sessionStorage.clear();
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+      history.push("/");
+    }
+  }
+
   return (
     <SideDrawer open={open} onClick={() => onClick(!open)}>
       <SideDrawerList>
@@ -64,7 +99,7 @@ function Drawer({ open, onClick }) {
         <li>
           <Link to="/main/questionnaire">
             <img src={Questionnaire} alt="Fragebögen" />
-            <span>Fragebögen</span>
+            <span>Tagebuch-Eintrag</span>
           </Link>
         </li>
         <li>
@@ -108,6 +143,12 @@ function Drawer({ open, onClick }) {
             <img src={About} alt="About" />
             <span>Über Moodster</span>
           </Link>
+        </li>
+        <li>
+          <img src={Exit} alt="Logout" />
+          <button onClick={Logout}>Logout</button>
+          {loading && <p>Lädt...</p>}
+          {error && <p>Something bad happened. Please try again.</p>}
         </li>
       </SideDrawerList>
     </SideDrawer>

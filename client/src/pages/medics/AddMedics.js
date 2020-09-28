@@ -14,7 +14,7 @@ function AddMedics() {
   const [intakeNight, setIntakeNight] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = "slawo.e";
+  const userID = sessionStorage.getItem("userID");
 
   function nameChange(name) {
     setName(name.target.value);
@@ -38,7 +38,7 @@ function AddMedics() {
     intakeMidday,
     intakeEvening,
     intakeNight,
-    userName,
+    userID,
   };
 
   async function handleSubmit(event) {

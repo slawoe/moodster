@@ -9,16 +9,16 @@ function DiaryList() {
   const [diaryEntries, setDiaryEntries] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
   const [query, setQuery] = useState("");
-  const userName = "slawo.e";
+  const userID = sessionStorage.getItem("userID");
 
   useEffect(() => {
     async function showDiaryEntries() {
-      const newDiaryEntries = await fetchDiaryEntries(userName);
+      const newDiaryEntries = await fetchDiaryEntries(userID);
       setDiaryEntries(newDiaryEntries);
       setIsLoaded(true);
     }
     showDiaryEntries();
-  }, []);
+  }, [userID]);
 
   const filteredDiary = diaryEntries?.filter((entries) => {
     return entries.date.startsWith(query);

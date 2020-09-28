@@ -7,8 +7,17 @@ export async function postNewUser(newUser) {
   return response.ok;
 }
 
-export async function fetchUsers() {
-  const response = await fetch(`/api/users`);
+export async function updateUser(id, content) {
+  const response = await fetch(`/api/users/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(content),
+  });
+  return response.ok;
+}
+
+export async function fetchUserLogin(userName) {
+  const response = await fetch(`/api/users/?userName=${userName}`);
   if (!response.ok) {
     throw new Error(response);
   }
@@ -16,8 +25,8 @@ export async function fetchUsers() {
   return result;
 }
 
-export async function fetchUser(userName) {
-  const response = await fetch(`/api/users/?userName=${userName}`);
+export async function fetchUserProfile(id) {
+  const response = await fetch(`/api/users/${id}`);
   if (!response.ok) {
     throw new Error(response);
   }
