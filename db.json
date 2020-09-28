@@ -1,17 +1,5 @@
 {
-  "users": [
-    {
-      "firstName": "Slawomir",
-      "lastName": "Ernst",
-      "nickName": "Slawo",
-      "birthDay": "21.05.1986",
-      "userName": "slawo.e",
-      "password": "1234",
-      "passwordRepeat": "1234",
-      "moodstername": "Moody",
-      "id": 1
-    }
-  ],
+  "users": [],
   "doctors": [],
   "medics": [],
   "diary": []

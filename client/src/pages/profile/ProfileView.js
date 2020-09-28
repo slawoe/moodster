@@ -12,7 +12,9 @@ function Profile() {
 
   useEffect(() => {
     async function showUser() {
-      const loadedUser = await fetchUserProfile(sessionStorage.getItem("id"));
+      const loadedUser = await fetchUserProfile(
+        sessionStorage.getItem("userID")
+      );
       setUser(loadedUser);
       setLoading(true);
     }

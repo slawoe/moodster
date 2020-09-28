@@ -12,16 +12,16 @@ function Medics() {
   const [medics, setMedics] = useState(null);
   const [isLoading, setIsLoaded] = useState(false);
   const [query, setQuery] = useState("");
-  const userName = sessionStorage.getItem("userName");
+  const userID = sessionStorage.getItem("userID");
 
   useEffect(() => {
     async function showMedics() {
-      const newMedics = await fetchMedics(userName);
+      const newMedics = await fetchMedics(userID);
       setMedics(newMedics);
       setIsLoaded(true);
     }
     showMedics();
-  }, [userName]);
+  }, [userID]);
 
   const filteredMedics = medics?.filter((medic) => {
     return medic.name.startsWith(query);

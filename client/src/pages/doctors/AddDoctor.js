@@ -17,7 +17,7 @@ function AddDoctor() {
   const [officeHours, setOfficeHours] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userName = sessionStorage.getItem("userName");
+  const userID = sessionStorage.getItem("userID");
 
   function firstNameChange(firstName) {
     setFirstName(firstName.target.value);
@@ -49,7 +49,7 @@ function AddDoctor() {
     phone,
     mail,
     officeHours,
-    userName,
+    userID,
   };
 
   async function handleSubmit(event) {

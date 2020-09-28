@@ -16,7 +16,7 @@ export async function updateUser(id, content) {
   return response.ok;
 }
 
-export async function fetchUserWelcome(userName) {
+export async function fetchUserLogin(userName) {
   const response = await fetch(`/api/users/?userName=${userName}`);
   if (!response.ok) {
     throw new Error(response);

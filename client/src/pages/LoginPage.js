@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Moodster from "../assets/images/moodster.svg";
 import { Link, useHistory } from "react-router-dom";
-import { fetchUserWelcome } from "../api/user";
+import { fetchUserLogin } from "../api/user";
 
 const LoginWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
@@ -62,7 +62,7 @@ function LoginPage() {
   }
 
   async function Login() {
-    const newUser = await fetchUserWelcome(userName);
+    const newUser = await fetchUserLogin(userName);
     if (newUser.length === 0) {
       setError(true);
       return;
@@ -72,8 +72,7 @@ function LoginPage() {
       setError(true);
     } else {
       history.push("/main");
-      sessionStorage.userName = parsedUser.userName;
-      sessionStorage.id = parsedUser.id;
+      sessionStorage.userID = parsedUser.id;
       sessionStorage.nickName = parsedUser.nickName;
     }
   }
