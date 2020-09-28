@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const FormPageWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
   display: grid;
-  grid-template-rows: 25% 65% 10%;
+  grid-template-rows: 30% 60% 10%;
   & > div:first-child {
     grid-area: 1 / 1 / 2 / 2;
   }

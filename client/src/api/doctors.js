@@ -23,10 +23,8 @@ export async function deleteDoctor(id) {
   return response.ok;
 }
 
-export async function fetchDoctors(userName) {
-  const response = await fetch(
-    `/api/doctors?userName=${userName}&_sort=lastName`
-  );
+export async function fetchDoctors(userID) {
+  const response = await fetch(`/api/doctors?userID=${userID}&_sort=lastName`);
   if (!response.ok) {
     throw new Error(response);
   }
