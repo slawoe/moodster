@@ -50,13 +50,13 @@ function Medics() {
             <>
               {filteredMedics?.map((medic) => (
                 <MedicsListElement
-                  key={medic.id}
+                  key={medic._id}
                   name={medic.name}
                   intakeMorning={medic.intakeMorning}
                   intakeMidday={medic.intakeMidday}
                   intakeEvening={medic.intakeEvening}
                   intakeNight={medic.intakeNight}
-                  id={medic.id}
+                  id={medic._id}
                 />
               ))}
             </>
