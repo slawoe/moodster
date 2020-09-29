@@ -7,10 +7,16 @@ const app = express();
 const { initDatabase } = require("./lib/database");
 
 const users = require("./lib/routes/users");
+const diary = require("./lib/routes/diary");
+const doctors = require("./lib/routes/doctors");
+const medics = require("./lib/routes/medics");
 
 app.use(express.json());
 
 app.use("/api/users", users);
+app.use("/api/diary", diary);
+app.use("/api/doctors", doctors);
+app.use("/api/medics", medics);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 
