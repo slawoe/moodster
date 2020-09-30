@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function About() {
+function Analysis() {
   const data = [
     { name: "1", uv: 1, pv: 0, amt: 0 },
     { name: "2", uv: 3, pv: 0, amt: 0 },
@@ -70,4 +70,4 @@ function About() {
   );
 }
 
-export default About;
+export default Analysis;
