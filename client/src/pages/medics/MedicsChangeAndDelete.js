@@ -115,8 +115,8 @@ function MedicsChange() {
           <DeleteAndSaveButtonWrapper>
             <DeleteButton
               type="submit"
-              onClick={() => {
-                deleteMedic(id);
+              onClick={async () => {
+                await deleteMedic(id);
                 history.push("/main/medics");
               }}
             />

@@ -63,17 +63,16 @@ function LoginPage() {
 
   async function Login() {
     const newUser = await fetchUserLogin(userName);
-    if (newUser.length === 0) {
+    if (!newUser) {
       setError(true);
       return;
     }
-    const parsedUser = newUser[0];
-    if (password !== parsedUser.password) {
+    if (password !== newUser.password || userName !== newUser.userName) {
       setError(true);
     } else {
       history.push("/main");
-      sessionStorage.userID = parsedUser.id;
-      sessionStorage.nickName = parsedUser.nickName;
+      sessionStorage.userID = newUser._id;
+      sessionStorage.nickName = newUser.nickName;
     }
   }
 

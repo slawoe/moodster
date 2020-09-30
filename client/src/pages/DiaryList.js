@@ -42,7 +42,7 @@ function DiaryList() {
         <>
           {filteredDiary?.map((diaryEntry) => (
             <DiaryListElement
-              key={diaryEntry.date}
+              key={diaryEntry._id}
               date={diaryEntry.date}
               mood={diaryEntry.mood}
               dayInOneWord={diaryEntry.dayInOneWord}

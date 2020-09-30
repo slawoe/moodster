@@ -50,7 +50,7 @@ function Doctors() {
             <>
               {filteredDoctors?.map((doctor) => (
                 <DoctorsListElement
-                  key={doctor.id}
+                  key={doctor._id}
                   firstName={doctor.firstName}
                   lastName={doctor.lastName}
                   street={doctor.street}
@@ -58,7 +58,7 @@ function Doctors() {
                   phone={doctor.phone}
                   mail={doctor.mail}
                   officeHours={doctor.officeHours}
-                  id={doctor.id}
+                  id={doctor._id}
                 />
               ))}
             </>

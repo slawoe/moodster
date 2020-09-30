@@ -140,8 +140,8 @@ function DoctorsChange() {
           <DeleteAndSaveButtonWrapper>
             <DeleteButton
               type="submit"
-              onClick={() => {
-                deleteDoctor(id);
+              onClick={async () => {
+                await deleteDoctor(id);
                 history.push("/main/doctors");
               }}
             />
