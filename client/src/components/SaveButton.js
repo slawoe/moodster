@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import PropTypes from "prop-types";
 
 const Button = styled.button`
-  padding: 1em 1em;
+  padding: 1rem 1rem;
   color: var(--text-color-attention);
   border: none;
   background: transparent;

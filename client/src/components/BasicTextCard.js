@@ -10,11 +10,11 @@ const BasicTextDiv = styled.div`
   border-radius: 5px;
   margin: 10px 0;
   display: grid;
-  height: 75%;
+  height: 85%;
   grid-template-columns: 90% 10%;
   grid-template-rows: 60% 40%;
   & > p {
-    padding: 0.4em 0.7em;
+    padding: 1rem 0.7rem;
     margin: 0;
     grid-area: 1/ 1/ 3 /2;
   }

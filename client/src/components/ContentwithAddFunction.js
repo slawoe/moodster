@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ContentWithAddWrapper = styled.div`
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 11% 89%;
   overflow: hidden;
   height: 100%;
 `;

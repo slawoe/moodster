@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 const InfoElementWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0;
-  & :first-child {
+  padding: 0.5rem 0.5rem;
+  & :first-of-type {
     width: 50%;
   }
-  & :last-child {
+  & :last-of-type {
     width: 50%;
   }
 `;

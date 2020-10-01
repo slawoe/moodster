@@ -29,16 +29,16 @@ const HeaderNavigation = styled.nav`
   display: grid;
   grid-template-columns: 27.5% 27.5% 15% 15% 15%;
   grid-template-rows: 10% 20% 40% 20% 10%;
-  & > :nth-child(1) {
+  & > a {
     grid-area: 2 / 1 / 5/ 2;
   }
-  & > :nth-child(1) > img {
+  & > a > img {
     height: 100%;
   }
-  & > :nth-child(2) {
+  & > button {
     grid-area: 3 / 4 / 4/ 5;
   }
-  & > :nth-child(2) > img {
+  & > button > img {
     height: 4vh;
   }
 `;

@@ -11,7 +11,7 @@ const StartCallButton = styled.button`
   box-shadow: var(--main-elements-shadow);
   & > a > img {
     object-fit: contain;
-    height: 3em;
+    height: 3rem;
   }
 `;
 

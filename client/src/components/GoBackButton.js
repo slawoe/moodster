@@ -10,11 +10,11 @@ const Button = styled.button`
   background: transparent;
   color: var(--text-color-normal);
   & > span {
-    padding: 1em;
+    padding: 1rem;
     margin: 0;
   }
   & > img {
-    width: 2em;
+    width: 2rem;
   }
 `;
 

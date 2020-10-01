@@ -10,16 +10,17 @@ const ReviewCard = styled.div`
   flex-direction: column;
   border: none;
   border-radius: 5px;
-  padding: 1em 1em;
+  padding: 1rem 1rem;
   height: 80%;
   grid-area: 2 / 2 / 3 / 3;
   & > div {
     display: flex;
     flex-direction: column;
-    margin: 1em 0;
+    margin: 1rem 0;
     color: var(--text-color-attention);
+    text-align: center;
   }
-  & > div > div:first-child > span:first-child {
+  & > div > div:first-of-type > span:first-of-type {
     color: var(--text-color-attention);
   }
   & > div > div > a,
@@ -33,6 +34,9 @@ const ReviewCard = styled.div`
     display: flex;
     justify-content: space-between;
     color: var(--text-color-normal);
+  }
+  & > h2 {
+    text-align: center;
   }
 `;
 

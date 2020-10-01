@@ -10,7 +10,8 @@ const SubmitCard = styled.div`
   flex-direction: column;
   border: none;
   border-radius: 5px;
-  padding: 1em 1em;
+  margin: 0.5rem 0 0;
+  padding: 1rem 1rem;
   height: 80%;
   grid-area: 2 / 2 / 3 / 3;
   text-align: center;
@@ -18,10 +19,10 @@ const SubmitCard = styled.div`
     border: none;
     background: transparent;
     color: var(--button-proceed-color);
-    margin-top: 3em;
+    margin-top: 3rem;
   }
   & > img {
-    margin-top: 3em;
+    margin-top: 3rem;
   }
 `;
 

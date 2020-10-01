@@ -52,15 +52,15 @@ const SideDrawerList = styled.ul`
   & > li > a > span {
     padding-left: 10%;
   }
-  & > li:last-child {
+  & > li:last-of-type {
     display: flex;
     align-items: center;
   }
-  & > li:last-child > img {
+  & > li:last-of-type > img {
     width: 4vh;
     padding: 5px 0;
   }
-  & > li:last-child > button {
+  & > li:last-of-type > button {
     border: none;
     background: transparent;
     color: var(--button-danger-color);

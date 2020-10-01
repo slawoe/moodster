@@ -12,7 +12,7 @@ const LoadingScreenWrapper = styled.div`
     grid-area: 2 / 2 / 3 / 3;
   }
   & > h1 {
-    font-size: 3em;
+    font-size: 3rem;
     grid-area: 3 / 2 / 4 / 3;
     margin: 0;
   }
