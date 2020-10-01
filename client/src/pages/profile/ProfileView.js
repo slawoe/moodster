@@ -52,7 +52,7 @@ function Profile() {
               <span>{user.userName}</span>
             </InfoElementWrapper>
             <InfoElementWrapper>
-              <span>Dein Moodster heißt:</span>
+              <span>Moodster-Name:</span>
               <span>{user.moodstername}</span>
             </InfoElementWrapper>
             <Link to="/main/profile/change">Profil bearbeiten...</Link>
