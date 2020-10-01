@@ -68,9 +68,16 @@ function Review({ setForm, formData }) {
     whatCouldBeBetter: formData.whatCouldBeBetter,
     diaryEntry: formData.diaryEntry,
     userID,
-    date: `${date.getUTCFullYear()}/${date.getMonth(
-      +1
-    )}/${date.getUTCDate()} ${date.getHours()}:${date.getMinutes()} Uhr`,
+    date:
+      date.getUTCFullYear() +
+      "/" +
+      ("0" + (date.getMonth() + 1)).slice(-2) +
+      "/" +
+      ("0" + date.getUTCDate()).slice(-2) +
+      " " +
+      ("0" + date.getHours()).slice(-2) +
+      ":" +
+      ("0" + date.getMinutes()).slice(-2),
   };
 
   async function handleSubmit(event) {
