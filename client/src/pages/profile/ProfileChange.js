@@ -12,7 +12,6 @@ function ProfileChange() {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [nickName, setNickName] = useState(null);
-  const [userName, setUserName] = useState(null);
   const [birthDay, setBirthDay] = useState(null);
   const [moodstername, setMoodstername] = useState(null);
   const [loadingUser, setLoadingUser] = useState(false);
@@ -28,7 +27,6 @@ function ProfileChange() {
       setLastName(loadedUser.lastName);
       setNickName(loadedUser.nickName);
       setBirthDay(loadedUser.birthDay);
-      setUserName(loadedUser.userName);
       setMoodstername(loadedUser.moodstername);
       setLoadingUser(true);
     }
@@ -48,10 +46,6 @@ function ProfileChange() {
     setBirthDay(birthDay.target.value);
   }
 
-  function userNameChange(userName) {
-    setUserName(userName.target.value);
-  }
-
   function moodsternameChange(moodstername) {
     setMoodstername(moodstername.target.value);
   }
@@ -61,7 +55,6 @@ function ProfileChange() {
     lastName,
     nickName,
     birthDay,
-    userName,
     moodstername,
   };
 
@@ -116,12 +109,6 @@ function ProfileChange() {
               onChange={birthDayChange}
             />
             <InputFieldChangeData
-              label={"Nutzername:"}
-              name="moodstername"
-              placeholder={userName}
-              onChange={userNameChange}
-            />
-            <InputFieldChangeData
               label={"Moodster-Name:"}
               name="moodstername"
               placeholder={moodstername}
@@ -133,7 +120,6 @@ function ProfileChange() {
                 !lastName ||
                 !nickName ||
                 !birthDay ||
-                !userName ||
                 !moodstername ||
                 loadingUpdate
               }
