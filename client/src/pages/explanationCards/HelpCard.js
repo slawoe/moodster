@@ -18,14 +18,15 @@ const HelpContainer = styled.div`
   & > div:last-child {
     display: flex;
     justify-content: space-between;
-    padding: 1em 0.5em;
+    padding: 1rem 0.5rem;
   }
   & > div:nth-child(2) {
-    padding: 0 1em;
+    padding: 0 1rem;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 `;
 
@@ -39,7 +40,7 @@ function HelpCard() {
       </div>
       <div>
         <p>
-          Hallo,<br></br>
+          Hallo {sessionStorage.nickName},<br></br>
           lass mich dir kurz zeigen wie die App funktioniert. Klick auf den
           Bereich der dich interessiert und ich erzähle dir was sich dahinter
           versteckt. Wenn Du fertig bist klick auf mich und Du kommst zur

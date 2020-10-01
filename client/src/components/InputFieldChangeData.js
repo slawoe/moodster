@@ -9,13 +9,13 @@ const InputFieldWrapper = styled.div`
     background: transparent;
     border: none;
     border-radius: 5px;
-    padding: 0.4em 0.7em;
+    padding: 0.4rem 0;
   }
   & > input {
     border: none;
     border-radius: 5px;
     box-shadow: var(--main-elements-shadow);
-    padding: 0.4em 0.7em;
+    padding: 0.4rem 0.7rem;
     font-family: "Silom";
     color: var(--inputfield-text-color);
     align-self: flex-end;

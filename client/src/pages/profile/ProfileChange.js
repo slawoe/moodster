@@ -109,7 +109,7 @@ function ProfileChange() {
               onChange={birthDayChange}
             />
             <InputFieldChangeData
-              label={"Moodster-Name:"}
+              label={"Moodster:"}
               name="moodstername"
               placeholder={moodstername}
               onChange={moodsternameChange}

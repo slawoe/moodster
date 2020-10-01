@@ -11,16 +11,18 @@ const ReviewCard = styled.div`
   flex-direction: column;
   border: none;
   border-radius: 5px;
-  padding: 1em 1em;
+  margin: 0.5rem 0 0;
+  padding: 1rem;
   grid-area: 2 / 2 / 3 / 3;
   height: 90%;
   & > h2 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
   }
   & > div {
     display: flex;
     flex-direction: column;
-    margin: 1em 0;
+    margin: 1rem 0;
+    text-align: center;
   }
   & a,
   button {
@@ -34,11 +36,21 @@ const ReviewCard = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  & > div > div > span {
+    text-align: left;
+  }
+  & > div > div > a {
+    text-align: right;
+  }
   & > div > span {
     align-self: flex-end;
     width: 100%;
-    padding: 1em 0 0;
+    padding: 1rem 0 0;
     color: var(--text-color-normal);
+    text-align: right;
+  }
+  button:last-child {
+    padding: 1rem;
   }
 `;
 
@@ -110,7 +122,7 @@ function Review({ setForm, formData }) {
         </div>
         <div>
           <div>
-            <span>Dein Tag in eimen Wort:</span>
+            <span>Dein Wort:</span>
             <Link to="/main/questionnaire/dayInOneWord">Bearbeiten...</Link>
           </div>
           <span>{formData.dayInOneWord}</span>
@@ -133,7 +145,7 @@ function Review({ setForm, formData }) {
         </div>
         <div>
           <div>
-            <span>Dein Tagebucheintrag:</span>
+            <span>Tagebucheintrag:</span>
             <Link to="/main/questionnaire/diaryEntry">Bearbeiten...</Link>
           </div>
           <span>{formData.diaryEntry}</span>

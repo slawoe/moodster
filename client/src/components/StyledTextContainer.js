@@ -10,38 +10,38 @@ const StyledTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   & > h1 {
-    font-size: 1.4em;
-    padding: 0.6em;
+    font-size: 1.4rem;
+    padding: 1rem;
     margin: 0px;
   }
   & > h2 {
-    font-size: 1em;
-    padding: 0.5em 1em 0;
+    font-size: 1rem;
+    padding: 1rem 1rem 0;
     margin: 0px;
   }
   & > p,
   & > div > p {
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     margin: 0;
     display: flex;
     flex-direction: column;
   }
   & > p > a {
     color: var(--button-proceed-color);
-    padding: 0.5em 1em;
+    padding: 0.5rem;
     align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
   & > p > img {
-    padding: 1em;
+    padding: 1rem;
   }
   & > div {
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
   }
   & > a {
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     color: var(--button-proceed-color);
     align-self: flex-end;
   }

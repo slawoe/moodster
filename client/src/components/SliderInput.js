@@ -12,15 +12,15 @@ const SliderInputFieldWrapper = styled.div`
     background-color: var(--card-background-color);
     border: none;
     border-radius: 5px;
-    padding: 0.4em 0.7em;
-    margin: 0.4em 0;
+    padding: 0.4rem 0.7rem;
+    margin: 0.4rem 0;
     width: 70%;
     box-shadow: var(--main-elements-shadow);
   }
   & > div {
     align-self: flex-end;
     width: 100%;
-    padding: 1em 0.7em;
+    padding: 1rem 0.7rem;
   }
   & > div > input {
     width: 100%;
@@ -29,7 +29,7 @@ const SliderInputFieldWrapper = styled.div`
   & > div > div {
     display: flex;
     justify-content: space-between;
-    padding: 1em 0.7em;
+    padding: 1rem 0.7rem;
   }
 `;
 

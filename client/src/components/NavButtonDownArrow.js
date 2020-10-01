@@ -12,7 +12,7 @@ const ButtonWrapper = styled.button`
   background: transparent;
   color: var(--text-color-normal);
   & > span {
-    font-size: 0.7em;
+    font-size: 0.7rem;
   }
 `;
 

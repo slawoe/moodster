@@ -9,7 +9,7 @@ function Links() {
       childrenmainsection={
         <>
           <StyledTextContainer>
-            <h1>Nützliche Nummer und Links</h1>
+            <h1>Nützliche Anlaufstellen</h1>
           </StyledTextContainer>
           <StyledTextContainer>
             <h2>Nummer gegen Kummer</h2>

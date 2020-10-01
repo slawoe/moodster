@@ -9,7 +9,7 @@ const DiaryListItem = styled.div`
   box-shadow: var(--main-elements-shadow);
   border-radius: 5px;
   margin: 10px 0;
-  padding: 0.4em 0.7em 0;
+  padding: 0.4rem 0.7rem 0;
   display: flex;
   flex-direction: column;
 `;
@@ -17,14 +17,17 @@ const DiaryListItem = styled.div`
 const MainCardDiv = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 `;
 
 const HeaderDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-bottom: 0.4em;
+  padding-bottom: 0.4rem;
   color: var(--text-color-attention);
+  & > div {
+    padding: 0.5rem;
+  }
   & > div > button {
     border: none;
     background: transparent;
@@ -33,15 +36,16 @@ const HeaderDiv = styled.div`
 `;
 
 const CollapsingDiv = styled.div`
+  padding: 0 0.5rem;
   & > div:last-child {
-    padding: 0 0 0.5em;
+    padding: 0 0 0.5rem;
   }
 `;
 
 const DetailsInfoElement = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 1.5em;
+  padding-bottom: 1.5rem;
   & > span:first-child {
     padding-bottom: 0.4em;
     color: var(--text-color-attention);
@@ -80,7 +84,7 @@ function DiaryListElement({
             <span>{mood} von 10</span>
           </InfoElementWrapper>
           <InfoElementWrapper>
-            <span>Dein Tag in einem Wort:</span>
+            <span>Dein Wort:</span>
             <span>{dayInOneWord}</span>
           </InfoElementWrapper>
         </div>
@@ -89,11 +93,11 @@ function DiaryListElement({
         {open && (
           <>
             <DetailsInfoElement>
-              <span>WAS LIEF BESONDERS GUT:</span>
+              <span>LIEF BESONDERS GUT:</span>
               <span>{whatWasGood}</span>
             </DetailsInfoElement>
             <DetailsInfoElement>
-              <span>WAS HÄTTE BESSER LAUFEN KÖNNEN:</span>
+              <span>HÄTTE BESSER LAUFEN KÖNNEN:</span>
               <span>{whatCouldBeBetter}</span>
             </DetailsInfoElement>
             <DetailsInfoElement>

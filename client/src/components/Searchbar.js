@@ -16,13 +16,13 @@ const SearchbarWrapper = styled.div`
     border: 2px var(--inputfield-attention-color) solid;
     height: 80%;
     width: 55%;
-    margin: 0.5em;
-    padding: 0.5em;
+    margin: 0.5rem;
+    padding: 0.5rem;
     border-radius: 5px;
     color: var(--text-color-attention);
   }
   & > img {
-    margin: 0.5em;
+    margin: 0.5rem;
   }
 `;
 

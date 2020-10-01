@@ -13,17 +13,18 @@ const ExplanationWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   & > div > h1 {
-    font-size: 1.4em;
-    padding: 0.6em;
+    font-size: 1.4rem;
+    padding: 1rem;
     margin: 0px;
   }
   & > div > p {
-    padding: 1em;
+    padding: 1rem;
     margin: 0;
   }
   & > div:last-child {
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem;
   }
 `;
 

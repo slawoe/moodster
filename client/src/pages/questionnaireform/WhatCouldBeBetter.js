@@ -21,7 +21,7 @@ function WhatCouldBeBetter({ setForm, formData }) {
       </div>
       <div>
         <InputFieldTextArea
-          label="Wie hätte besser laufen können?"
+          label="Was hätte besser laufen können?"
           name="whatCouldBeBetter"
           value={whatCouldBeBetter}
           placeholder="Das hätte besser laufen können..."

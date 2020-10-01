@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const InfoElementWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0.5em 0;
+  padding: 0.5rem 0.5rem;
   & :first-child {
     width: 50%;
   }

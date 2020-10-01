@@ -10,7 +10,7 @@ const LoginWrapper = styled.div`
   grid-template-rows: 20% 32% 38% 10%;
   justify-items: center;
   & > h1 {
-    font-size: 3em;
+    font-size: 3rem;
   }
   & > div {
     display: flex;
@@ -22,11 +22,11 @@ const LoginWrapper = styled.div`
     box-shadow: var(--main-elements-shadow);
     color: var(--inputfield-text-color);
     font-family: "Silom";
-    padding: 0.5em 0.5em;
+    padding: 0.5rem 0.5rem;
   }
   & div > span {
-    padding: 0.4em 0;
-    font-size: 1.25em;
+    padding: 0.4rem 0;
+    font-size: 1.25rem;
   }
   & div > button {
     align-self: center;
@@ -36,15 +36,15 @@ const LoginWrapper = styled.div`
     box-shadow: var(--main-elements-shadow);
     font-family: "Silom";
     color: var(--inputfield-text-color);
-    width: 6em;
-    height: 2em;
-    font-size: 1.25em;
-    margin-top: 0.5em;
+    width: 6rem;
+    height: 2rem;
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
   }
   & > a {
     color: var(--inputfield-text-color);
     align-content: center;
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
 `;
 
