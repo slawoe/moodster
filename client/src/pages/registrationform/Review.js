@@ -20,7 +20,7 @@ const ReviewCard = styled.div`
     color: var(--text-color-attention);
     text-align: center;
   }
-  & > div > div:first-child > span:first-child {
+  & > div > div:first-of-type > span:first-of-type {
     color: var(--text-color-attention);
   }
   & > div > div > a,

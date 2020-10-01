@@ -37,7 +37,7 @@ const HeaderDiv = styled.div`
 
 const CollapsingDiv = styled.div`
   padding: 0 0.5rem;
-  & > div:last-child {
+  & > div:last-of-type {
     padding: 0 0 0.5rem;
   }
 `;
@@ -46,7 +46,7 @@ const DetailsInfoElement = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 1.5rem;
-  & > span:first-child {
+  & > span:first-of-type {
     padding-bottom: 0.4em;
     color: var(--text-color-attention);
   }

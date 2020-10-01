@@ -21,7 +21,7 @@ const ExplanationWrapper = styled.div`
     padding: 1rem;
     margin: 0;
   }
-  & > div:last-child {
+  & > div:last-of-type {
     display: flex;
     justify-content: space-between;
     padding: 0.5rem;

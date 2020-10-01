@@ -14,13 +14,13 @@ const HelpContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  & > div:first-child,
-  & > div:last-child {
+  & > div:first-of-type,
+  & > div:last-of-type {
     display: flex;
     justify-content: space-between;
     padding: 1rem 0.5rem;
   }
-  & > div:nth-child(2) {
+  & > div:nth-of-type(2) {
     padding: 0 1rem;
     margin: 0;
     display: flex;

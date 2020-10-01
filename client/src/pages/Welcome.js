@@ -38,10 +38,10 @@ function Welcome({ children }) {
             </p>
             <p>
               <Link to="/main/help">
-                <p>
+                <span>
                   Wenn ich dir erklären soll, wie die App funktioniert, klick
                   einfach auf mich drauf.
-                </p>
+                </span>
                 <img src={Moodster} alt="Logo" />
               </Link>
             </p>

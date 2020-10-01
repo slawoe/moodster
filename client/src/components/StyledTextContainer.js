@@ -12,12 +12,12 @@ const StyledTextContainer = styled.div`
   & > h1 {
     font-size: 1.4rem;
     padding: 1rem;
-    margin: 0px;
+    margin: 0;
   }
   & > h2 {
     font-size: 1rem;
     padding: 1rem 1rem 0;
-    margin: 0px;
+    margin: 0;
   }
   & > p,
   & > div > p {

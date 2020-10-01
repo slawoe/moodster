@@ -13,8 +13,8 @@ const DoctorsListWrapper = styled.div`
   padding: 0.4rem 0.7rem;
   display: flex;
   flex-direction: column;
-  & div:last-child,
-  & div:last-child > a {
+  & div:last-of-type,
+  & div:last-of-type > a {
     align-self: flex-end;
     padding: 1rem 0;
     color: var(--button-proceed-color);

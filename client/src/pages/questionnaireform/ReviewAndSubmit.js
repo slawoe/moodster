@@ -49,7 +49,7 @@ const ReviewCard = styled.div`
     color: var(--text-color-normal);
     text-align: right;
   }
-  button:last-child {
+  button:last-of-type {
     padding: 1rem;
   }
 `;
