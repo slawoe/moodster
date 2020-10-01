@@ -12,6 +12,7 @@ import DiaryList from "../pages/DiaryList";
 import Doctors from "./Doctors";
 import Medics from "./Medics";
 import Profile from "./Profile";
+import Analysis from "./Analysis";
 
 function Home() {
   const { path } = useRouteMatch();
@@ -26,7 +27,9 @@ function Home() {
           <Route path={`${path}/medics`}>
             <Medics />
           </Route>
-          <Route path={`${path}/analysis`}></Route>
+          <Route path={`${path}/analysis`}>
+            <Analysis />
+          </Route>
           <Route path={`${path}/doctors`}>
             <Doctors />
           </Route>
@@ -43,7 +46,7 @@ function Home() {
             <About />
           </Route>
           <Route path={`${path}/questionnaire`}>
-            <DiaryForm></DiaryForm>
+            <DiaryForm />
           </Route>
           <Route exact path={`${path}/`}>
             <Welcome />

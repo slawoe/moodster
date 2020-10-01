@@ -21,6 +21,7 @@ const SideDrawer = styled.nav`
   position: absolute;
   transition: transform 0.5s ease-in-out;
   background-color: var(--navigation-main-color);
+  z-index: 1;
   top: 10.25vh;
   right: 0;
   border: none;

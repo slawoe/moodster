@@ -64,6 +64,9 @@ const GlobalStyles = () => {
         a {
           text-decoration: none;
         }
+        tspan {
+          font-size: 0.5rem;
+        }
       `}
     />
   );

@@ -17,3 +17,14 @@ export async function fetchDiaryEntries(userID) {
   const result = await response.json();
   return result;
 }
+
+export async function fetchLastDiaryEntries(userID) {
+  const response = await fetch(
+    `/api/diary?userID=${userID}&_sort=date&_order=desc&limit=14`
+  );
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const result = await response.json();
+  return result;
+}
