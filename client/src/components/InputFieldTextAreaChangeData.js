@@ -26,7 +26,7 @@ const InputFieldWrapper = styled.div`
   }
 `;
 
-function InputField({ label, type = "text", ...otherProps }) {
+function InputFieldTextAreaChangeData({ label, type = "text", ...otherProps }) {
   return (
     <InputFieldWrapper>
       <label>{label}</label>
@@ -35,9 +35,9 @@ function InputField({ label, type = "text", ...otherProps }) {
   );
 }
 
-export default InputField;
+export default InputFieldTextAreaChangeData;
 
-InputField.propTypes = {
+InputFieldTextAreaChangeData.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
 };
