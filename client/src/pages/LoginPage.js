@@ -50,24 +50,27 @@ const LoginWrapper = styled.div`
 
 function LoginPage() {
   const history = useHistory();
-  const [userName, setUserName] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [user, setUser] = useState({
+    userName: "",
+    password: "",
+  });
   const [error, setError] = useState(false);
 
-  function userNameChange(userName) {
-    setUserName(userName.target.value);
-  }
-  function passwordChange(password) {
-    setPassword(password.target.value);
+  function handleChange(event) {
+    const value = event.target.value;
+    setUser({ ...user, [event.target.name]: value });
   }
 
   async function Login() {
-    const newUser = await fetchUserLogin(userName);
+    const newUser = await fetchUserLogin(user.userName);
     if (!newUser) {
       setError(true);
       return;
     }
-    if (password !== newUser.password || userName !== newUser.userName) {
+    if (
+      user.password !== newUser.password ||
+      user.userName !== newUser.userName
+    ) {
       setError(true);
     } else {
       sessionStorage.userID = newUser._id;
@@ -84,14 +87,14 @@ function LoginPage() {
         <input
           name="userName"
           placeholder="max.mustermann"
-          onChange={userNameChange}
+          onChange={handleChange}
         />
         <span>Benutzername</span>
         <input
           type="password"
           name="password"
           placeholder="Passwort"
-          onChange={passwordChange}
+          onChange={handleChange}
         />
         <span>Passwort</span>
         <button type="submit" onClick={Login}>

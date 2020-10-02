@@ -11,52 +11,31 @@ import { useHistory, useParams } from "react-router-dom";
 
 function MedicsChange() {
   const history = useHistory();
-  const [name, setName] = useState("");
-  const [intakeMorning, setIntakeMorning] = useState("");
-  const [intakeMidday, setIntakeMidday] = useState("");
-  const [intakeEvening, setIntakeEvening] = useState("");
-  const [intakeNight, setIntakeNight] = useState("");
-  const [loadingMedic, setLoadingMedic] = useState(false);
+  const [updatedMedic, setUpdatedMedic] = useState({
+    name: "",
+    intakeMorning: "",
+    intakeMidday: "",
+    intakeEvening: "",
+    intakeNight: "",
+  });
+  const [loadingMedic, setLoadingMedic] = useState(true);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [error, setError] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     async function showMedic() {
-      const newMedic = await fetchMedic(id);
-      setName(newMedic.name);
-      setIntakeMorning(newMedic.intakeMorning);
-      setIntakeMidday(newMedic.intakeMidday);
-      setIntakeEvening(newMedic.intakeEvening);
-      setIntakeNight(newMedic.intakeNight);
-      setLoadingMedic(true);
+      const updatedMedic = await fetchMedic(id);
+      setUpdatedMedic(updatedMedic);
+      setLoadingMedic(false);
     }
     showMedic();
   }, [id]);
 
-  function nameChange(name) {
-    setName(name.target.value);
+  function handleChange(event) {
+    const value = event.target.value;
+    setUpdatedMedic({ ...updatedMedic, [event.target.name]: value });
   }
-  function intakeMorningChange(intakeMorning) {
-    setIntakeMorning(intakeMorning.target.value);
-  }
-  function intakeMiddayChange(intakeMidday) {
-    setIntakeMidday(intakeMidday.target.value);
-  }
-  function intakeEveningChange(intakeEvening) {
-    setIntakeEvening(intakeEvening.target.value);
-  }
-  function intakeNightChange(intakeNight) {
-    setIntakeNight(intakeNight.target.value);
-  }
-
-  const updatedMedic = {
-    name,
-    intakeMorning,
-    intakeMidday,
-    intakeEvening,
-    intakeNight,
-  };
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -73,7 +52,7 @@ function MedicsChange() {
     }
   }
 
-  if (!loadingMedic) {
+  if (loadingMedic) {
     return <LoadingPage />;
   }
   return (
@@ -84,32 +63,32 @@ function MedicsChange() {
           <InputFieldChangeData
             label="Name:"
             name="name"
-            placeholder={name}
-            onChange={nameChange}
+            value={updatedMedic.name}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Morgens:"
             name="intakeMorning"
-            placeholder={intakeMorning}
-            onChange={intakeMorningChange}
+            value={updatedMedic.intakeMorning}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Mittags:"
             name="intakeMidday"
-            placeholder={intakeMidday}
-            onChange={intakeMiddayChange}
+            value={updatedMedic.intakeMidday}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Abends:"
             name="intakeEvening"
-            placeholder={intakeEvening}
-            onChange={intakeEveningChange}
+            value={updatedMedic.intakeEvening}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Nachts:"
             name="intakeNight"
-            placeholder={intakeNight}
-            onChange={intakeNightChange}
+            value={updatedMedic.intakeNight}
+            onChange={handleChange}
           />
           <DeleteAndSaveButtonWrapper>
             <DeleteButton
@@ -121,14 +100,7 @@ function MedicsChange() {
             />
             {error && <p>Something bad happened. Please try again.</p>}
             <SaveButton
-              disabled={
-                !name ||
-                !intakeMorning ||
-                !intakeMidday ||
-                !intakeEvening ||
-                !intakeNight ||
-                loadingUpdate
-              }
+              disabled={!updatedMedic || loadingUpdate}
               type="submit"
               onClick={handleSubmit}
             />

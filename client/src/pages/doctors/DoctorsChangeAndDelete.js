@@ -12,64 +12,33 @@ import LoadingPage from "../LoadingPage";
 
 function DoctorsChange() {
   const history = useHistory();
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [street, setStreet] = useState(null);
-  const [zipAndLocation, setZipAndLocation] = useState(null);
-  const [phone, setPhone] = useState(null);
-  const [mail, setMail] = useState(null);
-  const [officeHours, setOfficeHours] = useState(null);
-  const [loadingDoctor, setLoadingDoctor] = useState(false);
+  const [updatedDoctor, setUpdatedDoctor] = useState({
+    firstName: "",
+    lastName: "",
+    street: "",
+    zipAndLocation: "",
+    phone: "",
+    mail: "",
+    officeHours: "",
+  });
+  const [loadingDoctor, setLoadingDoctor] = useState(true);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [error, setError] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     async function showDoctor() {
-      const newDoctor = await fetchDoctor(id);
-      setFirstName(newDoctor.firstName);
-      setLastName(newDoctor.lastName);
-      setStreet(newDoctor.street);
-      setZipAndLocation(newDoctor.zipAndLocation);
-      setPhone(newDoctor.phone);
-      setMail(newDoctor.mail);
-      setOfficeHours(newDoctor.officeHours);
-      setLoadingDoctor(true);
+      const updatedDoctor = await fetchDoctor(id);
+      setUpdatedDoctor(updatedDoctor);
+      setLoadingDoctor(false);
     }
     showDoctor();
   }, [id]);
 
-  function firstNameChange(firstName) {
-    setFirstName(firstName.target.value);
+  function handleChange(event) {
+    const value = event.target.value;
+    setUpdatedDoctor({ ...updatedDoctor, [event.target.name]: value });
   }
-  function lastNameChange(lastName) {
-    setLastName(lastName.target.value);
-  }
-  function streetChange(street) {
-    setStreet(street.target.value);
-  }
-  function zipAndLocationChange(zipAndLocation) {
-    setZipAndLocation(zipAndLocation.target.value);
-  }
-  function phoneChange(phone) {
-    setPhone(phone.target.value);
-  }
-  function mailChange(mail) {
-    setMail(mail.target.value);
-  }
-  function officeHoursChange(officeHours) {
-    setOfficeHours(officeHours.target.value);
-  }
-
-  const updatedDoctor = {
-    firstName,
-    lastName,
-    street,
-    zipAndLocation,
-    phone,
-    mail,
-    officeHours,
-  };
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -86,7 +55,7 @@ function DoctorsChange() {
     }
   }
 
-  if (!loadingDoctor) {
+  if (loadingDoctor) {
     return <LoadingPage />;
   }
   return (
@@ -97,44 +66,44 @@ function DoctorsChange() {
           <InputFieldChangeData
             label="Vorname:"
             name="firstName"
-            placeholder={firstName}
-            onChange={firstNameChange}
+            value={updatedDoctor.firstName}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Nachname:"
             name="lastName"
-            placeholder={lastName}
-            onChange={lastNameChange}
+            value={updatedDoctor.lastName}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Straße:"
             name="street"
-            placeholder={street}
-            onChange={streetChange}
+            value={updatedDoctor.street}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="PLZ und Ort:"
             name="zipAndLocation"
-            placeholder={zipAndLocation}
-            onChange={zipAndLocationChange}
+            value={updatedDoctor.zipAndLocation}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Telefon:"
             name="phone"
-            placeholder={phone}
-            onChange={phoneChange}
+            value={updatedDoctor.phone}
+            onChange={handleChange}
           />
           <InputFieldChangeData
             label="Mail:"
             name="mail"
-            placeholder={mail}
-            onChange={mailChange}
+            value={updatedDoctor.mail}
+            onChange={handleChange}
           />
           <InputFieldTextAraChangeData
             label="Sprechzeiten:"
             name="officeHours"
-            placeholder={officeHours}
-            onChange={officeHoursChange}
+            value={updatedDoctor.officeHours}
+            onChange={handleChange}
           />
           <DeleteAndSaveButtonWrapper>
             <DeleteButton
@@ -146,16 +115,7 @@ function DoctorsChange() {
             />
             {error && <p>Something bad happened. Please try again.</p>}
             <SaveButton
-              disabled={
-                !firstName ||
-                !lastName ||
-                !street ||
-                !zipAndLocation ||
-                !phone ||
-                !mail ||
-                !officeHours ||
-                loadingUpdate
-              }
+              disabled={!updatedDoctor || loadingUpdate}
               type="submit"
               onClick={handleSubmit}
             />
