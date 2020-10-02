@@ -7,7 +7,7 @@ import Loading from "./LoadingPage";
 
 function DiaryList() {
   const [diaryEntries, setDiaryEntries] = useState(null);
-  const [isLoading, setIsLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const userID = sessionStorage.getItem("userID");
 
@@ -15,7 +15,7 @@ function DiaryList() {
     async function showDiaryEntries() {
       const newDiaryEntries = await fetchDiaryEntries(userID);
       setDiaryEntries(newDiaryEntries);
-      setIsLoaded(true);
+      setLoading(false);
     }
     showDiaryEntries();
   }, [userID]);
@@ -24,7 +24,7 @@ function DiaryList() {
     return entries.date.startsWith(query);
   });
 
-  if (!isLoading) {
+  if (loading) {
     return <Loading />;
   }
   return (

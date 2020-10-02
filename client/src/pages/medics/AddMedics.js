@@ -7,39 +7,22 @@ import { useHistory } from "react-router-dom";
 
 function AddMedics() {
   const history = useHistory();
-  const [name, setName] = useState("");
-  const [intakeMorning, setIntakeMorning] = useState("");
-  const [intakeMidday, setIntakeMidday] = useState("");
-  const [intakeEvening, setIntakeEvening] = useState("");
-  const [intakeNight, setIntakeNight] = useState("");
+  const userID = sessionStorage.getItem("userID");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const userID = sessionStorage.getItem("userID");
-
-  function nameChange(name) {
-    setName(name.target.value);
-  }
-  function intakeMorningChange(intakeMorning) {
-    setIntakeMorning(intakeMorning.target.value);
-  }
-  function intakeMiddayChange(intakeMidday) {
-    setIntakeMidday(intakeMidday.target.value);
-  }
-  function intakeEveningChange(intakeEvening) {
-    setIntakeEvening(intakeEvening.target.value);
-  }
-  function intakeNightChange(intakeNight) {
-    setIntakeNight(intakeNight.target.value);
-  }
-
-  const newMedic = {
-    name,
-    intakeMorning,
-    intakeMidday,
-    intakeEvening,
-    intakeNight,
+  const [newMedic, setNewMedic] = useState({
+    name: "",
+    intakeMorning: "",
+    intakeMidday: "",
+    intakeEvening: "",
+    intakeNight: "",
     userID,
-  };
+  });
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setNewMedic({ ...newMedic, [event.target.name]: value });
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -64,48 +47,42 @@ function AddMedics() {
           <InputField
             label="Medikamenten-Name:"
             name="name"
-            value={name}
+            value={newMedic.name}
             placeholder="Medikamenten-Name"
-            onChange={nameChange}
+            onChange={handleChange}
           />
           <InputField
             label="Einnahme morgens:"
             name="intakeMorning"
-            value={intakeMorning}
+            value={newMedic.intakeMorning}
             placeholder="10mg 08:00 Uhr"
-            onChange={intakeMorningChange}
+            onChange={handleChange}
           />
           <InputField
             label="Einnahme mittags:"
             name="intakeMidday"
-            value={intakeMidday}
+            value={newMedic.intakeMidday}
             placeholder="5mg 12:00 Uhr"
-            onChange={intakeMiddayChange}
+            onChange={handleChange}
           />
           <InputField
             label="Einnahme abends:"
             name="intakeEvening"
-            value={intakeEvening}
+            value={newMedic.intakeEvening}
             placeholder="10mg 18:00 Uhr"
-            onChange={intakeEveningChange}
+            onChange={handleChange}
           />
           <InputField
             label="Einnahme nachts:"
             name="intakeNight"
-            value={intakeNight}
+            value={newMedic.intakeNight}
             placeholder="5mg 22:00 Uhr"
-            onChange={intakeNightChange}
+            onChange={handleChange}
           />
 
           <SaveButton
             type="submit"
-            disabled={
-              !name ||
-              !intakeMorning ||
-              !intakeMidday ||
-              !intakeEvening ||
-              !intakeNight | loading
-            }
+            disabled={!newMedic || loading}
             onClick={handleSubmit}
           />
           {error && <p>Something bad happened. Please try again.</p>}

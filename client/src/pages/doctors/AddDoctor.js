@@ -8,49 +8,24 @@ import { useHistory } from "react-router-dom";
 
 function AddDoctor() {
   const history = useHistory();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [street, setStreet] = useState("");
-  const [zipAndLocation, setZipAndLocation] = useState("");
-  const [phone, setPhone] = useState("");
-  const [mail, setMail] = useState("");
-  const [officeHours, setOfficeHours] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const userID = sessionStorage.getItem("userID");
-
-  function firstNameChange(firstName) {
-    setFirstName(firstName.target.value);
-  }
-  function lastNameChange(lastName) {
-    setLastName(lastName.target.value);
-  }
-  function streetChange(street) {
-    setStreet(street.target.value);
-  }
-  function zipAndLocationChange(zipAndLocation) {
-    setZipAndLocation(zipAndLocation.target.value);
-  }
-  function phoneChange(phone) {
-    setPhone(phone.target.value);
-  }
-  function mailChange(mail) {
-    setMail(mail.target.value);
-  }
-  function officeHoursChange(officeHours) {
-    setOfficeHours(officeHours.target.value);
-  }
-
-  const newDoctor = {
-    firstName,
-    lastName,
-    street,
-    zipAndLocation,
-    phone,
-    mail,
-    officeHours,
+  const [newDoctor, setNewDoctor] = useState({
+    firstName: "",
+    lastName: "",
+    street: "",
+    zipAndLocation: "",
+    phone: "",
+    mail: "",
+    officeHours: "",
     userID,
-  };
+  });
+
+  function handleChange(event) {
+    const value = event.target.value;
+    setNewDoctor({ ...newDoctor, [event.target.name]: value });
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -75,63 +50,54 @@ function AddDoctor() {
           <InputField
             label="Vorname:"
             name="firstName"
-            value={firstName}
+            value={newDoctor.firstName}
             placeholder="Heinz"
-            onChange={firstNameChange}
+            onChange={handleChange}
           />
           <InputField
             label="Nachname:"
             name="lastName"
-            value={lastName}
+            value={newDoctor.lastName}
             placeholder="Müller"
-            onChange={lastNameChange}
+            onChange={handleChange}
           />
           <InputField
             label="Straße:"
             name="street"
-            value={street}
+            value={newDoctor.street}
             placeholder="Lindenstraße 10"
-            onChange={streetChange}
+            onChange={handleChange}
           />
           <InputField
             label="PLZ und Ort:"
             name="zipAndLocation"
-            value={zipAndLocation}
+            value={newDoctor.zipAndLocation}
             placeholder="12345 Berlin"
-            onChange={zipAndLocationChange}
+            onChange={handleChange}
           />
           <InputField
             label="Telefon:"
             name="phone"
-            value={phone}
+            value={newDoctor.phone}
             placeholder="0123456789"
-            onChange={phoneChange}
+            onChange={handleChange}
           />
           <InputField
             label="Mail:"
             name="mail"
-            value={mail}
+            value={newDoctor.mail}
             placeholder="test@test.de"
-            onChange={mailChange}
+            onChange={handleChange}
           />
           <InputFieldTextArea
             label="Sprechzeiten:"
             name="officeHours"
-            value={officeHours}
+            value={newDoctor.officeHours}
             placeholder="Mo-Fr 10-18 Uhr"
-            onChange={officeHoursChange}
+            onChange={handleChange}
           />
           <SaveButton
-            disabled={
-              !firstName ||
-              !lastName ||
-              !street ||
-              !zipAndLocation ||
-              !phone ||
-              !mail ||
-              !officeHours ||
-              loading
-            }
+            disabled={!newDoctor || loading}
             type="submit"
             onClick={handleSubmit}
           />

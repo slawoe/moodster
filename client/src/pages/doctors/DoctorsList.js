@@ -10,7 +10,7 @@ import Loading from "../../pages/LoadingPage";
 
 function Doctors() {
   const [doctors, setDoctors] = useState(null);
-  const [isLoading, setIsLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
   const userID = sessionStorage.getItem("userID");
 
@@ -18,7 +18,7 @@ function Doctors() {
     async function showDoctors() {
       const newDoctors = await fetchDoctors(userID);
       setDoctors(newDoctors);
-      setIsLoaded(true);
+      setLoading(false);
     }
     showDoctors();
   }, [userID]);
@@ -27,7 +27,7 @@ function Doctors() {
     return doctor.lastName.startsWith(query);
   });
 
-  if (!isLoading) {
+  if (loading) {
     return <Loading />;
   }
   return (

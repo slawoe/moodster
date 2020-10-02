@@ -9,54 +9,32 @@ import Loading from "../LoadingPage";
 
 function ProfileChange() {
   const history = useHistory();
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [nickName, setNickName] = useState(null);
-  const [birthDay, setBirthDay] = useState(null);
-  const [moodsterName, setmoodsterName] = useState(null);
-  const [loadingUser, setLoadingUser] = useState(false);
+  const [updatedUser, setUpdatedUser] = useState({
+    firstName: "",
+    lastName: "",
+    nickName: "",
+    birthDay: "",
+    moodsterName: "",
+  });
+  const [loadingUser, setLoadingUser] = useState(true);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [error, setError] = useState(false);
 
   useEffect(() => {
     async function showUser() {
-      const loadedUser = await fetchUserProfile(
+      const updatedUser = await fetchUserProfile(
         sessionStorage.getItem("userID")
       );
-      setFirstName(loadedUser.firstName);
-      setLastName(loadedUser.lastName);
-      setNickName(loadedUser.nickName);
-      setBirthDay(loadedUser.birthDay);
-      setmoodsterName(loadedUser.moodsterName);
-      setLoadingUser(true);
+      setUpdatedUser(updatedUser);
+      setLoadingUser(false);
     }
     showUser();
   }, []);
 
-  function firstNameChange(firstName) {
-    setFirstName(firstName.target.value);
+  function handleChange(event) {
+    const value = event.target.value;
+    setUpdatedUser({ ...updatedUser, [event.target.name]: value });
   }
-  function lastNameChange(lastName) {
-    setLastName(lastName.target.value);
-  }
-  function nickNameChange(nickName) {
-    setNickName(nickName.target.value);
-  }
-  function birthDayChange(birthDay) {
-    setBirthDay(birthDay.target.value);
-  }
-
-  function moodsterNameChange(moodsterName) {
-    setmoodsterName(moodsterName.target.value);
-  }
-
-  const updatedUser = {
-    firstName,
-    lastName,
-    nickName,
-    birthDay,
-    moodsterName,
-  };
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -74,7 +52,7 @@ function ProfileChange() {
     }
   }
 
-  if (!loadingUser) {
+  if (loadingUser) {
     return <Loading />;
   }
   return (
@@ -86,42 +64,35 @@ function ProfileChange() {
             <InputFieldChangeData
               label={"Vorname:"}
               name="firstName"
-              placeholder={firstName}
-              onChange={firstNameChange}
+              value={updatedUser.firstName}
+              onChange={handleChange}
             />
             <InputFieldChangeData
               label={"Nachname:"}
               name="lastName"
-              placeholder={lastName}
-              onChange={lastNameChange}
+              value={updatedUser.lastName}
+              onChange={handleChange}
             />
             <InputFieldChangeData
               label={"Spitzname:"}
               name="nickName"
-              placeholder={nickName}
-              onChange={nickNameChange}
+              value={updatedUser.nickName}
+              onChange={handleChange}
             />
             <InputFieldChangeData
               label={"Geburtsdatum:"}
               name="birthDay"
-              placeholder={birthDay}
-              onChange={birthDayChange}
+              value={updatedUser.birthDay}
+              onChange={handleChange}
             />
             <InputFieldChangeData
               label={"Moodster:"}
               name="moodsterName"
-              placeholder={moodsterName}
-              onChange={moodsterNameChange}
+              value={updatedUser.moodsterName}
+              onChange={handleChange}
             />
             <SaveButton
-              disabled={
-                !firstName ||
-                !lastName ||
-                !nickName ||
-                !birthDay ||
-                !moodsterName ||
-                loadingUpdate
-              }
+              disabled={!updatedUser || loadingUpdate}
               type="submit"
               onClick={handleSubmit}
             />

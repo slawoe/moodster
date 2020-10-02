@@ -8,7 +8,7 @@ import Loading from "../LoadingPage";
 
 function Profile() {
   const [user, setUser] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function showUser() {
@@ -16,12 +16,12 @@ function Profile() {
         sessionStorage.getItem("userID")
       );
       setUser(loadedUser);
-      setLoading(true);
+      setLoading(false);
     }
     showUser();
   }, []);
 
-  if (!loading) {
+  if (loading) {
     return <Loading />;
   }
   return (
