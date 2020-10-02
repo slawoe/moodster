@@ -91,7 +91,7 @@ function DoctorsChange() {
   }
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <StyledTextContainer>
           <h1>Deinen Arzt bearbeiten</h1>
           <InputFieldChangeData

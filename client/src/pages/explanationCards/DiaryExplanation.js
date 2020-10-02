@@ -7,7 +7,7 @@ function DiaryExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <ExplanationContent
             h1="Tagebuch"

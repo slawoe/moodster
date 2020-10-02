@@ -7,7 +7,7 @@ function QuestionnaireExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <ExplanationContent
             h1="Fragen"

@@ -8,7 +8,7 @@ import BasicTextCard from "../../components/BasicTextCard";
 import { Link } from "react-router-dom";
 
 function Moodster({ setForm, formData }) {
-  const { moodstername } = formData;
+  const { moodsterName } = formData;
 
   return (
     <FormPageWrapper>
@@ -23,8 +23,8 @@ function Moodster({ setForm, formData }) {
       <div>
         <InputField
           label="Wie soll ich heißen?"
-          name="moodstername"
-          value={moodstername}
+          name="moodsterName"
+          value={moodsterName}
           placeholder="Moody"
           onChange={setForm}
         />

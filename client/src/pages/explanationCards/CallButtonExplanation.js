@@ -7,7 +7,7 @@ function CallButtonExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <ExplanationContent
             h1="Notruf"

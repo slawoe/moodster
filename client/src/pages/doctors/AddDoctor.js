@@ -69,7 +69,7 @@ function AddDoctor() {
 
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <h2>Arzt hinzufügen</h2>
           <InputField

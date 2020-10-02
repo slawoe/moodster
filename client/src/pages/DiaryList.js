@@ -29,7 +29,7 @@ function DiaryList() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={
+      childrenHeadSection={
         <>
           <Searchbar
             placeholder="Tagebucheintrag suchen"
@@ -38,7 +38,7 @@ function DiaryList() {
           />
         </>
       }
-      childrenmainsection={
+      childrenMainSection={
         <>
           {filteredDiary?.map((diaryEntry) => (
             <DiaryListElement

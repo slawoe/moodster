@@ -26,7 +26,7 @@ function Profile() {
   }
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <h1>Dein Profil</h1>
@@ -52,7 +52,7 @@ function Profile() {
             </InfoElementWrapper>
             <InfoElementWrapper>
               <span>Moodster:</span>
-              <span>{user.moodstername}</span>
+              <span>{user.moodsterName}</span>
             </InfoElementWrapper>
             <Link to="/main/profile/change">Profil bearbeiten...</Link>
           </StyledTextContainer>

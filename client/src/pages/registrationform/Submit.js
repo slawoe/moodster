@@ -71,7 +71,7 @@ function Submit({ setForm, formData }) {
     <SubmitCard>
       <p>
         Danke {formData.nickName}! Wenn Du jetzt die Anmeldung abschickst,
-        kümmert sich {formData.moodstername} um alles weitere und Du kannst dich
+        kümmert sich {formData.moodsterName} um alles weitere und Du kannst dich
         einloggen, um dir die App in Ruhe anschauen.
       </p>
       <button disabled={loading} type="submit" onClick={handleSubmit}>

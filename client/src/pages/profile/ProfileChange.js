@@ -13,7 +13,7 @@ function ProfileChange() {
   const [lastName, setLastName] = useState(null);
   const [nickName, setNickName] = useState(null);
   const [birthDay, setBirthDay] = useState(null);
-  const [moodstername, setMoodstername] = useState(null);
+  const [moodsterName, setmoodsterName] = useState(null);
   const [loadingUser, setLoadingUser] = useState(false);
   const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [error, setError] = useState(false);
@@ -27,7 +27,7 @@ function ProfileChange() {
       setLastName(loadedUser.lastName);
       setNickName(loadedUser.nickName);
       setBirthDay(loadedUser.birthDay);
-      setMoodstername(loadedUser.moodstername);
+      setmoodsterName(loadedUser.moodsterName);
       setLoadingUser(true);
     }
     showUser();
@@ -46,8 +46,8 @@ function ProfileChange() {
     setBirthDay(birthDay.target.value);
   }
 
-  function moodsternameChange(moodstername) {
-    setMoodstername(moodstername.target.value);
+  function moodsterNameChange(moodsterName) {
+    setmoodsterName(moodsterName.target.value);
   }
 
   const updatedUser = {
@@ -55,7 +55,7 @@ function ProfileChange() {
     lastName,
     nickName,
     birthDay,
-    moodstername,
+    moodsterName,
   };
 
   async function handleSubmit(event) {
@@ -79,7 +79,7 @@ function ProfileChange() {
   }
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <h1>Dein Profil bearbeiten</h1>
@@ -109,9 +109,9 @@ function ProfileChange() {
             />
             <InputFieldChangeData
               label={"Moodster:"}
-              name="moodstername"
-              placeholder={moodstername}
-              onChange={moodsternameChange}
+              name="moodsterName"
+              placeholder={moodsterName}
+              onChange={moodsterNameChange}
             />
             <SaveButton
               disabled={
@@ -119,7 +119,7 @@ function ProfileChange() {
                 !lastName ||
                 !nickName ||
                 !birthDay ||
-                !moodstername ||
+                !moodsterName ||
                 loadingUpdate
               }
               type="submit"

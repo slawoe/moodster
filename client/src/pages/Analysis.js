@@ -55,7 +55,7 @@ function Analysis() {
   ];
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <ChartContainer>
           <h1>Deine Stimmungskurve</h1>
           <p>So ging es dir die letzten 14 Male.</p>

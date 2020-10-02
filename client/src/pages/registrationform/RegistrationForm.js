@@ -15,7 +15,7 @@ const defaultData = {
   userName: "",
   password: "",
   passwordRepeat: "",
-  moodstername: "",
+  moodsterName: "",
 };
 function RegistrationForm() {
   const [formData, setForm] = useForm(defaultData);

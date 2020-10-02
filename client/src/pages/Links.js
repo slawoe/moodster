@@ -5,7 +5,7 @@ import StyledTextContainer from "../components/StyledTextContainer";
 function Links() {
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <h1>Nützliche Anlaufstellen</h1>

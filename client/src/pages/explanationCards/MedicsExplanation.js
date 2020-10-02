@@ -7,7 +7,7 @@ function MedicsExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <ExplanationContent
             h1="Medikamente"

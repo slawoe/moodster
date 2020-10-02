@@ -24,7 +24,7 @@ function Welcome({ children }) {
   }
   return (
     <BasicPageLayout
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <p>Hallo {user}!</p>

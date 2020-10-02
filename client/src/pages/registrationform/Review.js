@@ -49,7 +49,7 @@ function Review({ formData }) {
     userName,
     password,
     passwordRepeat,
-    moodstername,
+    moodsterName,
   } = formData;
 
   let info;
@@ -61,7 +61,7 @@ function Review({ formData }) {
     userName === "" ||
     password === "" ||
     passwordRepeat === "" ||
-    moodstername === ""
+    moodsterName === ""
   ) {
     info = (
       <>
@@ -116,7 +116,7 @@ function Review({ formData }) {
             <Link to="/register/moodster">Bearbeiten...</Link>
           </div>
           <div>
-            <span>Ich heiße:</span> <span>{moodstername}</span>
+            <span>Ich heiße:</span> <span>{moodsterName}</span>
           </div>
         </div>
         <Link to="/register/submit">Jetzt weiter zur Anmeldung...</Link>
@@ -137,5 +137,5 @@ Review.propTypes = {
   birtDay: PropTypes.string,
   userName: PropTypes.string,
   password: PropTypes.string,
-  moodstername: PropTypes.string,
+  moodsterName: PropTypes.string,
 };
