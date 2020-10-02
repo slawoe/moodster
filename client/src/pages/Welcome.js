@@ -8,18 +8,18 @@ import Loading from "./LoadingPage";
 
 function Welcome({ children }) {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function setUserNickName() {
       const nickName = sessionStorage.getItem("nickName");
       setUser(nickName);
-      setIsLoaded(true);
+      setLoading(false);
     }
     setUserNickName();
   }, []);
 
-  if (!isLoading) {
+  if (loading) {
     return <Loading />;
   }
   return (
