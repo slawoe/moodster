@@ -78,8 +78,7 @@ function MedicsChange() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
-      childrenmainsection={
+      childrenMainSection={
         <StyledTextContainer>
           <h1>Dein Medikament bearbeiten</h1>
           <InputFieldChangeData

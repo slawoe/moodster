@@ -55,8 +55,7 @@ function Analysis() {
   ];
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
-      childrenmainsection={
+      childrenMainSection={
         <ChartContainer>
           <h1>Deine Stimmungskurve</h1>
           <p>So ging es dir die letzten 14 Male.</p>
@@ -68,7 +67,6 @@ function Analysis() {
                 dataKey="uv"
                 stroke="var(--text-color-attention)"
                 strokeWidth={3}
-                activeDot="false"
               />
               <CartesianGrid
                 stroke="var(--text-color-normal)"

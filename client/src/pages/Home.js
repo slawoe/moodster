@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import { Switch, Route, useRouteMatch, useHistory } from "react-router-dom";
 import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
@@ -15,7 +15,11 @@ import Profile from "./Profile";
 import Analysis from "./Analysis";
 
 function Home() {
+  const history = useHistory();
   const { path } = useRouteMatch();
+  if (!sessionStorage.getItem("userID")) {
+    history.push("/");
+  }
   return (
     <>
       <Header />

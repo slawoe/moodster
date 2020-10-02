@@ -5,8 +5,7 @@ import BasicPageLayout from "../components/BasicPageLayout";
 function About() {
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <h1>Über Moodster</h1>

@@ -8,14 +8,14 @@ import Review from "./Review";
 import Submit from "./Submit";
 
 const defaultData = {
-  firstName: null,
-  lastName: null,
-  nickName: null,
-  birthDay: null,
-  userName: null,
-  password: null,
-  passwordRepeat: null,
-  moodstername: null,
+  firstName: "",
+  lastName: "",
+  nickName: "",
+  birthDay: "",
+  userName: "",
+  password: "",
+  passwordRepeat: "",
+  moodsterName: "",
 };
 function RegistrationForm() {
   const [formData, setForm] = useForm(defaultData);

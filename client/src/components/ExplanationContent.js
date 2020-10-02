@@ -45,8 +45,8 @@ function ExplanationContent({ h1, p, onClick }) {
 export default ExplanationContent;
 
 ExplanationContent.propTypes = {
-  h1: PropTypes.string.isRequired,
-  p: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  h1: PropTypes.string,
+  p: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.element,
 };

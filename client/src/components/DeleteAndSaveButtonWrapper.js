@@ -10,5 +10,5 @@ const DeleteAndSaveButtonWrapper = styled.div`
 export default DeleteAndSaveButtonWrapper;
 
 DeleteAndSaveButtonWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };

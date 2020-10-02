@@ -22,5 +22,5 @@ const FormPageWrapper = styled.div`
 export default FormPageWrapper;
 
 FormPageWrapper.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };

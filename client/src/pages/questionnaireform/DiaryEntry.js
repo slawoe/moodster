@@ -42,6 +42,6 @@ function DiaryEntry({ setForm, formData }) {
 export default DiaryEntry;
 
 DiaryEntry.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

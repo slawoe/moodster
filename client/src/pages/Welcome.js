@@ -24,8 +24,7 @@ function Welcome({ children }) {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
-      childrenmainsection={
+      childrenMainSection={
         <>
           <StyledTextContainer>
             <p>Hallo {user}!</p>
@@ -55,5 +54,5 @@ function Welcome({ children }) {
 export default Welcome;
 
 Welcome.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };

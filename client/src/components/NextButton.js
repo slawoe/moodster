@@ -31,5 +31,5 @@ function NextPageButton({ onClick }) {
 export default NextPageButton;
 
 NextPageButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };

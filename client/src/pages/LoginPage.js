@@ -70,9 +70,9 @@ function LoginPage() {
     if (password !== newUser.password || userName !== newUser.userName) {
       setError(true);
     } else {
-      history.push("/main");
       sessionStorage.userID = newUser._id;
       sessionStorage.nickName = newUser.nickName;
+      history.push("/main");
     }
   }
 

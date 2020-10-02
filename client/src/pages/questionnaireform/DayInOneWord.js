@@ -43,6 +43,6 @@ function DayInOneWord({ setForm, formData }) {
 export default DayInOneWord;
 
 DayInOneWord.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

@@ -41,6 +41,6 @@ function InputFieldTextArea({ label, type = "text", ...otherProps }) {
 export default InputFieldTextArea;
 
 InputFieldTextArea.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string,
 };

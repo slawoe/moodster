@@ -29,6 +29,6 @@ function AddButton({ onClick, description }) {
 
 export default AddButton;
 AddButton.propTypes = {
-  onClick: PropTypes.any.isRequired,
-  description: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  description: PropTypes.string,
 };

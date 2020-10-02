@@ -47,7 +47,7 @@ const DetailsInfoElement = styled.div`
   flex-direction: column;
   padding-bottom: 1.5rem;
   & > span:first-of-type {
-    padding-bottom: 0.4em;
+    padding-bottom: 0.4rem;
     color: var(--text-color-attention);
   }
 `;
@@ -114,10 +114,10 @@ function DiaryListElement({
 export default DiaryListElement;
 
 DiaryListElement.propTypes = {
-  date: PropTypes.any.isRequired,
-  mood: PropTypes.any.isRequired,
-  dayInOneWord: PropTypes.any.isRequired,
-  whatWasGood: PropTypes.any.isRequired,
-  whatCouldBeBetter: PropTypes.any.isRequired,
-  diaryEntry: PropTypes.any.isRequired,
+  date: PropTypes.string,
+  mood: PropTypes.string,
+  dayInOneWord: PropTypes.string,
+  whatWasGood: PropTypes.string,
+  whatCouldBeBetter: PropTypes.string,
+  diaryEntry: PropTypes.string,
 };

@@ -32,14 +32,14 @@ function Doctors() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={
+      childrenHeadSection={
         <Searchbar
           placeholder={"Arzt suchen"}
           value={query}
           onChange={(value) => setQuery(value)}
         />
       }
-      childrenmainsection={
+      childrenMainSection={
         <ContentWithAddFunction
           addcomponent={
             <Link to="/main/doctors/add">

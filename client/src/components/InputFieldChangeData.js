@@ -35,6 +35,6 @@ function InputField({ label, type = "text", ...otherProps }) {
 export default InputField;
 
 InputField.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string,
 };

@@ -40,7 +40,7 @@ const ReviewCard = styled.div`
   }
 `;
 
-function Review({ setForm, formData }) {
+function Review({ formData }) {
   const {
     firstName,
     lastName,
@@ -49,19 +49,19 @@ function Review({ setForm, formData }) {
     userName,
     password,
     passwordRepeat,
-    moodstername,
+    moodsterName,
   } = formData;
 
   let info;
   if (
-    firstName === null ||
-    lastName === null ||
-    nickName === null ||
-    birthDay === null ||
-    userName === null ||
-    password === null ||
-    passwordRepeat === null ||
-    moodstername === null
+    firstName === "" ||
+    lastName === "" ||
+    nickName === "" ||
+    birthDay === "" ||
+    userName === "" ||
+    password === "" ||
+    passwordRepeat === "" ||
+    moodsterName === ""
   ) {
     info = (
       <>
@@ -116,7 +116,7 @@ function Review({ setForm, formData }) {
             <Link to="/register/moodster">Bearbeiten...</Link>
           </div>
           <div>
-            <span>Ich heiße:</span> <span>{moodstername}</span>
+            <span>Ich heiße:</span> <span>{moodsterName}</span>
           </div>
         </div>
         <Link to="/register/submit">Jetzt weiter zur Anmeldung...</Link>
@@ -130,14 +130,12 @@ function Review({ setForm, formData }) {
 export default Review;
 
 Review.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
-  navigation: PropTypes.any,
+  formData: PropTypes.object,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   nickName: PropTypes.string,
   birtDay: PropTypes.string,
   userName: PropTypes.string,
   password: PropTypes.string,
-  moodstername: PropTypes.string,
+  moodsterName: PropTypes.string,
 };

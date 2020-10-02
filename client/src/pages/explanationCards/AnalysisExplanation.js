@@ -7,8 +7,7 @@ function DoctorsExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
-      childrenmainsection={
+      childrenMainSection={
         <>
           <ExplanationContent
             h1="Analyse"

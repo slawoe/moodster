@@ -19,5 +19,5 @@ const MainContainer = styled.main`
 export default MainContainer;
 
 MainContainer.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };

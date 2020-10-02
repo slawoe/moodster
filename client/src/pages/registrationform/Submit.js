@@ -51,14 +51,14 @@ function Submit({ setForm, formData }) {
         return;
       }
       await postNewUser(formData);
-      formData.firstName = null;
-      formData.lastName = null;
-      formData.nickName = null;
-      formData.birthDay = null;
-      formData.userName = null;
-      formData.password = null;
-      formData.repeatPassword = null;
-      formData.moodsterName = null;
+      formData.firstName = "";
+      formData.lastName = "";
+      formData.nickName = "";
+      formData.birthDay = "";
+      formData.userName = "";
+      formData.password = "";
+      formData.repeatPassword = "";
+      formData.moodsterName = "";
       setLoading(false);
       history.push("/");
     } catch (error) {
@@ -71,7 +71,7 @@ function Submit({ setForm, formData }) {
     <SubmitCard>
       <p>
         Danke {formData.nickName}! Wenn Du jetzt die Anmeldung abschickst,
-        kümmert sich {formData.moodstername} um alles weitere und Du kannst dich
+        kümmert sich {formData.moodsterName} um alles weitere und Du kannst dich
         einloggen, um dir die App in Ruhe anschauen.
       </p>
       <button disabled={loading} type="submit" onClick={handleSubmit}>
@@ -98,6 +98,6 @@ function Submit({ setForm, formData }) {
 export default Submit;
 
 Submit.propTypes = {
-  formData: PropTypes.any,
-  setForm: PropTypes.any,
+  formData: PropTypes.object,
+  setForm: PropTypes.func,
 };

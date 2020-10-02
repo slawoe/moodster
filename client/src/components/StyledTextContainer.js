@@ -50,5 +50,5 @@ const StyledTextContainer = styled.div`
 export default StyledTextContainer;
 
 StyledTextContainer.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };
