@@ -15,19 +15,19 @@ import Error from "./ErrorPage";
 
 function Analysis() {
   const [diaryEntries, setDiaryEntries] = useState(null);
-  const [isLoading, setIsLoaded] = useState(false);
+  const [loading, setLoading] = useState(true);
   const userID = sessionStorage.getItem("userID");
 
   useEffect(() => {
     async function showLastDiaryEntries() {
       const newDiaryEntries = await fetchLastDiaryEntries(userID);
       setDiaryEntries(newDiaryEntries);
-      setIsLoaded(true);
+      setLoading(false);
     }
     showLastDiaryEntries();
   }, [userID]);
 
-  if (!isLoading) {
+  if (loading) {
     return <Loading />;
   } else if (diaryEntries.length !== 14) {
     return (
