@@ -79,7 +79,6 @@ function ProfileChange() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <StyledTextContainer>

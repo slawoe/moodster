@@ -52,6 +52,6 @@ function SliderInputField({ label, type = "text", ...otherProps }) {
 export default SliderInputField;
 
 SliderInputField.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  type: PropTypes.string,
 };

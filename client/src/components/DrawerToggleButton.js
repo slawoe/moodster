@@ -23,6 +23,6 @@ function DrawerToggleButton({ onClick, open }) {
 export default DrawerToggleButton;
 
 DrawerToggleButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
+  open: PropTypes.bool,
 };

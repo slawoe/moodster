@@ -7,7 +7,6 @@ function MenueExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <ExplanationContent

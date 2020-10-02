@@ -87,10 +87,10 @@ function Review({ setForm, formData }) {
     try {
       await postNewDiaryEntry(newDiaryEntry);
       formData.mood = "5";
-      formData.dayInOneWord = null;
-      formData.whatWasGood = null;
-      formData.whatCouldBeBetter = null;
-      formData.diaryEntry = null;
+      formData.dayInOneWord = "";
+      formData.whatWasGood = "";
+      formData.whatCouldBeBetter = "";
+      formData.diaryEntry = "";
     } catch (error) {
       console.error(error);
       setError(true);
@@ -102,10 +102,10 @@ function Review({ setForm, formData }) {
 
   let info;
   if (
-    formData.dayInOneWord === null ||
-    formData.whatWasGood === null ||
-    formData.whatCouldBeBetter === null ||
-    formData.diaryEntry === null
+    formData.dayInOneWord === "" ||
+    formData.whatWasGood === "" ||
+    formData.whatCouldBeBetter === "" ||
+    formData.diaryEntry === ""
   ) {
     info = (
       <>
@@ -171,9 +171,9 @@ function Review({ setForm, formData }) {
 export default Review;
 
 Review.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
-  mood: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
+  mood: PropTypes.string,
   dayInOneWord: PropTypes.string,
   whatWasGood: PropTypes.string,
   whatCouldBeBetter: PropTypes.string,

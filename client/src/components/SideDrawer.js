@@ -159,6 +159,6 @@ function Drawer({ open, onClick }) {
 export default Drawer;
 
 Drawer.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
+  open: PropTypes.bool,
 };

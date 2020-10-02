@@ -78,7 +78,6 @@ function MedicsChange() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <StyledTextContainer>
           <h1>Dein Medikament bearbeiten</h1>

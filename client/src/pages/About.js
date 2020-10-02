@@ -5,7 +5,6 @@ import BasicPageLayout from "../components/BasicPageLayout";
 function About() {
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <StyledTextContainer>

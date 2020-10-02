@@ -61,6 +61,6 @@ function User({ setForm, formData }) {
 export default User;
 
 User.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

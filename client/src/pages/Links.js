@@ -5,7 +5,6 @@ import StyledTextContainer from "../components/StyledTextContainer";
 function Links() {
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <StyledTextContainer>

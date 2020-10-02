@@ -43,6 +43,6 @@ function Moodster({ setForm, formData }) {
 export default Moodster;
 
 Moodster.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

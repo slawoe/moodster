@@ -11,10 +11,10 @@ import SubmitMessage from "./SubmitMessage";
 
 const defaultData = {
   mood: "5",
-  dayInOneWord: null,
-  whatWasGood: null,
-  whatCouldBeBetter: null,
-  diaryEntry: null,
+  dayInOneWord: "",
+  whatWasGood: "",
+  whatCouldBeBetter: "",
+  diaryEntry: "",
 };
 function QuestionnaireForm() {
   const [formData, setForm] = useForm(defaultData);

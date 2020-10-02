@@ -31,5 +31,5 @@ const ChartContainer = styled.div`
 export default ChartContainer;
 
 ChartContainer.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.element,
 };

@@ -30,6 +30,6 @@ function ContentWithAddFunction({ addcomponent, content }) {
 export default ContentWithAddFunction;
 
 ContentWithAddFunction.propTypes = {
-  addcomponent: PropTypes.element.isRequired,
-  content: PropTypes.element.isRequired,
+  addcomponent: PropTypes.element,
+  content: PropTypes.element,
 };

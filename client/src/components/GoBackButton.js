@@ -29,5 +29,5 @@ function GoBackButton({ onClick }) {
 
 export default GoBackButton;
 GoBackButton.propTypes = {
-  onClick: PropTypes.any.isRequired,
+  onClick: PropTypes.func,
 };

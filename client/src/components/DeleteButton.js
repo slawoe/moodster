@@ -30,5 +30,5 @@ function DeleteButton({ onClick }) {
 export default DeleteButton;
 
 DeleteButton.propTypes = {
-  onClick: PropTypes.any.isRequired,
+  onClick: PropTypes.func,
 };

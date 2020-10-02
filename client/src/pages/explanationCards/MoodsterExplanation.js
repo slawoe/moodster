@@ -7,7 +7,6 @@ function MoodsterExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <ExplanationContent

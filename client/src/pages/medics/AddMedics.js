@@ -58,7 +58,6 @@ function AddMedics() {
 
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <h2>Medikament hinzufügen</h2>

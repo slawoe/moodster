@@ -30,6 +30,6 @@ function NavButtonDownArrow({ description, to }) {
 export default NavButtonDownArrow;
 
 NavButtonDownArrow.propTypes = {
-  description: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  to: PropTypes.string,
 };

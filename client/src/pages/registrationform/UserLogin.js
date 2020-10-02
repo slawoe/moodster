@@ -57,6 +57,6 @@ function UserLogin({ setForm, formData }) {
 export default UserLogin;
 
 UserLogin.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

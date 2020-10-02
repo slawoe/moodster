@@ -42,6 +42,6 @@ function WhatWasGood({ setForm, formData }) {
 export default WhatWasGood;
 
 WhatWasGood.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

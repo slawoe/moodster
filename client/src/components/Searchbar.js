@@ -41,7 +41,7 @@ function Searchbar({ query, onChange, placeholder }) {
 
 export default Searchbar;
 Searchbar.propTypes = {
-  query: PropTypes.any.isRequired,
-  onChange: PropTypes.any.isRequired,
-  placeholder: PropTypes.string.isRequired,
+  query: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 };

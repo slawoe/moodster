@@ -26,7 +26,6 @@ function Profile() {
   }
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <StyledTextContainer>

@@ -7,7 +7,6 @@ function CallButtonExplanation() {
   let history = useHistory();
   return (
     <BasicPageLayout
-      childrenheadsection={<></>}
       childrenmainsection={
         <>
           <ExplanationContent

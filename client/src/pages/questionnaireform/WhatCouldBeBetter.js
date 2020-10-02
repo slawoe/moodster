@@ -42,6 +42,6 @@ function WhatCouldBeBetter({ setForm, formData }) {
 export default WhatCouldBeBetter;
 
 WhatCouldBeBetter.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
+  setForm: PropTypes.func,
+  formData: PropTypes.object,
 };

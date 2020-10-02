@@ -40,7 +40,7 @@ const ReviewCard = styled.div`
   }
 `;
 
-function Review({ setForm, formData }) {
+function Review({ formData }) {
   const {
     firstName,
     lastName,
@@ -54,14 +54,14 @@ function Review({ setForm, formData }) {
 
   let info;
   if (
-    firstName === null ||
-    lastName === null ||
-    nickName === null ||
-    birthDay === null ||
-    userName === null ||
-    password === null ||
-    passwordRepeat === null ||
-    moodstername === null
+    firstName === "" ||
+    lastName === "" ||
+    nickName === "" ||
+    birthDay === "" ||
+    userName === "" ||
+    password === "" ||
+    passwordRepeat === "" ||
+    moodstername === ""
   ) {
     info = (
       <>
@@ -130,9 +130,7 @@ function Review({ setForm, formData }) {
 export default Review;
 
 Review.propTypes = {
-  setForm: PropTypes.any,
-  formData: PropTypes.any,
-  navigation: PropTypes.any,
+  formData: PropTypes.object,
   firstName: PropTypes.string,
   lastName: PropTypes.string,
   nickName: PropTypes.string,

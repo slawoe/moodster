@@ -17,6 +17,6 @@ function BasicPageLayout({ childrenheadsection, childrenmainsection }) {
 export default BasicPageLayout;
 
 BasicPageLayout.propTypes = {
-  childrenheadsection: PropTypes.element.isRequired,
-  childrenmainsection: PropTypes.element.isRequired,
+  childrenheadsection: PropTypes.element,
+  childrenmainsection: PropTypes.element,
 };
