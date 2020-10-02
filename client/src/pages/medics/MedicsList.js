@@ -10,7 +10,7 @@ import Loading from "../../pages/LoadingPage";
 
 function Medics() {
   const [medics, setMedics] = useState(null);
-  const [isLoading, setIsLoaded] = useState(false);
+  const [loading, setLaoding] = useState(true);
   const [query, setQuery] = useState("");
   const userID = sessionStorage.getItem("userID");
 
@@ -18,7 +18,7 @@ function Medics() {
     async function showMedics() {
       const newMedics = await fetchMedics(userID);
       setMedics(newMedics);
-      setIsLoaded(true);
+      setLaoding(false);
     }
     showMedics();
   }, [userID]);
@@ -27,7 +27,7 @@ function Medics() {
     return medic.name.startsWith(query);
   });
 
-  if (!isLoading) {
+  if (loading) {
     return <Loading />;
   }
   return (
