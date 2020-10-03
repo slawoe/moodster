@@ -66,7 +66,7 @@ function Review({ formData }) {
     info = (
       <>
         <div>
-          Du scheinst Daten vergessen zu haben. Bitte schaue nochmal von Beginn
+          Du scheinst Daten vergessen zu haben. Bitte schaue noch mal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
         <Link to="/register">Klick hier um alles überprüfen...</Link>
