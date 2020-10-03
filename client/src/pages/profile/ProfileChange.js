@@ -22,11 +22,15 @@ function ProfileChange() {
 
   useEffect(() => {
     async function showUser() {
-      const updatedUser = await fetchUserProfile(
-        sessionStorage.getItem("userID")
-      );
-      setUpdatedUser(updatedUser);
-      setLoadingUser(false);
+      try {
+        const updatedUser = await fetchUserProfile(
+          sessionStorage.getItem("userID")
+        );
+        setUpdatedUser(updatedUser);
+        setLoadingUser(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showUser();
   }, []);

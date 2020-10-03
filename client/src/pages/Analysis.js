@@ -20,9 +20,13 @@ function Analysis() {
 
   useEffect(() => {
     async function showLastDiaryEntries() {
-      const newDiaryEntries = await fetchLastDiaryEntries(userID);
-      setDiaryEntries(newDiaryEntries);
-      setLoading(false);
+      try {
+        const newDiaryEntries = await fetchLastDiaryEntries(userID);
+        setDiaryEntries(newDiaryEntries);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showLastDiaryEntries();
   }, [userID]);

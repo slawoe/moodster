@@ -12,11 +12,15 @@ function Profile() {
 
   useEffect(() => {
     async function showUser() {
-      const loadedUser = await fetchUserProfile(
-        sessionStorage.getItem("userID")
-      );
-      setUser(loadedUser);
-      setLoading(false);
+      try {
+        const loadedUser = await fetchUserProfile(
+          sessionStorage.getItem("userID")
+        );
+        setUser(loadedUser);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showUser();
   }, []);

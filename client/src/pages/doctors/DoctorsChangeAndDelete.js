@@ -28,9 +28,13 @@ function DoctorsChange() {
 
   useEffect(() => {
     async function showDoctor() {
-      const updatedDoctor = await fetchDoctor(id);
-      setUpdatedDoctor(updatedDoctor);
-      setLoadingDoctor(false);
+      try {
+        const updatedDoctor = await fetchDoctor(id);
+        setUpdatedDoctor(updatedDoctor);
+        setLoadingDoctor(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showDoctor();
   }, [id]);

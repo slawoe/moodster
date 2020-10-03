@@ -16,9 +16,13 @@ function Medics() {
 
   useEffect(() => {
     async function showMedics() {
-      const newMedics = await fetchMedics(userID);
-      setMedics(newMedics);
-      setLaoding(false);
+      try {
+        const newMedics = await fetchMedics(userID);
+        setMedics(newMedics);
+        setLaoding(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showMedics();
   }, [userID]);
