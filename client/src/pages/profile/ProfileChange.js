@@ -100,7 +100,11 @@ function ProfileChange() {
               type="submit"
               onClick={handleSubmit}
             />
-            {error && <p>Something bad happened. Please try again.</p>}
+            {error && (
+              <p>
+                Das hat leider nicht funktioniert. Probier es bitte noch einmal
+              </p>
+            )}
           </StyledTextContainer>
         </>
       }

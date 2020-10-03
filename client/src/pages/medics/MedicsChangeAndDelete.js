@@ -56,6 +56,18 @@ function MedicsChange() {
     }
   }
 
+  async function handleDelete(event) {
+    event.preventDefault();
+    try {
+      await deleteMedic(id);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      history.push("/main/medics");
+    }
+  }
+
   if (loadingMedic) {
     return <LoadingPage />;
   }
@@ -95,20 +107,17 @@ function MedicsChange() {
             onChange={handleChange}
           />
           <DeleteAndSaveButtonWrapper>
-            <DeleteButton
-              type="submit"
-              onClick={async () => {
-                await deleteMedic(id);
-                history.push("/main/medics");
-              }}
-            />
-            {error && <p>Something bad happened. Please try again.</p>}
+            <DeleteButton type="submit" onClick={handleDelete} />
             <SaveButton
               disabled={!updatedMedic || loadingUpdate}
               type="submit"
               onClick={handleSubmit}
             />
-            {error && <p>Something bad happened. Please try again.</p>}
+            {error && (
+              <p>
+                Das hat leider nicht funktioniert. Probier es bitte noch einmal
+              </p>
+            )}
           </DeleteAndSaveButtonWrapper>
         </StyledTextContainer>
       }
