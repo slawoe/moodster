@@ -55,7 +55,7 @@ function Analysis() {
   if (averageMood < 3) {
     info = (
       <>
-        Du solltest dringend mit deinen Eltern oder einem Arzt über deine
+        Du solltest dringend mit deinen Eltern oder deinem Arzt über deine
         Probleme sprechen!
       </>
     );
