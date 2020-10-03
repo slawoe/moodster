@@ -53,13 +53,25 @@ function Analysis() {
 
   let info;
   if (averageMood < 3) {
-    info = <></>;
+    info = (
+      <>
+        Du solltest dringend mit deinen Eltern oder einem Arzt über deine
+        Probleme sprechen!
+      </>
+    );
   } else if (averageMood < 5) {
-    info = <></>;
+    info = (
+      <>
+        Wenn deine Stimmung nicht besser wird, solltest Du bald einem
+        Erwachsenen deine Sorgen erzählen.
+      </>
+    );
   } else if (averageMood < 8) {
-    info = <></>;
+    info = (
+      <>Deine Stimmung ist gut, aber noch ist ein bisschen Luft nach oben.</>
+    );
   } else {
-    info = <></>;
+    info = <>Schön, dass Du glücklich bist und es dir gut geht!</>;
   }
 
   const data = [
@@ -84,8 +96,8 @@ function Analysis() {
         <ChartContainer>
           <h1>Deine Stimmungskurve</h1>
           <p>
-            Deine Stimmung lag die letzten 14 Mal bei durchschnittlich{" "}
-            {averageMood} von 10
+            Deine durchschnittliche Stimmung lag bei {averageMood} von 10
+            Punkten.
           </p>
           <p>{info}</p>
           <ResponsiveContainer width="90%" height={200} margin={0}>
