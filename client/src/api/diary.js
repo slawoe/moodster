@@ -11,20 +11,10 @@ export async function postNewDiaryEntry(newDiaryEntry) {
   return result;
 }
 
-export async function fetchDiaryEntries(userID) {
+export async function fetchDiaryEntries(userID, limit) {
   const response = await fetch(
-    `/api/diary?userID=${userID}&_sort=date&_order=desc`
-  );
-  if (!response.ok) {
-    throw new Error(response);
-  }
-  const result = await response.json();
-  return result;
-}
-
-export async function fetchLastDiaryEntries(userID) {
-  const response = await fetch(
-    `/api/diary?userID=${userID}&_sort=date&_order=desc&limit=14`
+    `/api/diary?userID=${userID}&_sort=date&_order=desc&_limit=${limit}
+  `
   );
   if (!response.ok) {
     throw new Error(response);
