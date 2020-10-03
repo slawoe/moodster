@@ -33,23 +33,23 @@ function MedicsListElement({
   return (
     <MedicsListWrapper>
       <InfoElementWrapper>
-        <span>Name:</span>
+        <span>Medikamenten-Name:</span>
         <span>{name}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
-        <span>Morgens:</span>
+        <span>Einnahme morgens:</span>
         <span>{intakeMorning}</span>
       </InfoElementWrapper>{" "}
       <InfoElementWrapper>
-        <span>Mittags:</span>
+        <span>Einnahme mittags:</span>
         <span>{intakeMidday}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
-        <span>Abends:</span>
+        <span>Einnahme abends:</span>
         <span>{intakeEvening}</span>
       </InfoElementWrapper>{" "}
       <InfoElementWrapper>
-        <span>Nachts:</span>
+        <span>Einnahme nachts:</span>
         <span>{intakeNight}</span>
       </InfoElementWrapper>
       <div>
