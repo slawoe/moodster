@@ -4,7 +4,11 @@ export async function postNewDiaryEntry(newDiaryEntry) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newDiaryEntry),
   });
-  return response.ok;
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const result = await response.json();
+  return result;
 }
 
 export async function fetchDiaryEntries(userID) {

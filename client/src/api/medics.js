@@ -4,7 +4,11 @@ export async function postNewMedic(newMedic) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newMedic),
   });
-  return response.ok;
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const result = await response.json();
+  return result;
 }
 
 export async function updateMedic(id, content) {
