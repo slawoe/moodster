@@ -41,6 +41,27 @@ function Analysis() {
       />
     );
   }
+
+  let moodSum = 0;
+  const len = diaryEntries.length;
+  let item = 0;
+  for (let i = 0; i < len; i++) {
+    item = diaryEntries[i];
+    moodSum = parseInt(item.mood) + moodSum;
+  }
+  const averageMood = (moodSum / diaryEntries.length).toFixed(1);
+
+  let info;
+  if (averageMood < 3) {
+    info = <></>;
+  } else if (averageMood < 5) {
+    info = <></>;
+  } else if (averageMood < 8) {
+    info = <></>;
+  } else {
+    info = <></>;
+  }
+
   const data = [
     { name: "1", uv: diaryEntries[0].mood, pv: 0, amt: 0 },
     { name: "2", uv: diaryEntries[1].mood, pv: 0, amt: 0 },
@@ -62,7 +83,11 @@ function Analysis() {
       childrenMainSection={
         <ChartContainer>
           <h1>Deine Stimmungskurve</h1>
-          <p>So ging es dir die letzten 14 Male.</p>
+          <p>
+            Deine Stimmung lag die letzten 14 Mal bei durchschnittlich{" "}
+            {averageMood} von 10
+          </p>
+          <p>{info}</p>
           <ResponsiveContainer width="90%" height={200} margin={0}>
             <LineChart width={300} height={200} data={data}>
               <Line
