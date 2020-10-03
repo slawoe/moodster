@@ -15,7 +15,7 @@ function Mood({ setForm, formData }) {
         <BasicTextCard>
           <p>
             Super, lass uns gleich loslegen. Ich habe ein paar Fragen an dich.
-            Mit dem Regler unter den Smileys kannst Du mir gleich die erste
+            Mit dem Regler unter den Smileys kannst Du mir gleich die Erste
             beantworten.
           </p>
         </BasicTextCard>
