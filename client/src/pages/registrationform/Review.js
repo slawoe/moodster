@@ -36,7 +36,7 @@ const ReviewCard = styled.div`
     color: var(--text-color-normal);
   }
   & > h2 {
-    text-align: center;
+    font-size: 1.2rem;
   }
 `;
 
