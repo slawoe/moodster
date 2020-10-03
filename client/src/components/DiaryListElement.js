@@ -9,7 +9,7 @@ const DiaryListItem = styled.div`
   box-shadow: var(--main-elements-shadow);
   border-radius: 5px;
   margin: 10px 0;
-  padding: 0.4rem 0.7rem 0;
+  padding: 0.7rem 0.7rem 0;
   display: flex;
   flex-direction: column;
 `;
@@ -17,7 +17,9 @@ const DiaryListItem = styled.div`
 const MainCardDiv = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 1rem;
+  & > div:last-of-type > span:last-of-type {
+    padding-bottom: 1rem;
+  }
 `;
 
 const HeaderDiv = styled.div`
@@ -36,19 +38,11 @@ const HeaderDiv = styled.div`
 `;
 
 const CollapsingDiv = styled.div`
-  padding: 0 0.5rem;
-  & > div:last-of-type {
-    padding: 0 0 0.5rem;
+  & > div:first-of-type > span:first-of-type {
+    padding-top: 0;
   }
-`;
-
-const DetailsInfoElement = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 1.5rem;
-  & > span:first-of-type {
-    padding-bottom: 0.4rem;
-    color: var(--text-color-attention);
+  & > div:last-of-type > span:last-of-type {
+    padding-bottom: 1rem;
   }
 `;
 
@@ -74,36 +68,34 @@ function DiaryListElement({
             <button onClick={handleClick}>Details...</button>
           </div>
         </HeaderDiv>
-        <div>
-          <InfoElementWrapper>
-            <span>Datum:</span>
-            <span>{date}</span>
-          </InfoElementWrapper>
-          <InfoElementWrapper>
-            <span>Stimmung:</span>
-            <span>{mood} von 10</span>
-          </InfoElementWrapper>
-          <InfoElementWrapper>
-            <span>Dein Wort:</span>
-            <span>{dayInOneWord}</span>
-          </InfoElementWrapper>
-        </div>
+        <InfoElementWrapper>
+          <span>Datum:</span>
+          <span>{date}</span>
+        </InfoElementWrapper>
+        <InfoElementWrapper>
+          <span>Stimmung:</span>
+          <span>{mood} von 10</span>
+        </InfoElementWrapper>
+        <InfoElementWrapper>
+          <span>Dein Wort:</span>
+          <span>{dayInOneWord}</span>
+        </InfoElementWrapper>
       </MainCardDiv>
       <CollapsingDiv>
         {open && (
           <>
-            <DetailsInfoElement>
-              <span>LIEF BESONDERS GUT:</span>
+            <InfoElementWrapper>
+              <span>Lief besonders gut:</span>
               <span>{whatWasGood}</span>
-            </DetailsInfoElement>
-            <DetailsInfoElement>
-              <span>HÄTTE BESSER LAUFEN KÖNNEN:</span>
+            </InfoElementWrapper>
+            <InfoElementWrapper>
+              <span>Hätte besser laufen können:</span>
               <span>{whatCouldBeBetter}</span>
-            </DetailsInfoElement>
-            <DetailsInfoElement>
-              <span>DEIN TAGEBUCHEINTRAG:</span>
+            </InfoElementWrapper>
+            <InfoElementWrapper>
+              <span>Dein Tagebucheintrag:</span>
               <span>{diaryEntry}</span>
-            </DetailsInfoElement>
+            </InfoElementWrapper>
           </>
         )}
       </CollapsingDiv>

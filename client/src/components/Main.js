@@ -12,7 +12,8 @@ const MainContainer = styled.main`
   }
   & > :last-of-type {
     grid-area: 2 / 2 / 3 / 3;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 `;
 

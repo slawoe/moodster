@@ -12,15 +12,16 @@ const BasicTextDiv = styled.div`
   display: grid;
   height: 85%;
   grid-template-columns: 90% 10%;
-  grid-template-rows: 60% 40%;
+  grid-template-rows: 25% 25% 25% 25%;
   & > p {
     padding: 1rem 0.7rem;
     margin: 0;
-    grid-area: 1/ 1/ 3 /2;
+    grid-area: 1/ 1/ 5 /2;
   }
   & > img {
-    height: 50%;
-    grid-area: 2/ 2/ 3 /3;
+    width: 2rem;
+    grid-area: 4/ 2/ 5 /3;
+    padding: 0 0.1rem 0.1rem 0;
   }
 `;
 

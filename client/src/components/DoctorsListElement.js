@@ -10,13 +10,13 @@ const DoctorsListWrapper = styled.div`
   box-shadow: var(--main-elements-shadow);
   border-radius: 5px;
   margin: 10px 0;
-  padding: 0.4rem 0.7rem;
+  padding: 0.7rem;
   display: flex;
   flex-direction: column;
   & div:last-of-type,
   & div:last-of-type > a {
     align-self: flex-end;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem;
     color: var(--button-proceed-color);
   }
 `;
@@ -51,11 +51,11 @@ function DoctorsListElement({
       </InfoElementWrapper>
       <InfoElementWrapper>
         <span>Tel-Nr.:</span>
-        <span>{phone}</span>
+        <a href={`tel:${phone}`}>{phone}</a>
       </InfoElementWrapper>
       <InfoElementWrapper>
         <span>Mail:</span>
-        <span>{mail}</span>
+        <a href={`mailto:${mail}`}>{mail}</a>
       </InfoElementWrapper>
       <InfoElementWrapper>
         <span>Sprechzeiten:</span>
@@ -63,7 +63,7 @@ function DoctorsListElement({
       </InfoElementWrapper>
       <div>
         <Link to={`/main/doctors/change/${id}`}>
-          Arzt bearbeiten oder löschen...
+          Bearbeiten oder löschen...
         </Link>
       </div>
     </DoctorsListWrapper>

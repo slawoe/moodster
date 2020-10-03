@@ -10,13 +10,13 @@ const MedicsListWrapper = styled.div`
   box-shadow: var(--main-elements-shadow);
   border-radius: 5px;
   margin: 10px 0;
-  padding: 0.4rem 0.7rem;
+  padding: 0.7rem;
   display: flex;
   flex-direction: column;
   & div:last-of-type,
   & div:last-of-type > a {
     align-self: flex-end;
-    padding: 1rem 0;
+    padding: 1rem 0 0.5rem;
     color: var(--button-proceed-color);
     text-align: right;
   }
@@ -53,9 +53,7 @@ function MedicsListElement({
         <span>{intakeNight}</span>
       </InfoElementWrapper>
       <div>
-        <Link to={`/main/medics/change/${id}`}>
-          Medikament bearbeiten oder löschen...
-        </Link>
+        <Link to={`/main/medics/change/${id}`}>Bearbeiten oder löschen...</Link>
       </div>
     </MedicsListWrapper>
   );
