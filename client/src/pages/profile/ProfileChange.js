@@ -4,7 +4,7 @@ import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
 import SaveButton from "../../components/SaveButton";
 import { useHistory } from "react-router-dom";
-import { fetchUserProfile, updateUser } from "../../api/user";
+import { fetchUserProfile, updateUser } from "../../api/users";
 import Loading from "../LoadingPage";
 
 function ProfileChange() {

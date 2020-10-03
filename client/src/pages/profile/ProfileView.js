@@ -3,7 +3,7 @@ import StyledTextContainer from "../../components/StyledTextContainer";
 import BasicPageLayout from "../../components/BasicPageLayout";
 import InfoElementWrapper from "../../components/InfoElementWrapper";
 import { Link } from "react-router-dom";
-import { fetchUserProfile } from "../../api/user";
+import { fetchUserProfile } from "../../api/users";
 import Loading from "../LoadingPage";
 
 function Profile() {

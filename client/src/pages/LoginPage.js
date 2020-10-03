@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import Moodster from "../assets/images/moodster.svg";
 import { Link, useHistory } from "react-router-dom";
-import { fetchUserLogin } from "../api/user";
+import { fetchUserLogin } from "../api/users";
 
 const LoginWrapper = styled.div`
   grid-area: 2 / 2 / 3 / 3;
