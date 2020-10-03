@@ -26,7 +26,6 @@ const HelpContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
 `;
 
@@ -40,11 +39,11 @@ function HelpCard() {
       </div>
       <div>
         <p>
-          Hallo {sessionStorage.nickName},<br></br>
-          lass mich dir kurz zeigen wie die App funktioniert. Klick auf den
-          Bereich der dich interessiert und ich erzähle dir was sich dahinter
-          versteckt. Wenn Du fertig bist klick auf mich und Du kommst zur
-          Startseite.
+          Hallo {sessionStorage.nickName},
+          <br /> lass mich dir kurz zeigen, wie die App funktioniert. Klick auf
+          den Bereich, der dich interessiert und ich erzähle dir, was sich
+          dahinter versteckt. Wenn Du fertig bist, klick auf mich drauf und Du
+          kommst direkt zur Startseite.
         </p>
         <Link to="/main">
           <img src={Moodster} alt={Moodster} />

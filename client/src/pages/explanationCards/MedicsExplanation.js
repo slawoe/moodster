@@ -11,7 +11,7 @@ function MedicsExplanation() {
         <>
           <ExplanationContent
             h1="Medikamente"
-            p="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            p="Hier findest Du deine Medikamente. Du kannst sie alle abspeichern, bearbeiten, löschen, nach Namen durchsuchen und natürlich kannst Du auch eintragen, wann Du, welche davon einnehmen musst. Bevor ich es vergesse: In der Menüleiste findest Du auch eine Kategorie für Ärzte, wo Du das Gleiche mit all deinen Ärzten machen kannst."
             onClick={history.goBack}
           />
         </>

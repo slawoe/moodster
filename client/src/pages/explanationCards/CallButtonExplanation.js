@@ -11,7 +11,7 @@ function CallButtonExplanation() {
         <>
           <ExplanationContent
             h1="Notruf"
-            p="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            p="Wenn Du auf den Knopf oben recht draufdrückst kannst Du dich sofort mit der Telefonseelsorge verbinden lassen. Die Menschen dort haben immer ein offenes Ohr für dich und deine Probleme. Du musst also keine Angst haben, dort anzurufen, wenn es dir gerade schlecht geht und Du niemanden zum Reden hast."
             onClick={history.goBack}
           />
         </>
