@@ -11,7 +11,8 @@ function MenueExplanation() {
         <>
           <ExplanationContent
             h1="Menü"
-            p="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            p="Oben rechts befindet sich das Menü.
+            Hier findest Du alle Punkte, die man in der App ansteuern kann. Klick dich gerne durch, Du kannst nichts kaputtmachen und wenn Du fertig bist, dann kannst Du ganz einfach über die Hilfe wieder hierher finden."
             onClick={history.goBack}
           />
         </>

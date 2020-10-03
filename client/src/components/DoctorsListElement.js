@@ -50,7 +50,7 @@ function DoctorsListElement({
         <span>{zipAndLocation}</span>
       </InfoElementWrapper>
       <InfoElementWrapper>
-        <span>Tel-Nr.:</span>
+        <span>Telefonnummer.:</span>
         <a href={`tel:${phone}`}>{phone}</a>
       </InfoElementWrapper>
       <InfoElementWrapper>

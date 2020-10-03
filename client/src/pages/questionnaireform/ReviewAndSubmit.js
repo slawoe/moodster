@@ -110,10 +110,12 @@ function Review({ setForm, formData }) {
     info = (
       <>
         <div>
-          Du scheinst etwas nicht ausgefüllt zu haben. Bitte schaue nochmal
+          Du scheinst etwas nicht ausgefüllt zu haben. Bitte schaue noch mal
           alles durch und fülle die Felder aus.
         </div>
-        <Link to="/main/questionnaire">Klick hier um alles überprüfen...</Link>
+        <Link to="/main/questionnaire">
+          Klick hier um alles zu überprüfen...
+        </Link>
       </>
     );
   } else {
