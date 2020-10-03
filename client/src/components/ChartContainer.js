@@ -22,6 +22,9 @@ const ChartContainer = styled.div`
     font-size: 0.75rem;
     text-align: center;
   }
+  & > p:last-of-type {
+    padding-bottom: 1rem;
+  }
   > div {
     padding: 1rem;
     transform: translateX(-1.5rem);

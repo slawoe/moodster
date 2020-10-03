@@ -15,7 +15,8 @@ const AddButtonWrapper = styled.div`
 `;
 const ContentWrapper = styled.div`
   grid-area: 2 / 1 / 3 / 3;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;
 
 function ContentWithAddFunction({ addcomponent, content }) {

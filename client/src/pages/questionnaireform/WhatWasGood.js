@@ -21,7 +21,7 @@ function WhatWasGood({ setForm, formData }) {
       </div>
       <div>
         <InputFieldTextArea
-          label="Was lief heute?"
+          label="Was lief heute gut?"
           name="whatWasGood"
           value={whatWasGood}
           placeholder="Was heute gut lief..."
