@@ -12,9 +12,13 @@ function Welcome({ children }) {
 
   useEffect(() => {
     async function setUserNickName() {
-      const nickName = sessionStorage.getItem("nickName");
-      setUser(nickName);
-      setLoading(false);
+      try {
+        const nickName = sessionStorage.getItem("nickName");
+        setUser(nickName);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     setUserNickName();
   }, []);

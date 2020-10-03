@@ -4,7 +4,7 @@ import BasicPageLayout from "../../components/BasicPageLayout";
 import InputFieldChangeData from "../../components/InputFieldChangeData";
 import SaveButton from "../../components/SaveButton";
 import { useHistory } from "react-router-dom";
-import { fetchUserProfile, updateUser } from "../../api/user";
+import { fetchUserProfile, updateUser } from "../../api/users";
 import Loading from "../LoadingPage";
 
 function ProfileChange() {
@@ -22,11 +22,15 @@ function ProfileChange() {
 
   useEffect(() => {
     async function showUser() {
-      const updatedUser = await fetchUserProfile(
-        sessionStorage.getItem("userID")
-      );
-      setUpdatedUser(updatedUser);
-      setLoadingUser(false);
+      try {
+        const updatedUser = await fetchUserProfile(
+          sessionStorage.getItem("userID")
+        );
+        setUpdatedUser(updatedUser);
+        setLoadingUser(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showUser();
   }, []);
@@ -96,7 +100,11 @@ function ProfileChange() {
               type="submit"
               onClick={handleSubmit}
             />
-            {error && <p>Something bad happened. Please try again.</p>}
+            {error && (
+              <p>
+                Das hat leider nicht funktioniert. Probier es bitte noch einmal
+              </p>
+            )}
           </StyledTextContainer>
         </>
       }

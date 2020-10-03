@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "@emotion/styled";
 import Moodster from "../../assets/images/moodster.svg";
 import { useHistory } from "react-router-dom";
-import { fetchUserLogin, postNewUser } from "../../api/user";
+import { fetchUserLogin, postNewUser } from "../../api/users";
 
 const SubmitCard = styled.div`
   background: var(--card-background-color);
@@ -89,7 +89,9 @@ function Submit({ setForm, formData }) {
           </button>
         </>
       )}
-      {error && <p>Something bad happened. Please try again.</p>}
+      {error && (
+        <p>Das hat leider nicht funktioniert. Probier es bitte noch einmal</p>
+      )}
       <img src={Moodster} alt="moodster"></img>
     </SubmitCard>
   );

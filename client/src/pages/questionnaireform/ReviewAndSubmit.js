@@ -160,7 +160,9 @@ function Review({ setForm, formData }) {
         <button disabled={loading} type="submit" onClick={handleSubmit}>
           Abschicken
         </button>
-        {error && <p>Something bad happened. Please try again.</p>}
+        {error && (
+          <p>Das hat leider nicht funktioniert. Probier es bitte noch einmal</p>
+        )}
       </>
     );
   }

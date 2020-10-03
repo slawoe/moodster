@@ -4,13 +4,6 @@ export async function postNewDiaryEntry(newDiaryEntry) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newDiaryEntry),
   });
-  return response.ok;
-}
-
-export async function fetchDiaryEntries(userID) {
-  const response = await fetch(
-    `/api/diary?userID=${userID}&_sort=date&_order=desc`
-  );
   if (!response.ok) {
     throw new Error(response);
   }
@@ -18,9 +11,10 @@ export async function fetchDiaryEntries(userID) {
   return result;
 }
 
-export async function fetchLastDiaryEntries(userID) {
+export async function fetchDiaryEntries(userID, limit) {
   const response = await fetch(
-    `/api/diary?userID=${userID}&_sort=date&_order=desc&limit=14`
+    `/api/diary?userID=${userID}&_sort=date&_order=desc&_limit=${limit}
+  `
   );
   if (!response.ok) {
     throw new Error(response);

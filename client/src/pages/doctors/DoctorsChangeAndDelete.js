@@ -28,9 +28,13 @@ function DoctorsChange() {
 
   useEffect(() => {
     async function showDoctor() {
-      const updatedDoctor = await fetchDoctor(id);
-      setUpdatedDoctor(updatedDoctor);
-      setLoadingDoctor(false);
+      try {
+        const updatedDoctor = await fetchDoctor(id);
+        setUpdatedDoctor(updatedDoctor);
+        setLoadingDoctor(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showDoctor();
   }, [id]);
@@ -51,6 +55,18 @@ function DoctorsChange() {
       setError(true);
     } finally {
       setLoadingUpdate(false);
+      history.push("/main/doctors");
+    }
+  }
+
+  async function handleDelete(event) {
+    event.preventDefault();
+    try {
+      await deleteDoctor(id);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
       history.push("/main/doctors");
     }
   }
@@ -106,20 +122,17 @@ function DoctorsChange() {
             onChange={handleChange}
           />
           <DeleteAndSaveButtonWrapper>
-            <DeleteButton
-              type="submit"
-              onClick={async () => {
-                await deleteDoctor(id);
-                history.push("/main/doctors");
-              }}
-            />
-            {error && <p>Something bad happened. Please try again.</p>}
+            <DeleteButton type="submit" onClick={handleDelete} />
             <SaveButton
               disabled={!updatedDoctor || loadingUpdate}
               type="submit"
               onClick={handleSubmit}
             />
-            {error && <p>Something bad happened. Please try again.</p>}
+            {error && (
+              <p>
+                Das hat leider nicht funktioniert. Probier es bitte noch einmal
+              </p>
+            )}
           </DeleteAndSaveButtonWrapper>
         </StyledTextContainer>
       }

@@ -9,7 +9,7 @@ import {
   YAxis,
   ResponsiveContainer,
 } from "recharts";
-import { fetchLastDiaryEntries } from "../api/diary";
+import { fetchDiaryEntries } from "../api/diary";
 import Loading from "./LoadingPage";
 import Error from "./ErrorPage";
 
@@ -20,9 +20,13 @@ function Analysis() {
 
   useEffect(() => {
     async function showLastDiaryEntries() {
-      const newDiaryEntries = await fetchLastDiaryEntries(userID);
-      setDiaryEntries(newDiaryEntries);
-      setLoading(false);
+      try {
+        const newDiaryEntries = await fetchDiaryEntries(userID, 14);
+        setDiaryEntries(newDiaryEntries);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showLastDiaryEntries();
   }, [userID]);

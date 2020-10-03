@@ -13,9 +13,13 @@ function DiaryList() {
 
   useEffect(() => {
     async function showDiaryEntries() {
-      const newDiaryEntries = await fetchDiaryEntries(userID);
-      setDiaryEntries(newDiaryEntries);
-      setLoading(false);
+      try {
+        const newDiaryEntries = await fetchDiaryEntries(userID);
+        setDiaryEntries(newDiaryEntries);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
     showDiaryEntries();
   }, [userID]);

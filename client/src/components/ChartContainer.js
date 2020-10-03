@@ -18,7 +18,7 @@ const ChartContainer = styled.div`
     padding: 0.5rem 1rem;
     margin: 0;
   }
-  & > p:nth-of-type(n + 3) {
+  & > p:nth-of-type(n + 2) {
     font-size: 0.75rem;
     text-align: center;
   }

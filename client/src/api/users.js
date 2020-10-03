@@ -4,7 +4,11 @@ export async function postNewUser(newUser) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newUser),
   });
-  return response.ok;
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const result = await response.json();
+  return result;
 }
 
 export async function updateUser(id, content) {
