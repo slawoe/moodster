@@ -26,7 +26,7 @@ app.use(
 );
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
 });
 
 initDatabase(process.env.MONGO_URI, process.env.MONGO_DB).then(async () => {
