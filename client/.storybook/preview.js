@@ -9,7 +9,7 @@ export const parameters = {
 const AppDecorator = (Story, context) => {
   return (
     <>
-      <GlobalStyles />{" "}
+      <GlobalStyles />
       <Router>
         <Story {...context} />
       </Router>
