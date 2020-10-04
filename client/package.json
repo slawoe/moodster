@@ -24,7 +24,8 @@
     "react-query": "^2.15.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "recharts": "^1.8.5"
+    "recharts": "^1.8.5",
+    "storybook": "^6.0.25"
   },
   "scripts": {
     "start": "react-scripts start",
