@@ -95,7 +95,7 @@ function Review({ formData }) {
             <span>Nachname:</span> <span>{lastName}</span>
           </div>
           <div>
-            <span>Spitzame:</span> <span>{nickName}</span>
+            <span>Spitzname:</span> <span>{nickName}</span>
           </div>
           <div>
             <span>Geburtsdatum:</span> <span>{birthDay}</span>
