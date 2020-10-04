@@ -10,8 +10,7 @@ In addition, the app has an analysis function of the last 14 entries.
 In version 1.0 there is no encryption and decryption yet, but will be implemented with future versions.
 Work in progress
 
-Current version: 1.0
-current version: 04.10.2020
+Current version: 1.0 || 04.10.2020
 
 ## 🖱 Deployment
 
