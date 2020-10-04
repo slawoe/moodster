@@ -13,22 +13,24 @@ Work in progress
 Current version: 1.0
 current version: 04.10.2020
 
+## 🔧 Development
+
 ### Requirements
 
 Nodejs and NPM
 
-### Install all dependencies
+### 👨‍💻 Install all dependencies
 
 `npm install`
 
 Since there is a postinstall, the system automatically searches the client folder and installs the required dependencies there, too.
 
-### .env
+### 📜 .env
 
 There is an included .env.example file.
 
 Set up a mongoDB as your database with the following collections: diary, doctors, medics and users
 
-### Run dev server with
+### 💻 Run dev server with:
 
 `npm run dev`
