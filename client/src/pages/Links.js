@@ -26,7 +26,11 @@ function Links() {
                 42103 Wuppertal
               </span>
               <span>montags-samstags von 14-20 Uhr</span>
-              <a href="https://www.nummergegenkummer.de/kinder-und-jugendtelefon.html">
+              <a
+                href="https://www.nummergegenkummer.de/kinder-und-jugendtelefon.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:116111">Kindertelefon</a>
@@ -44,7 +48,11 @@ function Links() {
                 <br />
                 20246 Hamburg
               </span>
-              <a href="https://www.nummergegenkummer.de/kinder-und-jugendtelefon.html">
+              <a
+                href="https://www.nummergegenkummer.de/kinder-und-jugendtelefon.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:+494074100">Telefon</a>
@@ -61,7 +69,11 @@ function Links() {
                 <br />
                 81539 München
               </span>
-              <a href="https://www.neurologen-und-psychiater-im-netz.org/kinder-jugend-psychiatrie/uebersicht/">
+              <a
+                href="https://www.neurologen-und-psychiater-im-netz.org/kinder-jugend-psychiatrie/uebersicht/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:+498964248212">Telefon</a>
@@ -70,9 +82,19 @@ function Links() {
           <StyledTextContainer>
             <LinksHeadline>Telefonseelsorge</LinksHeadline>
             <p>
-              <a href="https://www.telefonseelsorge.de/">Homepage</a>
+              <a
+                href="https://www.telefonseelsorge.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Homepage
+              </a>
               <a href="tel:08001110111">Telefon</a>
-              <a href="https://www.telefonseelsorge.de/vor-ort/">
+              <a
+                href="https://www.telefonseelsorge.de/vor-ort/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Vor-Ort-Beratung
               </a>
             </p>
@@ -87,7 +109,13 @@ function Links() {
                 <br />
                 Postfach 12 02 64, 10592 Berlin
               </span>
-              <a href="https://www.kbv.de/html/arztsuche.php">Homepage</a>
+              <a
+                href="https://www.kbv.de/html/arztsuche.php"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Homepage
+              </a>
               <a href="tel:116117">Telefonischer Patientenservice</a>
               <a href="mailto:info@kbv.de">Mail</a>
             </p>
@@ -104,11 +132,19 @@ function Links() {
                 <br />
                 33311 Gütersloh
               </span>
-              <a href="https://www.weisse-liste.de/de/arzt/arztsuche/">
+              <a
+                href="https://www.weisse-liste.de/de/arzt/arztsuche/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:+4930275788300">Telefon</a>
-              <a href="https://www.weisse-liste.de/de/informationen/kontakt-allgemein/">
+              <a
+                href="https://www.weisse-liste.de/de/informationen/kontakt-allgemein/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Kontaktformular
               </a>
             </p>
@@ -123,9 +159,19 @@ function Links() {
                 <br />
                 10117 Berlin
               </span>
-              <a href="https://familienportal.de/">Homepage</a>
+              <a
+                href="https://familienportal.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Homepage
+              </a>
               <a href="tel:03020179130">Service-Telefon</a>
-              <a href="https://familienportal.de/familienportal/meta/kontakt">
+              <a
+                href="https://familienportal.de/familienportal/meta/kontakt"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Kontaktformular
               </a>
             </p>
@@ -142,7 +188,11 @@ function Links() {
                 <br />
                 D-90763 Fürth
               </span>
-              <a href="https://www.bke.de/virtual/ratsuchende/beratungsstellen.html?SID=114-7D0-704-C17">
+              <a
+                href="https://www.bke.de/virtual/ratsuchende/beratungsstellen.html?SID=114-7D0-704-C17"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:+49911977140">Telefon</a>
@@ -158,7 +208,13 @@ function Links() {
                 <br />
                 Neumarkter Str. 84 c <br /> 81673 München
               </span>
-              <a href="https://www.dajeb.de/">Homepage</a>
+              <a
+                href="https://www.dajeb.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Homepage
+              </a>
               <a href="tel:+49894361091">Telefon</a>
               <a href="mailto:info@dajeb.de">Mail</a>
             </p>
@@ -171,7 +227,11 @@ function Links() {
                 Karlstraße 40 <br />
                 79104 Freiburg
               </span>
-              <a href="https://www.caritas.de/hilfeundberatung/onlineberatung/kinder-jugendliche/start">
+              <a
+                href="https://www.caritas.de/hilfeundberatung/onlineberatung/kinder-jugendliche/start"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:+497612000">Telefon</a>
@@ -190,7 +250,11 @@ function Links() {
                 <br />
                 10179 Berlin
               </span>
-              <a href="https://www.bptk.de//service/therapeutensuche/">
+              <a
+                href="https://www.bptk.de//service/therapeutensuche/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Homepage
               </a>
               <a href="tel:0302787850">Telefon</a>
@@ -206,7 +270,13 @@ function Links() {
                 Am Köllnischen Park 2<br />
                 10179 Berlin
               </span>
-              <a href="https://www.psychotherapiesuche.de/">Homepage</a>
+              <a
+                href="https://www.psychotherapiesuche.de/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Homepage
+              </a>
               <a href="tel:030209166330">Telefon</a>
               <a href="mailto:pid@psychologenakademie.de">Mail</a>
             </p>
