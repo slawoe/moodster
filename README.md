@@ -2,7 +2,7 @@
 
 # ![Logo](./client/src/assets/images/moodster.svg) MOODSTER
 
-**THIS IS A NON-COMMERCIAL-PROJECT AS FINAL THESIS FOR MY WEB DEVELOPER BOOTCAMP AT NEUE FISCHE**
+**THIS IS A NON-COMMERCIAL-PROJECT AS FINAL THESIS FOR MY WEB DEVELOPER BOOTCAMP AT [neue fische](https://www.neuefische.de/)**
 
 Moodster is an app for children who are in therapy. It offers the possibility to make diary entries, save medication and doctors, but also many useful links and contact points to get help.
 In addition, the app has an analysis function of the last 14 entries.
