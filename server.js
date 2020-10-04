@@ -20,14 +20,14 @@ app.use("/api/medics", medics);
 
 app.use(express.static(path.join(__dirname, "client/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/index.html"));
-});
-
 app.use(
   "/storybook",
   express.static(path.join(__dirname, "client/storybook-static"))
 );
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
 initDatabase(process.env.MONGO_URI, process.env.MONGO_DB).then(async () => {
   console.log(`Database ${process.env.MONGO_DB} is ready`);
