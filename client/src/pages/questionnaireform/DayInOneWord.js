@@ -14,7 +14,7 @@ function DayInOneWord({ setForm, formData }) {
       <div>
         <BasicTextCard>
           <p>
-            Ok, das habe ich mir aufgeschrieben. Lass uns weitermachen, jetzt
+            Ok, das habe ich mir aufgeschrieben. Lass uns weitermachen. Jetzt
             darfst Du kreativer werden. Beschreib mir deinen Tag in einem Wort.
           </p>
         </BasicTextCard>

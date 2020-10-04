@@ -69,7 +69,7 @@ function Review({ formData }) {
           Du scheinst Daten vergessen zu haben. Bitte schaue noch mal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
-        <Link to="/register">Klick hier um alles überprüfen...</Link>
+        <Link to="/register">Klick hier um alles zu überprüfen...</Link>
       </>
     );
   } else if (password !== passwordRepeat) {
@@ -95,7 +95,7 @@ function Review({ formData }) {
             <span>Nachname:</span> <span>{lastName}</span>
           </div>
           <div>
-            <span>Spitzame:</span> <span>{nickName}</span>
+            <span>Spitzname:</span> <span>{nickName}</span>
           </div>
           <div>
             <span>Geburtsdatum:</span> <span>{birthDay}</span>
