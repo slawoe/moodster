@@ -69,7 +69,7 @@ function Review({ formData }) {
           Du scheinst Daten vergessen zu haben. Bitte schaue noch mal von Beginn
           an die Anmeldung durch und fülle alle Felder aus.
         </div>
-        <Link to="/register">Klick hier um alles überprüfen...</Link>
+        <Link to="/register">Klick hier um alles zu überprüfen...</Link>
       </>
     );
   } else if (password !== passwordRepeat) {
