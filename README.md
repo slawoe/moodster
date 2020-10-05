@@ -27,7 +27,7 @@ The app is designed and laid out for smartphone screens, so adjust the settings 
 
 ### Requirements
 
-Nodejs and NPM
+Node.js and npm
 
 ### 👨‍💻 Install all dependencies
 
