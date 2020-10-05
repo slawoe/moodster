@@ -21,7 +21,7 @@ See design and layout Infos below!
 
 ## 📲 Design and layout infos
 
-The app is designed and laid out for smartphone screens, so adjust the settings in your view accordingly to Iphone 5 or 6/7/8.
+The app is designed and laid out for smartphone screens, so adjust the settings in your view accordingly to IPhone 5 or 6/7/8.
 
 ## 🔧 Development
 
